@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style2 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; }
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF6633;
+}
+.style6 {	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #E7A500}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #E7A500 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style3">EFECTIVIDAD DE PRUEBA </p>
+<p class="style2">&nbsp;</p>
+<p class="style2">En esta p&aacute;gina  se representa el comportamiento de cada cabeza de prueba, este comportamiento se  calcula teniendo en cuenta la clasificaci&oacute;n de las pruebas como &eacute;xito, fallo,  advertencia, inesperados y pro ultimo efectividad. En la pantalla los datos  aparecen descritos de la siguiente manera:</p>
+<ol class="style2 style7">
+  <li><strong>Site:</strong> Nombre del cabezal.</li>
+  <li><strong>Total:</strong> La cantidad total de pruebas que se han solicitas  para cada cabeza de prueba. Al final de la columna se puede ver el total de las  pruebas realizadas por el sistema durante todo el d&iacute;a.</li>
+  <li><strong>&Eacute;xito:</strong> Numero de pruebas que se ejecutaron con  &eacute;xito sin tener en cuenta si el resultado de esta es bueno o malo. Esta columna  se divide en dos: <em>Cantidad</em>: Cantidad  de pruebas realizadas por cada cabeza que dieron &eacute;xito. <em>Porcentaje (%):</em> El valor en porcentaje de la cantidad de pruebas  que fueron exitosas.</li>
+  <li><strong>Fallo:</strong> La cantidad de pruebas que se solicitaron  pero que no se realizaron por alg&uacute;n problema de comunicaci&oacute;n ya sea con la  cabeza, la central o configuraci&oacute;n del SAPE. Es columna se divide tambi&eacute;n en  dos: <em>Cantidad</em>: Cantidad de pruebas  realizadas por cada cabeza que no se pudieron culminar. <em>Porcentaje (%):</em> El valor en porcentaje de la cantidad de pruebas  que fueron fallidas o no exitosas.</li>
+  <li><strong>Advertencia:</strong> La cantidad de pruebas que durante la  ejecuci&oacute;n de la misma la cabeza, la l&iacute;nea se encontr&oacute; en congesti&oacute;n, por lo que  es necesario repetir la prueba unos minutos despu&eacute;s del primer intento. Es  columna se divide en dos: <em>Cantidad</em>:  Cantidad de pruebas realizadas por cada cabeza que presentaron advertencia y <em>Porcentaje (%):</em> El valor en porcentaje  de la cantidad de pruebas que dieron como resultado una advertencia.</li>
+  <li><strong>Inesperado:</strong> La cantidad de pruebas que dieron como  resultados ND (No Disponible) y por lo probable que la prueba tenga que  volverse a realizar. Es columna se divide en dos: <em>Cantidad</em>: Cantidad de pruebas realizadas por cada cabeza que  presentaron ND como resultado y <em>Porcentaje  (%):</em> El valor en porcentaje de la cantidad de pruebas que dieron como  resultado un inesperado</li>
+  <li><strong>Efectividad:</strong> Aqu&iacute; se encuentra la cantidad de pruebas que  arrojaron resultados independientes del c&oacute;digo ver, para saber la cantidad que  aparece en esta columna se suman las columna &Eacute;xito con la de Advertencia. Aparecen  dos columnas:<em> Cantidad:</em> Cantidad de  pruebas que el sistema toma como finalizadas correctamente indiferente si el  resultado el&eacute;ctrico es bueno o malo. <em>Porcentaje: </em>El valor en porcentaje de la cantidad de pruebas efectivas, para los  valores inferiores al 92% el recuadro aparece en color naranja.</li>
+  <li><strong>Tiempo Promedio:</strong> El  tiempo promedio por central telef&oacute;nica que tarda el SAPE en realizar la prueba el&eacute;ctrica  de una l&iacute;nea telef&oacute;nica </li>
+</ol>
+<p class="style2 style7">&nbsp;</p>
+<p class="style2 style7">&nbsp;</p>
+<p class="style2 style7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUSQUEDA  DE EFECTIVIDAD DE PRUEBA POR FECHA</strong></p>
+<ul class="style2 style7"><li>Con esta opci&oacute;n permite realizar una consulta de la efectividad del sistema en un periodo de tiempo deteminado.</li>
+  <li>Con  el mouse en el campo &ldquo;DESDE&rdquo; haga Click en <strong>&ldquo;(aaaa-mm-dd)&rdquo;</strong> y se abrir&aacute; un cuadro con el calendario. Seleccione el d&iacute;a, el mes y el a&ntilde;o, a  partir del cual se iniciara la consulta.</li>
+  <li>Con  el mouse en el campo &ldquo;HASTA&rdquo; haga Click en <strong>&ldquo;(aaaa-mm-dd)&rdquo;</strong> y se abrir&aacute; otro cuadro con el calendario. Seleccione el d&iacute;a, el mes y el a&ntilde;o y  esta ser&aacute; la fecha final hasta donde se realizar&aacute; la consulta.</li>
+  <li>Haga  Click en <strong>&ldquo;Aceptar&rdquo;</strong>.</li>
+</ul>
+<p class="style2 style7"><strong>&nbsp;</strong></p>
+<p class="style2 style7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONSULTAR  DETALLES DEL TOTAL DE LAS PRUEBAS </strong></p>
+<ul class="style2 style7">
+  <li>En la  parte final de la columna &ldquo;TOTAL&rdquo; &nbsp;aparece el n&uacute;mero total de pruebas realizadas.</li>
+  <li>Con  el puntero del mouse haga Click sobre este numero y se abrir&aacute; una ventana donde  se describen todas las l&iacute;neas telef&oacute;nicas a las cuales se ejecutaron las pruebas  el&eacute;ctricas.</li>
+  <li>Esta  consulta tambi&eacute;n se puede realizar para cada uno de los cabezales simplemente  ubique el cabezal y haga clic sobre el numero y en una nueva ventana se ver&aacute;n  los datos correspondientes a dicha cabeza.</li>
+  <li>Si se  requiere analizar el resultado de determinada l&iacute;nea, solo se necesita hacer clic  en el n&uacute;mero que aparece en la columna &ldquo;Prueba&rdquo;.</li>
+</ul>
+<p class="style2 style7">&nbsp;</p>
+<p class="style2 style7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSULTAR DETALLES A PRUEBAS EXITOSA:</strong></p>
+<ul class="style2 style7">
+  <li>En la  parte final de la columna &ldquo;EXISTOSA&rdquo; aparece el n&uacute;mero total de pruebas  realizadas que se culminaron sin ning&uacute;n problema.</li>
+  <li>Con  el puntero del mouse haga Click sobre este numero y se abrir&aacute; una ventana donde  se describen todas las l&iacute;neas telef&oacute;nicas a las cuales se ejecutaron las  pruebas el&eacute;ctricas sin ning&uacute;n problema.</li>
+</ul>
+<p class="style2 style7">&nbsp;</p>
+<p class="style2 style7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSULTAR DETALLES A PRUEBAS CON  FALLAS:</strong></p>
+<ul class="style2 style7">
+  <li>En la  parte final de la columna &ldquo;FALLO&rdquo; aparece el n&uacute;mero total de pruebas realizadas  pero sin ning&uacute;n &eacute;xito, debido a la no comunicaci&oacute;n entre la cabeza, la central.</li>
+  <li>Con  el puntero del mouse haga Click sobre este numero y se abrir&aacute; una ventana donde  se describen todas las l&iacute;neas telef&oacute;nicas a las cuales se no se le ejecutaron  las pruebas el&eacute;ctricas.</li>
+</ul>
+<p class="style2 style7"><strong>&nbsp;</strong></p>
+<p class="style2 style7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSULTAR DETALLES A PRUEBAS QUE  PRESENTARON ADVERTENCIA:</strong></p>
+<ul class="style2 style7">
+  <li>En la  parte final de la columna &ldquo;ADVERTENCIA&ldquo;, aparece el n&uacute;mero total de pruebas que  dieron como resultado: cliente o central ocupado u otros motivos por lo cual se  requiere repetir la prueba.</li>
+  <li>Con  el puntero del mouse haga Click sobre este numero y se abrir&aacute; una ventana donde  se describen todas las l&iacute;neas telef&oacute;nicas que se clasificaron como advertencia.</li>
+</ul>
+<p class="style2 style7"><strong>&nbsp;</strong></p>
+<p class="style2 style7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSULTAR DETALLES A PRUEBAS INESPERADAS:</strong></p>
+<ul class="style2 style7">
+  <li>En la  parte final de la columna &ldquo;INESPERADOS&ldquo;, aparece el n&uacute;mero total de pruebas que  por alg&uacute;n motivo no se pudo obtener ning&uacute;n dato al ejecutarse la prueba.</li>
+  <li>Con  el puntero del mouse haga Click sobre este numero y se abrir&aacute; una ventana donde  se describen todas las l&iacute;neas telef&oacute;nicas que tuvieron casos inesperados  durante la ejecuci&oacute;n de la prueba.</li>
+</ul>
+<p class="style2 style7"><strong>&nbsp;</strong></p>
+<p class="style2 style7"><strong>&nbsp;</strong></p>
+<p class="style2 style7"><strong>&nbsp;</strong></p>
+<p class="style2 style7"><em>NOTA:</em><br />
+    <em>Para  visualizar gr&aacute;ficamente el total de todas las&nbsp;  pruebas ejecutas haga Click en <strong>&ldquo;GRAFICA&rdquo;. </strong>Si requiere mirar el resultado  de la prueba de una determinada l&iacute;nea telef&oacute;nica haga Click en la columna  Prueba (numero en azul subrayado) y se abrir&aacute; la ventana <strong>&ldquo;Resultado de la prueba&rdquo;</strong></em>.</p>
+<p class="style2 style7">&nbsp;</p>
+<p class="style2 style7"><em><br clear="all" />
+</em><a href="Indice.html" class="style6">Indice</a></p>
+</body>
+</html>

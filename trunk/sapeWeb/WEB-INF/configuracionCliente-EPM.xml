@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuracion>
+<!-- EN cada tag invisible se incluira una clave para la parte de la pantalla a la que se le
+	 van a otorgar restricciones.
+ --> 
+
+	<visibilidad>
+			<invisible>CODVETB</invisible>
+			<invisible>MATRIZ</invisible>
+			<invisible>CONFIGADSL</invisible>
+			<invisible>CARGAR_FIRMWARE</invisible>
+			<invisible>MANTENIMIENTO_DLU</invisible>
+			<invisible>MANTENIMIENTO_LI</invisible>
+			<invisible>RUTINA_SERIE</invisible>
+			<invisible>REPORTEADOR</invisible>
+			<invisible>CALIFICACION_RUTINAS</invisible>
+			<invisible>OPCION_CABLE_DIRECTO</invisible><!-- OPCION PARA SELECCIONAR SI ES UN CABLE DIRECTO O NO. METROTEL -->
+	</visibilidad>
+
+	<autenticacion type="sape"> <!--  posibles: sape, ldap -->
+	</autenticacion>
+	 
+	<!-- Numero maximo de rutinas por cable o armario que se podran levantar -->
+	<numero-max-rutinas>4</numero-max-rutinas>
+	
+	<host-cyclades>192.168.0.125</host-cyclades>
+	
+	<server-interactivas>10.65.196.16</server-interactivas>
+	<puerto-interactivas>2020</puerto-interactivas>
+	
+	<!-- Cantidad de digitos para los numeros telefonicos -->
+	<cant-digitos>7</cant-digitos>
+	
+	<!-- path en el sistema de archivos donde se encuentran los archivos de configuracion de Indigos y Fast. -->
+	<ruta-archivos-indigo-fast>/opt/gude/sqltcl/Indigos</ruta-archivos-indigo-fast>
+
+</configuracion>

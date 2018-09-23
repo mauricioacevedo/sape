@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.auditoria.Visita"
+        table="visitas"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">idvisitas</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Visita.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="fechaIngreso"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fecha_ingreso"
+        />
+
+        <property
+            name="fechaSalida"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fecha_salida"
+        />
+
+        <property
+            name="usuario"
+            type="string"
+            update="true"
+            insert="true"
+            column="usuario"
+        />
+
+        <property
+            name="ip"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Visita.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

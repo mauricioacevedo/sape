@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuracion>
+	<visibilidad>
+	<!-- EN cada tag invisible se incluira una clave para la parte de la pantalla a la que se le
+		 van a otorgar restricciones.
+	 --> 
+	
+		<invisible>PBX</invisible>
+		<invisible>CLIP</invisible>
+		<invisible>CLIPFTX</invisible>
+		<invisible>INTERACTIVAS</invisible>
+		
+		<invisible>ARMARIOS</invisible>
+		<invisible>USUARIOS</invisible>
+		<invisible>EVALUACION</invisible>
+
+		<invisible>REPORTETSTLI</invisible>		
+		
+		<invisible>CPRSIPLEXPRO</invisible>
+		<invisible>ACTUALIZARCPRSERIE</invisible>
+		<invisible>MATRIZ</invisible>
+		<invisible>CONFIGADSL</invisible>
+		
+		<invisible>GESTIONCOLAS</invisible>
+		<invisible>INDICADORESTSTLI</invisible>
+		<invisible>COLAS</invisible>
+		<invisible>MANTENIMIENTO_INDIGOFAST_EPM</invisible>
+		<invisible>OPCION_CABLE_DIRECTO</invisible><!-- OPCION PARA SELECCIONAR SI ES UN CABLE DIRECTO O NO. METROTEL -->
+	</visibilidad>
+
+	<autenticacion type="ldap"> <!--  posibles: sape, ldap -->
+		<ip>172.18.21.98</ip>
+		<usuarioLogin>cn=app-sape,ou=Aplicaciones,o=etb</usuarioLogin>
+		<passwordLogin>etbnovell</passwordLogin>
+	</autenticacion>
+	
+	<!-- Numero maximo de rutinas por cable o armario que se podran levantar -->
+	<numero-max-rutinas>27</numero-max-rutinas>
+	
+	<host-cyclades>192.168.0.2</host-cyclades>
+	
+	<server-interactivas>10.65.196.16</server-interactivas>
+	<puerto-interactivas>2020</puerto-interactivas>
+
+	<!-- Cantidad de digitos para los numeros telefonicos -->
+	<cant-digitos>7</cant-digitos>
+	
+</configuracion>

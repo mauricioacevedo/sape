@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.siplexpro.PruebaPing"
+        table="siplexpro_ping"
+    >
+
+        <id
+            name="idEvento"
+            column="id"
+            type="int"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-PruebaPing.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="avgRoundTrip"
+            type="string"
+            update="true"
+            insert="true"
+            column="avgroundtrip"
+        />
+
+        <property
+            name="codv"
+            type="string"
+            update="true"
+            insert="true"
+            column="codv"
+        />
+
+        <property
+            name="connect"
+            type="string"
+            update="true"
+            insert="true"
+            column="connect"
+        />
+
+        <property
+            name="estado"
+            type="string"
+            update="true"
+            insert="true"
+            column="estado"
+        />
+
+        <property
+            name="gwAssigned"
+            type="string"
+            update="true"
+            insert="true"
+            column="gwassigned"
+        />
+
+        <property
+            name="ipAssigned"
+            type="string"
+            update="true"
+            insert="true"
+            column="ipassigned"
+        />
+
+        <property
+            name="ipDestiny"
+            type="string"
+            update="true"
+            insert="true"
+            column="ipdestiny"
+        />
+
+        <property
+            name="login"
+            type="string"
+            update="true"
+            insert="true"
+            column="login"
+        />
+
+        <property
+            name="loginId"
+            type="string"
+            update="true"
+            insert="true"
+            column="loginid"
+        />
+
+        <property
+            name="maxRoundTrip"
+            type="string"
+            update="true"
+            insert="true"
+            column="maxroundtrip"
+        />
+
+        <property
+            name="minRoundTrip"
+            type="string"
+            update="true"
+            insert="true"
+            column="minroundtrip"
+        />
+
+        <property
+            name="packetsRec"
+            type="int"
+            update="true"
+            insert="true"
+            column="packetsrec"
+        />
+
+        <property
+            name="packetsSent"
+            type="int"
+            update="true"
+            insert="true"
+            column="packetssent"
+        />
+
+        <property
+            name="ping"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping"
+        />
+
+        <property
+            name="priDns"
+            type="string"
+            update="true"
+            insert="true"
+            column="pridns"
+        />
+
+        <property
+            name="secDns"
+            type="string"
+            update="true"
+            insert="true"
+            column="secdns"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PruebaPing.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+.style2 {
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+.style3 {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF6633;
+}
+.style6 {	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #E7A500}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #E7A500 }
+ a:hover {color:#000000}
+</style>
+
+</head>
+<body>
+<p class="style3">RUTINA DE PRUEBA POR EVENTO </p>
+<p class="style1">&nbsp;</p>
+<p class="style1">Se observa como aparece la pantalla al dar Click en la opci&oacute;n <strong>&ldquo;Rutina de Pruebas por Evento&rdquo;</strong>. &nbsp;Con esta opci&oacute;n se pueden observar cada uno de  los resultados arrojados por el sistema durante la ejecuci&oacute;n de una prueba  programada con anterioridad. La pantalla esta conformadas por varias columnas:  Transacci&oacute;n, Tipo de Prueba, N&uacute;mero de Prueba, Fecha Inicial y Fecha Final.</p>
+<ol class="style1">
+  <li><em>Transacci&oacute;n:</em> Es cuando el sistema ejecuta una prueba  previamente programada, a cada transacci&oacute;n se le asigna un n&uacute;mero.</li>
+  <li><em>Tipo  de Prueba: </em>Es el tipo de  prueba que fue seleccionada al programar la rutina de prueba. Las opciones que  aparecen en pantalla se nombran as&iacute;: AR (armario), CA (Cable), CL (Cliente). </li>
+  <li><em>N&uacute;mero  de Pruebas: </em>El n&uacute;mero de  pruebas realizadas el sistema por el sistema en el tiempo determinado.</li>
+  <li><em>Fecha  Inicial: </em>Fecha y hora en  la que se inicia la transacci&oacute;n.</li>
+  <li><em>Fecha  Final: </em>Fecha y hora en la  que se finaliza la transacci&oacute;n</li>
+</ol>
+<p class="style1">&nbsp;</p>
+<span class="style2">BUSCAR REPORTE POR EVENTO PROGRAMADO</span>
+<ul class="style1">
+  <li>En el  campo &ldquo;Buscar por:&rdquo; seleccione las pruebas a buscar por ya sea: Armario, Cable  o Cliente.</li>
+  <li>Seleccione  el rango de fecha desde cual desea la b&uacute;squeda.</li>
+  <li>Haga  Click en <strong>&ldquo;Aceptar&rdquo;</strong>.</li>
+</ul>
+<p class="style1"><strong>&nbsp;</strong></p>
+<p class="style1"><strong>OBSERVA DETALLES DE LA PRUEBA</strong></p>
+<ul>
+  <li class="style1">Para  observar detalladamente los resultados de las pruebas haga Click en la columna  &ldquo;Transacci&oacute;n&rdquo; en la prueba que desea. Y se abrir&aacute; una ventana con todas las  l&iacute;neas telef&oacute;nicas que el sistema probo durante su ejecuci&oacute;n, en ella se pude  ver en n&uacute;mero de prueba que el sistema le asigno, el n&uacute;mero telef&oacute;nico, los  valores de las capacitancias y resistencias entre los hilos A, B y Tierra, el  C&oacute;digo Ver del resultado de la prueba y la clasificaci&oacute;n de la l&iacute;nea es decir  si esta bien o mal.</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="Indice.html" class="style6">Indice</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

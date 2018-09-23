@@ -1,0 +1,153 @@
+<!-- contenidoConfiguracionADSL.jsp -->
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<jsp:useBean id="listaConfiguraciones" class="java.util.ArrayList" scope="request"/>
+<jsp:useBean id="central" class="java.lang.String" scope="request"/>
+<jsp:useBean id="cabezaId" class="java.lang.String" scope="request"/>
+
+
+<%--
+La plantilla tiene un manejo algo 'dinamico' con respecto a la informacion que maneja.
+la manera de tomar la plantilla es la siguiente:
+
+1.	Dentro de listaConfiguraciones viene definida la informacion para cada tipo de configuracion
+	(PPPoE, PPPoA, Bridge y IPoA).
+2.	Por cada una de estas configuraciones se traen parametros, informacion que el bean maneja, y que
+	con cierta logica se despliegan en el jsp.
+3.	Por ejemplo en una iteracion tenemos:
+	* 	configuracion.values : es una lista con los datos para validacion e identificacion de cada
+		configuracion. Esta lista trae en cada posicion un vector con datos que se utilizan para desplegar
+		el nombre, desplegar la informacion contenida y validar la informacion que se va a enviar al servidor.
+
+ --%>
+
+<c:forEach items="${listaConfiguraciones}" var="configuracion">
+
+<table width="60%" align="center">
+<tr bgcolor="Black">
+	<td colspan="2" align="center"><font color="White">Configuracion  ${configuracion.nombreConfiguracion}</font></td>
+</tr>
+</table>
+<table width="60%" align="center" border="1" cellspacing="0" cellpadding="0">
+	<c:forEach items="${configuracion.values}" var="datos">
+		<tr>
+		<td align="center" width="50%">${datos[3]}</td>
+		<td align="center" width="50%">
+		<c:choose>
+		<c:when test="${not empty datos[2] and fn:startsWith(datos[2], '[COMBO]')}">
+			<%-- Este campo tiene pocos valores y se debe manejar como un combobox --%>
+			<c:set var="combo" value="${fn:substringAfter(datos[2], '[COMBO]')}"/>
+			<select name="${datos[0]}" id="${datos[0]}">
+				<option value="seleccione" >Seleccione:</option>
+			<c:forEach items="${fn:split(combo, ',')}" var="cond">
+				<option value="${cond}" ${datos[1] == cond?"selected":""}>${cond}</option>
+			</c:forEach>
+			</select>
+		</c:when>
+		<c:when test="${not empty datos[2] and fn:startsWith(datos[2], '[RANGE]')}">
+			<%-- Este campo es numerico y tiene que validarse entre un rango de valores --%>
+
+			<input class="texto" id="${datos[0]}" type="text" value="${datos[1]}" size="10">
+
+		</c:when>
+		<c:otherwise> 
+		<input class="texto" id="${datos[0]}" type="text" value="${datos[1]}" size="10">
+		</c:otherwise>
+		</c:choose>
+		</td>
+		</tr>
+	</c:forEach>
+	<tr>
+		<td align="left">
+			<input class="boton" type="button" value="Guardar" onclick="javascript:procesar${configuracion.nombreConfiguracion}('guardar');">
+		</td>
+		<td align="right">
+			<input class="boton" type="button" value="Cargar de la Cabeza" onclick="javascript:procesar${configuracion.nombreConfiguracion}('loadInfoCabeza');">
+			<input class="boton" type="button" value="Actualizar Cabeza" onclick="javascript:procesar${configuracion.nombreConfiguracion}('saveInfoCabeza');">
+		</td>
+	</tr>
+</table>
+<br>
+	<script language="JavaScript">
+	
+	<%--Este javascript procesa la informacion de la pantalla y realiza operaciones de
+		guardar configuracion(En la db) (accion=guardar), cargar configuracion desde la cabeza (accion=loadInfoCabeza) y enviar
+		informacion a la cabeza (accion=saveInfoCabeza) --%>
+	
+		function procesar${configuracion.nombreConfiguracion}( accion ){
+			var query = "";
+			
+			if (accion != 'loadInfoCabeza'){
+			
+				<c:forEach items="${configuracion.values}" var="datos">
+					var ${datos[0]} = document.getElementById('${datos[0]}');
+	
+					<c:choose>
+					<c:when test="${not empty datos[2] and fn:startsWith(datos[2], '[COMBO]')}">
+						var da = ${datos[0]}.options[${datos[0]}.selectedIndex].value;
+	
+						if(da == "seleccione"){
+							alert("Seleccione un valor para el campo ${fn:replace(datos[0], '_', ' ')}");
+							${datos[0]}.focus();
+							return;
+						}
+	
+						query += "&${datos[0]}="+da;
+					</c:when>
+					<c:when test="${not empty datos[2] and fn:startsWith(datos[2], '[RANGE]')}">
+						var da = ${datos[0]}.value;
+						<c:set var="dat" value="${fn:substringAfter(datos[2], '[RANGE]')}"/>
+						<c:set var="rango" value="${fn:split(dat, ',')}"/>
+						da = validarInfo(${datos[0]},${rango[0]},${rango[1]})
+						if(da == '[null]'){
+							alert('Ingrese solo cantidades numericas entre el rango ${rango[0]} y ${rango[1]} para el campo ${datos[3]}!');
+							${datos[0]}.focus();
+							return
+						}
+						query += "&${datos[0]}="+da;
+					</c:when>
+					<c:otherwise>
+						query += "&${datos[0]}="+${datos[0]}.value;
+					</c:otherwise>
+					</c:choose>
+				</c:forEach>
+			
+			}else{
+			
+				<c:if test="${configuracion.nombreConfiguracion == 'PING'}">
+					
+					var tipComb = document.getElementById('tipo');
+					var nameConff = tipComb.options[tipComb.selectedIndex].value;
+					
+					if(nameConff == 'seleccione'){
+						alert('Seleccione un Tipo de Configuracion a cargar.');
+						tipComb.focus();
+						return;
+					}
+					
+					query += "&tipo="+nameConff;
+				
+				</c:if>
+			
+			}
+			
+			query+= "&id=${cabezaId}&central=${central}&proceso="+accion;
+			location.href = "${pageContext.request.contextPath}/actionSape?accion=mantenimientoSiplexPro&operacion=procesarConfigADSL&config=${configuracion.nombreConfiguracion}"+query;
+		}
+
+		function validarInfo(input,inicio,fin){
+
+			if(isNaN(input.value)){
+				return "[null]";
+			}
+
+			if(input.value > inicio && input.value < fin){
+				return input.value;
+			} else{
+				return "[null]"
+			}
+		}
+	</script>
+</c:forEach>

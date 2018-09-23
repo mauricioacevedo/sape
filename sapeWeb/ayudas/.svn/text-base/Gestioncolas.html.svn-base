@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF6633;
+}
+.style6 {	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #E7A500}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #E7A500 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style2">GESTION DE COLAS </p>
+<p class="style1">&nbsp;</p>
+<p class="style1 style7">Esta opci&oacute;n permite mirar las fallas que ya fueron  evacuadas y las que aun quedan pendientes por solucionar. Para esto ubicado en  a pagina &ldquo;Indicadores&rdquo; haga Click en <strong>&ldquo;Gesti&oacute;n  de Colas&rdquo;</strong><em>.</em></p>
+<ul class="style1 style7">
+  <li>Seleccione  cuales son los procesos que desea ver, si los cumplidos, los pendientes o  ambos, seleccione tambi&eacute;n la o las colas que desea que aparezcan en la grafica.</li>
+  <li>Haga  Click en <strong>&ldquo;Mostrar&rdquo;</strong>.</li>
+  <li>Aparecer&aacute;  la grafica de la o las colas y la cantidad de fallas que ha recibido.</li>
+</ul>
+<p class="style1 style7">&nbsp;</p>
+<p class="style1 style7"><strong>REGRESAR A GESTION DE COLAS</strong></p>
+<ul class="style1 style7">
+  <li>Haga  Click en <strong>&ldquo;Regresar&rdquo;</strong>.</li>
+  <li>Volver&aacute;  a la pantalla <em>Gesti&oacute;n de Colas&rdquo;</em></li>
+</ul>
+<p class="style1 style7"><strong>&nbsp;</strong></p>
+<p class="style1 style7"><strong>MANTEMINIENTO  DE COLAS</strong></p>
+<p class="style1 style7">Dentro de  Gesti&oacute;n de Colas se encuentra la opci&oacute;n <strong>&ldquo;Mantenimiento  de Colas&rdquo;</strong>, la cual permite ingresar una nueva cola, eliminarla o crear una  alarma. La alarma permite que una cola genere una alerta cuando se encuentre en  condiciones cr&iacute;ticas, para que la persona encargada del manejo de dicha colas pueda  tomar las medidas necesarias para solucionar el problema. </p>
+<p class="style1 style7">&nbsp;</p>
+<p class="style1"><a href="Indice.html" class="style6">Indice</a></p>
+<p class="style1">&nbsp;</p>
+</body>
+</html>

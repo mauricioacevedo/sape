@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sape-config>
+	<ruta-servicios value="/usr/java/tomcat/webapps/sape/config-servicios.xml" />
+	<url-servicios value="http://192.168.0.124:8080/sape/config-servicios.xml" />
+	<ruta-eval-resultados value="/opt/gude/sqltcl/evaluacionResultados.tcl" />
+	<ruta-gude-conf-tcl value="/opt/gude/sqltcl/gude.conf.tcl" />
+	<ruta-codigos-falla value="/usr/java/tomcat/webapps/sape/WEB-INF/codigosFalla.xml" />
+	<ruta-archivos-temporales value="/tmp" />
+	<cliente-sistema value="EPM" />
+	<servicio-gude>
+		<ip>127.0.0.1</ip>
+		<puerto>11112</puerto>
+	</servicio-gude>
+	<servicios-gude>
+		<servicio name="desbloqueo">3</servicio>
+		<servicio name="atu">7</servicio>
+		<servicio name="clip">8</servicio>
+		<servicio name="clipFTX">48</servicio>
+		<servicio name="enviarCalificacion">49</servicio>
+		<servicio name="categorias">9</servicio>
+		<servicio name="prueba">12</servicio>
+		<servicio name="importarCable">18</servicio>
+		<servicio name="importarArmario">19</servicio>
+		<servicio name="desbloqueoTelefonoFenix">39</servicio>
+		
+	</servicios-gude>
+</sape-config>

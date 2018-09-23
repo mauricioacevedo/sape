@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.rutinas.Rutinas"
+        table="rutinas"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">idrutinas</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Rutinas.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="tipo"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipo"
+        />
+
+        <property
+            name="valorTipo"
+            type="string"
+            update="true"
+            insert="true"
+            column="valortipo"
+        />
+
+        <property
+            name="usuario"
+            type="string"
+            update="true"
+            insert="true"
+            column="usuario"
+        />
+
+        <property
+            name="tipoDePrueba"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipodeprueba"
+        />
+
+        <property
+            name="tipoHorario"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipohorario"
+        />
+
+        <property
+            name="horas"
+            type="string"
+            update="true"
+            insert="true"
+            column="horas"
+        />
+
+        <property
+            name="dias"
+            type="string"
+            update="true"
+            insert="true"
+            column="dias"
+        />
+
+        <property
+            name="fechaInicial"
+            type="date"
+            update="true"
+            insert="true"
+            column="fechainicial"
+        />
+
+        <property
+            name="horaInicial"
+            type="string"
+            update="true"
+            insert="true"
+            column="horainicial"
+        />
+
+        <property
+            name="fechaFinal"
+            type="date"
+            update="true"
+            insert="true"
+            column="fechafinal"
+        />
+
+        <property
+            name="horaFinal"
+            type="string"
+            update="true"
+            insert="true"
+            column="horafinal"
+        />
+
+        <property
+            name="habilitado"
+            type="boolean"
+            update="true"
+            insert="true"
+            column="habilitado"
+        />
+
+        <property
+            name="fechaProgramada"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fechaprogramada"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Rutinas.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

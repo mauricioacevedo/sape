@@ -1,0 +1,387 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="listaCampos" value="${requestScope.listaCampos}" />
+<c:set var="listaReporteadores" value="${requestScope.listaReporteadores}" />
+<c:set var="reporteador" value="${requestScope.reporteador}" />
+
+<html>
+<head>
+<title>SAPE - Reporteador</title>
+</head>
+<script language="JavaScript" src="javascript/varios.js"></script>
+<script language="JavaScript" src="javascript/calendar.js"></script>
+<script type="text/javascript" language="javascript">
+
+addCalendar("DateIni", "calIni", "fechaIni", "forma1");
+addCalendar("DateFin", "calFin", "fechaFin", "forma1");
+addCalendar("DateMail", "calMail", "fechaMail", "forma2");
+
+function validaciones(){
+		
+	var titulo = document.getElementById('tituloReporte');
+	
+	if(!validarString(titulo.value)){
+		alert('Ingrese un titulo para el reporte');
+		titulo.focus();
+		return;
+	}
+	
+	<c:set var="delim" value="" />
+	<c:forEach items="${listaCampos}" var="campo"><c:set var="name" value="${name}${delim}${fn:split(campo,';')[0]}" />	<c:set var="delim" value=";" /></c:forEach>
+	
+	var names = '${name}'.split(';');
+	
+	var listaCampos = "";
+	var listaLabels = "";
+	var elementoOrdenador = "";
+	
+	for(i=0;i<names.length;i++) {
+		var chek = document.getElementById('checks'+names[i]);
+		if(chek.checked){
+			listaCampos += names[i]+";";
+			var label = document.getElementById('textos'+names[i]);
+			if(label.value == ''){
+				alert('Debe asignar un label para el campo');
+				label.focus();
+				return
+			}
+			listaLabels += label.value+";";
+			var radio = document.getElementById('radios'+names[i]);
+			if(radio.checked){
+				elementoOrdenador = names[i];
+			}
+		}
+	}
+
+	if(listaCampos == ''){
+		alert('Seleccione almenos un campo para mostrar.');
+		return;
+	}
+
+	var selectBuscar = document.getElementById('selectBuscar');
+	
+	var buscar = selectBuscar.options[selectBuscar.selectedIndex].value;
+	
+	if(buscar == 'seleccione'){
+		alert('Seleccione un valor para el tipo de busqueda.');
+		selectBuscar.focus();
+		return;
+	}
+	
+	var selectCondicion = document.getElementById('selectCondicion');
+	var condicion = selectCondicion.options[selectCondicion.selectedIndex].value;
+
+	var valorCondicion = document.getElementById('valorCondicion');
+	
+	var fechaIni = document.getElementById('fechaIni');
+	var fechaFin = document.getElementById('fechaFin');
+	
+	if (!validarCamposRangosFechas(fechaIni, fechaFin)) {
+			return;
+	}
+	
+	
+	var selectFormatos = document.getElementById('selectFormatos');
+
+	var formato = selectFormatos.options[selectFormatos.selectedIndex].value;
+	
+	var emails = document.getElementById('emails');
+
+	if(emails.value == ''){
+		alert('Ingrese almenos un correo electronico');
+		emails.focus();
+		return;
+	}
+
+	var fechaMail = document.getElementById('fechaMail');
+	
+	if(fechaMail.value == ''){
+		alert('Ingrese la fecha de generacion del reporte');
+		fechaMail.focus();
+		return;
+	}
+	
+	var selectHora = document.getElementById('selectHora');
+	var hora = selectHora.options[selectHora.selectedIndex].value;
+	
+	var selectMinuto = document.getElementById('selectMinuto');
+	var minuto = selectMinuto.options[selectMinuto.selectedIndex].value;
+	
+	alert('campos: '+listaCampos);
+	alert('labels: '+listaLabels);
+	alert('elemento ordenador: '+elementoOrdenador);
+	alert('buscar: '+buscar+" "+condicion+" "+valorCondicion.value+' desde: '+fechaIni.value+' hasta: '+fechaFin.value);
+	alert('Formato de archivo: '+formato+' dirigido a: '+emails.value);
+	alert('Fecha de reporte: '+fechaMail.value+' '+hora+' '+minuto);
+	
+	
+}
+
+function validarString(cadena){
+
+	if(cadena.length  > 1 ) return true;
+	else return false;
+}
+
+
+function verificarRadios(nombreCampo){
+	var check = document.getElementById('checks'+nombreCampo);
+	if(!check.checked){
+		check.checked=true;
+	}
+}
+
+function nuevo(){
+
+
+	var titulo = document.getElementById('tituloReporte');
+	
+	titulo.value='';
+	
+
+	<c:set var="delim" value="" />
+	<c:set var="name" value="" />
+	<c:forEach items="${listaCampos}" var="campo"><c:set var="labels" value="${labels}${delim}${fn:split(campo,';')[1]}" /><c:set var="name" value="${name}${delim}${fn:split(campo,';')[0]}" />	<c:set var="delim" value="," /></c:forEach>
+	
+	var names1 = '${name}'.split(',');
+	var labels1 = '${labels}'.split(',');
+	
+	for(i=0;i<names1.length;i++) {
+		var chek = document.getElementById('checks'+names1[i]);
+		
+		if(chek == 'null' || chek == null){
+			alert('null: '+names1[i]);
+		}
+		
+		chek.checked=false;
+			
+		var label = document.getElementById('textos'+names1[i]);
+		label.value = labels1[i];
+		
+		var radio = document.getElementById('radios'+names1[i]);
+		if(radio.checked){
+			radio.checked=false;
+		}
+		
+		if(names1[i] == 'prueba'){
+			chek.checked=true;
+			radio.checked=true;
+		}
+
+	}
+
+	var valorCondicion = document.getElementById('valorCondicion');
+	valorCondicion.value='';
+	
+	var fechaIni = document.getElementById('fechaIni');
+	var fechaFin = document.getElementById('fechaFin');
+	
+	fechaIni.value=formatDate(new Date(),"yyyy-MM-dd");
+	fechaFin.value=formatDate(new Date(),"yyyy-MM-dd");
+	
+	var emails = document.getElementById('emails');
+	emails.value='';
+	
+
+	var fechaMail = document.getElementById('fechaMail');
+	fechaMail.value=formatDate(new Date(),"yyyy-MM-dd");
+	
+	resetearCombo('selectMinuto');
+	resetearCombo('selectHora');
+	resetearCombo('selectFormatos');
+	resetearCombo('selectCondicion');
+	resetearCombo('selectBuscar');
+}
+
+function cargarReporteador(){
+	var id = getValueid('selectReporteadores');
+	
+	location.href='${pageContext.request.contextPath}/actionSape?accion=reporteador&operacion=cargarReporteador&id='+id;
+}
+
+</script>
+<body>
+<jsp:include page="../encabezado.jsp" flush="true" />
+<br>
+<table align="center" width="100%">
+	<tr><td align="center" class="mensajeCentral">REPORTEADOR SAPE </td></tr>
+</table>
+
+<br>
+<div align="center">
+Reportes Anteriores (ordenados por id desc): 
+<select name="selectReporteadores" id="selectReporteadores" onChange="javascript:cargarReporteador();">
+	<option value="seleccione">Seleccione:</option>
+	<c:forEach items="${listaReporteadores}" var="r">
+	<option value="${r.id}" ${r.id == reporteador.id?'selected':''}>${r.titulo}</option>
+	</c:forEach>
+</select>
+</div>
+
+<br>
+<br>
+T&iacute;tulo Del Reporte: <input type="text" size="60" value="${reporteador.titulo}" id="tituloReporte" class="texto">
+<br>
+<br>
+SELECCIONE CAMPOS 
+<table border="1" align="center" width="100%">
+<tr>
+	<c:set var="i" value="0" />
+	<c:forEach begin="0" end="1">
+	<td>
+		CAMPO
+	</td>
+	<td>
+		MOSTRAR
+	</td>
+	<td width="30">
+		ORDEN
+	</td>
+	<c:if test="${i == 0}">
+		<td width="50">&nbsp</td>
+	</c:if>
+	<c:set var="i" value="1" />
+	</c:forEach>
+</tr>
+<c:set var="i" value="0" />
+<c:forEach var="campo" items="${listaCampos}">
+<c:if test="${i%2 == 0}">
+<tr>
+</c:if>
+	<td>
+		<input type="checkbox" value="${campo.nombre}" id="checks${campo.campo}" name="check${campo.campo}" ${campo.campo == 'prueba'?'checked':''}> ${campo.nombre}
+	</td>
+	<td>
+<<<<<<< reporteador.jsp
+		<c:set var="listaVars" value="${fn:split(reporteador.campos,',')}" />
+		<c:set var="listaLabs" value="${fn:split(reporteador.etiquetas,',')}" />
+		<c:set var="k" value="0" />
+		<c:forEach items="${listaVars}" var="v">
+			<c:set var="k" value="${k + 1}" />
+		</c:forEach>
+		
+		<input type="text" size="15" value="${par[1]}" id="textos${par[0]}" name="textos${par[0]}" class="texto">
+=======
+		<input type="text" size="15" value="${campo.nombre}" id="textos${campo.campo}" name="textos${campo.campo}" class="texto">
+>>>>>>> 1.2
+	</td>
+	<td align="center">
+		<input type="radio" name="orden" value="${campo.campo}" id="radios${campo.campo}" name="radios${campo.campo}" onclick="javascript:verificarRadios('${campo.campo}');" ${campo.campo == 'prueba'?'checked':''}>
+	</td>
+	<c:if test="${i%2 == 0}">
+	<td>&nbsp;</td>
+	</c:if>
+<c:if test="${i%2 == 1}">
+</tr>
+</c:if>
+<c:set var="i" value="${i + 1}" />
+</c:forEach>
+<table>
+<br>
+<table border="1">
+<tr>
+	<td>Buscar Por</td>
+	<td>Condicion</td>	
+	<td>Valor</td>	
+	<td>Desde Fecha </td>	
+	<td>Hasta Fecha </td>	
+</tr>
+<tr>
+	<td>
+		<select name="selectBuscar" id="selectBuscar">
+			<option value="seleccione">seleccione</option>
+			<c:forEach var="campo" items="${listaCampos}">
+				<c:if test="${campo.filtro == true}">
+				<option value="${campo.campo}">${campo.nombre}</option>
+				</c:if>
+			</c:forEach>
+		</select>
+	</td>
+	<td>
+		<select name="selectCondicion" id="selectCondicion">
+			<option>=</option>
+			<option>&gt;</option>
+			<option>&lt;</option>
+			<option>!=</option>
+		</select>
+	</td>
+	<td>
+		<input type="text" class="texto" name="valorCondicion" id="valorCondicion">
+	</td>
+	<form name="forma1">
+	<td>
+		<input type="text" class="texto" name="fechaIni" id="fechaIni" maxlength="10" size="10" value="">
+        <span title="Click Para Abrir El Calendario" class="calendario"><a href="javascript:showCal('DateIni', 5, 5)"> (aaaa-mm-dd)</a></span>
+        <div id="calIni" style="position:relative; visibility: hidden;">
+	</td>
+	<td>
+        <input type="text" class="texto" name="fechaFin" id="fechaFin" maxlength="10" size="10" value="">
+        <span title="Click Para Abrir El Calendario" class="calendario"><a href="javascript:showCal('DateFin', 5, 5)">(aaaa-mm-dd)</a></span>
+        <div id="calFin" style="position:relative; visibility: hidden;">
+	</td>
+	</form>
+</tr>
+</table>
+<br>
+<table border="1" width="100%">
+<tr>
+	<td width="195" align="center">
+	Formato de envio: 
+	<select name="selectFormatos" id="selectFormatos">
+		<option value="html">HTML</option>
+		<option value="csv">CSV</option>
+		<option value="xls">XLS</option>
+		<option value="pdf">PDF</option>
+	</select>
+	</td>
+	<td width="*" align="center">
+		Direcci&oacute;n (es): 
+		<input type="text" size="90%" name="emails" id="emails" class="texto"> 
+	</td>
+</tr>
+</table>
+<br>
+<br>
+<table border="1" width="550" align="center">
+<tr>
+	<td colspan="2" align="center">
+		FECHA GENERACION
+	</td>
+</tr>
+<tr>
+	<form name="forma2">
+	<td align="center">
+		<table width="60%">
+		<tr>
+		<td width="70%">
+		Fecha: <input type="text" class="texto" name="fechaMail" id="fechaMail" maxlength="10" size="10" value="">
+        <span title="Click Para Abrir El Calendario" class="calendario"><a href="javascript:showCal('DateMail', 5, 5)">(aaaa-mm-dd)</a></span>
+        <div id="calMail" style="position:relative; visibility: hidden;"></div>
+		</td>
+		<td>
+		<select name="selectHora" id="selectHora">
+			<c:forEach var="hora" begin="0" end="23">
+				<option value="${hora <= 9?'0':''}${hora}">${hora <= 9?'0':''}${hora}</option>
+			</c:forEach>		
+		</select>
+		 <select name="selectMinuto" id="selectMinuto">
+			<option value="00">00</option>
+			<option value="15">15</option>
+			<option value="30">30</option>
+			<option value="45">45</option>
+		</select>
+		</td>
+		</tr>
+		</table>
+	</td>
+	</form>	
+</tr>
+</table>
+<br>
+<div align="center">
+	<input type="button" value="Nuevo" class="boton" onclick="javascript:nuevo();">
+	<input type="button" value="Guardar" onclick="javascript:validaciones();" class="boton">
+	<input type="button" value="Eliminar" class="boton">	
+</div>
+</body>
+</html>

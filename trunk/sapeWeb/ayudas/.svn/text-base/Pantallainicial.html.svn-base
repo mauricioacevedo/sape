@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style14 {font-size: 9}
+.style17 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style18 {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.style19 {font-size: 12px; }
+-->
+</style>
+</head>
+
+<body>
+<p class="style18">La Pantalla Inicial  del Sistema Administrativo de Pruebas Extendidas (SAPE), para iniciar la sesi&oacute;n  es necesario ingresar un <strong>&ldquo;USUARIO&rdquo;</strong> y <strong>&ldquo;CONTRASE&Ntilde;A&rdquo;</strong> dado previamente por el  administrador del sistema. Si no tiene asignado un usuario y contrase&ntilde;a para  uso del sistema, solic&iacute;telo al administrador del sistema.</p>
+<p class="style18">&nbsp;</p>
+<p class="style19"><span class="style17"><strong>PARA INICIAR SESI&Oacute;N</strong>:</span></p>
+<ul class="style17">
+  <li class="style19"><span class="style17">Escriba en el camp</span>o &ldquo;USUARIO&rdquo; el nombre  de usuario asignado por el administrador.</li>
+  <li class="style19">Escriba en el campo &ldquo;CONTRASE&Ntilde;A&rdquo; la  contrase&ntilde;a asignada por el administrador.</li>
+  <li class="style19">Haga Click en <strong>&ldquo;INGRESAR&rdquo;</strong> o presione la tecla <strong>ENTER</strong>.</li>
+</ul>
+<p align="left" class="style17">&nbsp;</p>
+<p align="left" class="style14"><em><strong>NOTA: </strong></em><br />
+    <em>El usuario se  deshabilitara para el ingreso al sistema despu&eacute;s de 3 intentos fallidos por no  escribir correctamente el usuario o la contrase&ntilde;a.</em><br />
+    <em>El usuario y  contrase&ntilde;a es sensible a may&uacute;sculas y min&uacute;sculas por lo que tendr&aacute; que  escribirlo id&eacute;ntico a como se dio de alta en el sistema.</em> </p>
+<p align="justify" class="style14">&nbsp;</p>
+</body>
+</html>

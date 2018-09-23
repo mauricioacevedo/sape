@@ -1,0 +1,496 @@
+/*
+ * Created on 13-ene-2004
+ */
+package com.gc.data;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Hashtable;
+import java.util.List;
+
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Session;
+import net.sf.hibernate.Transaction;
+
+import com.osp.sape.Exceptions.SapeDataException;
+import com.osp.sape.data.HibernateConfiguration;
+import com.osp.sape.data.HibernateConfigurationSape;
+import com.osp.sape.data.HibernateObject;
+import com.osp.sape.maestros.auditoria.RastroSape;
+import com.osp.sape.maestros.auditoria.Visita;
+
+/**
+ * @author Andres Aristizabal
+ */
+public class AplicacionDAOImpl extends HibernateObject implements AplicacionDAO  {
+
+    private final String SQL_PAGINAS_MAS_VISITADAS = "select substring(hits_pagina, locate('?accion=', hits_pagina) + 8) as accion, count(hits_pagina) as cantidad from hits ";
+    private final String SQL_VISITAS_POR_HORAS  = "SELECT hour(visi_fecha_ingreso) as hora, count(visi_fecha_ingreso) as cantidad FROM visitas ";
+    private final String SQL_VISITAS_POR_DIAS = "SELECT dayname(visi_fecha_ingreso) as dia, count(visi_fecha_ingreso) as cantidad FROM visitas  ";
+    private final String SQL_VISITAS_POR_MESES = "SELECT monthname(visi_fecha_ingreso) as mes, count(visi_fecha_ingreso) as cantidad FROM visitas ";
+    private final String SQL_VISITAS_POR_ANOS = "SELECT year(visi_fecha_ingreso) as ano, count(visi_fecha_ingreso) as cantidad FROM visitas ";
+    private final String SQL_ESTADISTICO_BROWSERS = "SELECT count(hits_browser) as cantidad, hits_browser as browser FROM hits "; 
+    private final String SQL_ESTADISTICO_SO = "SELECT count(hits_so) as cantidad, hits_so as so FROM hits ";
+    
+    private ArrayList<RastroSape> rastrosPendientes; //Cuando llegue a 20 se hacen los insert.
+    
+    
+    public AplicacionDAOImpl() {
+    	rastrosPendientes = new java.util.ArrayList(20);
+    }
+    
+    protected HibernateConfiguration getHibernateConfiguration() {
+    	return HibernateConfigurationSape.getInstance();
+    }
+
+
+    public Hashtable getEstadisticoPaginas(int cantidad) {
+        Hashtable retorno = new Hashtable(cantidad);
+        Session session = null;
+        try {
+            session = getSession();
+            Statement stm = session.connection().createStatement();
+            String sql = SQL_PAGINAS_MAS_VISITADAS + "group by accion order by cantidad desc limit " + cantidad;
+//            log(4, "el sql es: " + sql);TODO
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()) {
+                retorno.put(rs.getString("ACCION"), new Integer(rs.getInt("cantidad")));
+            }
+        } catch (HibernateException e) {
+        	logs.error(e);
+        } catch (SQLException e) {
+        	logs.error(e);
+        } finally {
+            try {
+                session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            }        
+        }
+        return retorno;
+    }
+
+    
+    public void registrarVisita(Visita v) {
+        if (debug) logs.debug("registrarVisita: " + v);
+        if (v.getUsuario().length() > 10) v.setUsuario(v.getUsuario().substring(1,10));
+        try {
+            insertarObjeto(v);
+        } catch (HibernateException e) {
+            logs.error(e);
+        }
+    }
+
+    
+    public void registrarSalida(Visita v) {
+        if (debug) logs.debug("registrarSalida: " + v);
+        try {
+            actualizarObjeto(v);
+        } catch (HibernateException e) {
+        	logs.error(e);
+        }
+    }
+
+
+    public Hashtable getEstadisticoVisitasHoras() {
+//        log(3, "getEstadisticoVisitasHoras");
+        Hashtable retorno = new Hashtable(24);
+        Session session = null;
+        try {
+            session = getSession();
+            Statement stm = session.connection().createStatement();
+            String sql = SQL_VISITAS_POR_HORAS + "group by hora";
+//            log(4, "el sql es: " + sql);TODO
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()) {
+                retorno.put(rs.getString("hora"), new Integer(rs.getInt("cantidad")));
+            }
+        } catch (HibernateException e) {
+        	logs.error(e);
+        } catch (SQLException e) {
+        	logs.error(e);
+        } finally {
+            try {
+                session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            }            
+        }
+        return retorno;
+    }
+
+
+    public Hashtable getEstadisticoVisitasDias() {
+//        log(3, "getEstadisticoVisitasDias");TODO
+        Hashtable retorno = new Hashtable(7);
+        Session session = null;
+        try {
+            session = getSession();
+            Statement stm = session.connection().createStatement();
+            String sql = SQL_VISITAS_POR_DIAS + "group by dia";
+//            log(4, "el sql es: " + sql);TODO
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()) {
+                retorno.put(rs.getString("dia"), new Integer(rs.getInt("cantidad")));
+            }
+        } catch (HibernateException e) {
+        	logs.error(e);
+        } catch (SQLException e) {
+        	logs.error(e);
+        } finally {
+            try {
+                session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            }    
+        }
+        return retorno;
+    }
+	
+    public Hashtable getEstadisticoVisitasMeses() {
+//        log(3, "getEstadisticoVisitasMeses");TODO
+        Hashtable retorno = new Hashtable(12);
+        Session session = null;
+        try {
+            session = getSession();
+            Statement stm = session.connection().createStatement();
+            String sql = SQL_VISITAS_POR_MESES + "group by mes";
+//            log(4, "el sql es: " + sql);TODO
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()) {
+                retorno.put(rs.getString("mes"), new Integer(rs.getInt("cantidad")));
+            }
+        } catch (HibernateException e) {
+        	logs.error(e);
+        } catch (SQLException e) {
+        	logs.error(e);
+        } finally {
+            try {
+                session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            }            
+        }
+        return retorno;
+    }
+    
+    public Hashtable getEstadisticoVisitasAnos() {
+//        log(3, "getEstadisticoVisitasAnos");TODO
+        Hashtable retorno = new Hashtable(4);
+        Session session = null;
+        try {
+            session = getSession();
+            Statement stm = session.connection().createStatement();
+            String sql = SQL_VISITAS_POR_ANOS + "group by ano";
+//            log(4, "el sql es: " + sql);TODO
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()) {
+                retorno.put(rs.getString("ano"), new Integer(rs.getInt("cantidad")));
+            }
+        } catch (HibernateException e) {
+        	logs.error(e);
+        } catch (SQLException e) {
+//            logs.error(e);
+        } finally {
+            try {
+                session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            }            
+        }
+        return retorno;
+    }
+    
+    public Hashtable getEstadisticoBrowsers() {
+//        log(3, "getEstadisticoBrowsers");TODO
+        Hashtable retorno = new Hashtable(5);
+        Session session = null;
+        try {
+            session = getSession();
+            Statement stm = session.connection().createStatement();
+            String sql = SQL_ESTADISTICO_BROWSERS + "group by browser";
+//            log(4, "el sql es: " + sql);TODO
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()) {
+                retorno.put(rs.getString("browser"), new Integer(rs.getInt("cantidad")));
+            }
+        } catch (HibernateException e) {
+        	logs.error(e);
+        } catch (SQLException e) {
+        	logs.error(e);
+        } finally {
+            try {
+                session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            }
+        }
+        return retorno;
+    }
+    
+    public Hashtable getEstadisticoSO() {
+//    	log(3, "getEstadisticoSO");TODO
+        Hashtable retorno = new Hashtable(5);
+        Session session = null;
+        try {
+            session = getSession();
+            Statement stm = session.connection().createStatement();
+            String sql = SQL_ESTADISTICO_SO + "group by so";
+//            log(4, "el sql es: " + sql);TODO
+            ResultSet rs = stm.executeQuery(sql);
+            while(rs.next()) {
+                retorno.put(rs.getString("so"), new Integer(rs.getInt("cantidad")));
+            }
+        } catch (HibernateException e) {
+        	logs.error(e);
+        } catch (SQLException e) {
+        	logs.error(e);
+        } finally {
+            try {
+                session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            }               
+        }
+        return retorno;
+    }
+
+    public void registrarActualizacion(Date fecha, String usuario, Object viejo, Object nuevo) {
+    	if (debug) logs.debug("registrarActualizacion: " + fecha + ", " + usuario); //no le pongo viejo y nuevo porque queda muy largo el log.
+    	if (usuario.length() > 10) usuario = usuario.substring(1,10);
+    	String descripcion = "Cambiado: " + viejo + "; Por: " + nuevo;
+    	registrarRastro(new RastroSape(fecha, usuario, 2, descripcion));
+    }
+    
+    
+    public void registrarEliminacion (Date fecha, String usuario, Object eliminado) {
+    	if (debug) logs.debug("registrarActualizacion: " + fecha + ", " + usuario); //no le pongo viejo y nuevo porque queda muy largo el log.
+    	if (usuario.length() > 10) usuario = usuario.substring(1,10);
+    	String descripcion = "Eliminado: " + eliminado;
+    	registrarRastro(new RastroSape(fecha, usuario, 4, descripcion));
+    }
+    
+    public void registrarInsersion (Date fecha, String usuario, Object nuevo) {
+    	if (debug) logs.debug("registrarInsersion: " + fecha + ", " + usuario); //no le pongo nuevo porque queda muy largo el log.
+    	if (usuario.length() > 10) usuario = usuario.substring(1,10);
+    	String descripcion = "Insertado: " + nuevo;
+    	registrarRastro (new RastroSape(fecha, usuario, 5, descripcion));
+    }
+    
+    
+	public void registrarLoginFallido(Date fecha, String usuario, String clave, String ip) {
+		if (debug) logs.debug("registrarLoginFallido: " + fecha + ", " + usuario + ", " + clave);
+        if (usuario.length() > 10) usuario = usuario.substring(1,10);
+        String descripcion = "Clave: " + clave + "; IP: " + ip;
+        registrarRastro(new RastroSape(fecha, usuario, 1, descripcion));
+	}
+    
+	/**
+	 * 
+	 * @param fecha
+	 * @param usuario
+	 * @param tipo 1: login invalido, 2: cambio en pantalla, 3: consulta pagina, 4: eliminar Registro, 5: insertar Registro
+	 * @param descripcion
+	 */
+	private void registrarRastro (RastroSape rastro) {
+		if (debug) logs.debug("registrarRastro: " + rastro);
+		
+		rastrosPendientes.add(rastro);
+		if (debug) logs.debug("Pendientes: " + rastrosPendientes.size());
+		if (rastrosPendientes.size() >= 20) {
+			insertarRastros();
+		}	
+	}
+	
+	
+	public List buscarRastro(String fIni, String fFin,String user,String tipo)  throws SapeDataException{
+        if(debug) logs.debug("buscarRastro : fIni=["+fIni+"], fFin=["+fFin+"], user=["+user+"], tipo=["+tipo+"]");
+
+        Exception exception=null;
+        List l = null;
+        Session session = null;
+
+        fIni = fIni + " 00:00:00";
+        fFin = fFin + " 23:59:59";
+        
+        String hql = "from RastroSape u where u.fecha between '"+fIni+"' and '"+fFin+"' ";
+        hql += (user!=null&&!user.equals("")?" and u.usuario='"+user+"'":"");
+        
+        if(tipo != null && !tipo.equals("")&&!tipo.equals("todos"))
+        	hql += " and u.tipo="+tipo;
+        
+        hql +=" order by u.fecha DESC";
+        
+        try {
+        	if(debug) logs.debug("[hql: "+hql+"]");
+            session = getSession();
+            l = session.find(hql);
+            session.flush();
+
+        } catch (HibernateException e) {
+            logs.error(e);
+            exception = e;
+        } finally{
+            try{
+                if(session !=null) session.close();
+            }catch(HibernateException e1){
+                logs.error(e1);
+                exception=e1;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return l;
+	}
+	
+	
+    public List buscarVisita(String fIni, String fFin,String user) throws SapeDataException {
+        if(debug) logs.debug("buscarVisita : fIni=["+fIni+"], fFin=["+fFin+"], user=["+user+"]");
+        Exception exception=null;
+        List l = new ArrayList();
+        Session session = null;
+        Statement stm = null;
+        
+        
+        fIni = fIni+" 00:00:00";
+        fFin = fFin+" 23:59:59";
+
+        try {
+
+            session = getSession();
+			stm = session.connection().createStatement();
+            String sql = "select *,(fecha_salida - fecha_ingreso) AS duracion from visitas where fecha_ingreso between '"+fIni+"' and '"+fFin+"' "+
+            (user!=null&&!user.equals("")?" and usuario='"+user+"'":"")+" order by fecha_ingreso DESC";
+            
+            
+            /*l = session.find("from Visita u where u.fechaIngreso between '"+fIni+"' and '"+fFin+"' "+
+                    (user!=null&&!user.equals("")?" and u.usuario='"+user+"'":"")+" order by u.fechaIngreso DESC");
+            */
+            
+            if (debug) logs.debug("sql: " + sql);
+            ResultSet rta=stm.executeQuery(sql);
+
+            while(rta.next()){
+            	Visita v = new Visita();
+            	v.setFechaIngreso(rta.getTimestamp("fecha_ingreso"));
+            	v.setUsuario(rta.getString("usuario"));
+            	v.setIp(rta.getString("ip"));
+//            	Timestamp time=rta.getTimestamp("fecha_salida");
+//            	Date d = null;
+//            	if(time != null)d = new Date(time.getTime());
+            	v.setFechaSalida(rta.getTimestamp("fecha_salida"));
+            	v.setDuracion(rta.getString("duracion"));
+            	
+            	l.add(v);
+            }
+            
+            session.flush();
+        } catch (HibernateException e) {
+            logs.error(e);
+            exception = e;
+        } catch (SQLException e) {
+			logs.error(e);
+			exception = e;
+		} finally{
+            try{
+                if(session !=null) session.close();
+            }catch(HibernateException e1){
+                logs.error(e1);
+                exception=e1;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+
+        return l;
+    }
+
+	private void insertarRastros() {
+		if (debug) logs.debug("Inserto los rastos en la base de datos");
+		Transaction tx = null;
+		Session sessionRastros = null;
+		try {
+			sessionRastros = getSession();
+			tx = sessionRastros.beginTransaction();
+			for (RastroSape rastro : rastrosPendientes) {
+				sessionRastros.save(rastro);
+			}
+			rastrosPendientes.clear();	//vacio la lista
+			tx.commit();
+			sessionRastros.flush();
+		} catch (HibernateException e) {
+			logs.error(e);
+			try {
+				if (tx != null) tx.rollback();
+			} catch (HibernateException e1) {
+				logs.error(e1);
+			}
+		} finally {
+			try {
+				if (sessionRastros != null) sessionRastros.close();
+			} catch (HibernateException e) {
+				logs.error(e);
+			}
+		}
+	}
+	
+	
+	public int eliminarRastros (String desdeFecha, String hastaFecha) throws SapeDataException {
+		if (logs.isDebugEnabled()) logs.debug("EliminarRastros: " + desdeFecha + ", " + hastaFecha);
+		return eliminarRastrosVisitas ("from RastroSape r where r.fecha between '" + desdeFecha + " 00:00:00' and '" + hastaFecha + " 23:59:59'");
+	}
+
+	public int eliminarVisitas (String desdeFecha, String hastaFecha) throws SapeDataException {
+		if (logs.isDebugEnabled()) logs.debug("EliminarVisitas: " + desdeFecha + ", " + hastaFecha);
+		return eliminarRastrosVisitas ("from Visita v where v.fechaIngreso between '" + desdeFecha + " 00:00:00' and '" + hastaFecha + " 23:59:59'");
+	}
+	
+	
+	/**
+	 * Como eliminar Rastros y vista son casi lo mismo hice un metodo comun, lo único es que se le pasa como parametro el HQL
+	 * @param desdeFecha
+	 * @param hastaFecha
+	 * @return
+	 * @throws SapeDataException
+	 */
+	private int eliminarRastrosVisitas (String hql) throws SapeDataException {
+		if (logs.isDebugEnabled()) logs.debug("EliminarRastrosVisitas: " + hql);
+		
+		Exception exception = null;
+		Transaction tx = null;
+		Session session = null;
+		
+		int retorno = 0;
+		try {
+			session = getSession();
+			tx = session.beginTransaction();
+			retorno = session.delete(hql);
+			tx.commit();
+			session.flush();
+		} catch (HibernateException e) {
+			logs.error(e);
+			exception = e;
+			try {
+				if (tx != null) tx.rollback();
+			} catch (HibernateException e1) {
+				logs.error(e1);
+			}
+		} finally {
+			try {
+				if (session != null) session.close();
+			} catch (HibernateException e) {
+				logs.error(e);
+				exception = e;
+			}
+		}
+		if (exception != null) throw new SapeDataException(exception);
+		return retorno;
+	}
+	
+	
+	public void finalizarPendientes() {
+		insertarRastros();
+	}
+	
+}	

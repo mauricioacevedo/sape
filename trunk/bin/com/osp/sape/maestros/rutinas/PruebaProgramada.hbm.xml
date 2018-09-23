@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.rutinas.PruebaProgramada"
+        table="pruebaprogramada"
+    >
+
+        <id
+            name="transaccion"
+            column="transaccion"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">transaccion_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-PruebaProgramada.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="tipoDePrueba"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipodeprueba"
+        />
+
+        <property
+            name="telefonoIni"
+            type="long"
+            update="true"
+            insert="true"
+            column="telefonoini"
+        />
+
+        <property
+            name="telefonoFin"
+            type="long"
+            update="true"
+            insert="true"
+            column="telefonofin"
+        />
+
+        <property
+            name="numeroPruebas"
+            type="integer"
+            update="true"
+            insert="true"
+            column="numpruebas"
+        />
+
+        <property
+            name="fechaIni"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fechaini"
+        />
+
+        <property
+            name="fechaFin"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fechafin"
+        />
+
+        <property
+            name="duracion"
+            type="java.lang.String"
+            formula="to_char(fechafin - fechaini, 'HH24:MI:SS')"
+            update="false"
+            insert="false"
+        />
+
+        <property
+            name="idRutina"
+            type="int"
+            update="true"
+            insert="true"
+            column="idrutina"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PruebaProgramada.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

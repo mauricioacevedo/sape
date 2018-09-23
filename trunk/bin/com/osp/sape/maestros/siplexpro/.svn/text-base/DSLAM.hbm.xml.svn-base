@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.siplexpro.DSLAM"
+        table="siplexpro_configuracionadsl"
+    >
+
+        <id
+            name="idCabeza"
+            column="idcabeza"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-DSLAM.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="stdDslam"
+            type="string"
+            update="true"
+            insert="true"
+            column="dslam_std"
+        />
+
+        <property
+            name="txPwrAttDslam"
+            type="string"
+            update="true"
+            insert="true"
+            column="dslam_tx_pwr_att"
+        />
+
+        <property
+            name="bitSwapDslam"
+            type="string"
+            update="true"
+            insert="true"
+            column="dslam_bit_swap"
+        />
+
+        <property
+            name="negTimeDslam"
+            type="string"
+            update="true"
+            insert="true"
+            column="dslam_neg_time"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-DSLAM.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

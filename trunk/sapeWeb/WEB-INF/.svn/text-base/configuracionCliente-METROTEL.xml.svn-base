@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuracion>
+	<visibilidad>
+	<!-- EN cada tag invisible se incluira una clave para la parte de la pantalla a la que se le
+		 van a otorgar restricciones.
+	 --> 
+	
+		<invisible>PBX</invisible>
+		<invisible>CLIP</invisible>
+		<invisible>CLIPFTX</invisible>
+		<invisible>INTERACTIVAS</invisible>
+		
+		<invisible>ARMARIOS</invisible>
+		<invisible>EVALUACION</invisible>
+
+		<invisible>REPORTETSTLI</invisible>		
+		
+		<invisible>CPRSIPLEXPRO</invisible>
+		<invisible>ACTUALIZARCPRSERIE</invisible>
+		<invisible>MATRIZ</invisible>
+		<invisible>CONFIGADSL</invisible>
+		
+		<invisible>GESTIONCOLAS</invisible>
+		<invisible>INDICADORESTSTLI</invisible>
+		<invisible>COLAS</invisible>
+		<invisible>MANTENIMIENTO_INDIGOFAST_EPM</invisible>
+		
+		
+		<invisible>CODVETB</invisible>
+		<invisible>CARGAR_FIRMWARE</invisible>
+		<invisible>MANTENIMIENTO_DLU</invisible>
+		<invisible>MANTENIMIENTO_LI</invisible>
+		<invisible>RUTINA_SERIE</invisible>
+		<invisible>REPORTEADOR</invisible>
+		<invisible>CALIFICACION_RUTINAS</invisible>
+		<invisible>INDICADORES_ESTADO_CYCLADES</invisible>
+	</visibilidad>
+
+	<autenticacion type="sape"> <!--  posibles: sape, ldap -->
+	</autenticacion>
+	
+	<!-- Numero maximo de rutinas por cable o armario que se podran levantar -->
+	<numero-max-rutinas>4</numero-max-rutinas>
+	
+	<host-cyclades>localhost</host-cyclades>
+	
+	<server-interactivas>localhost</server-interactivas>
+	<puerto-interactivas>2020</puerto-interactivas>
+
+	<!-- Cantidad de digitos para los numeros telefonicos -->
+	<cant-digitos>7</cant-digitos>
+	
+</configuracion>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.style2 {
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FF5900;
+}
+.style6 {
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #FF6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #FF6600 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style2">CLASES DE NODOS </p>
+<p class="style1">&nbsp;</p>
+<p class="style1 style7">Esta opci&oacute;n permite tener el listado de  las diferentes clases de tecnolog&iacute;as existentes en las centrales para la  ejecuci&oacute;n de las pruebas el&eacute;ctricas.</p>
+<p class="style1 style7">&nbsp;</p>
+<p class="style1 style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>AGREGAR UN NUEVA CLASE DE NODO</strong></p>
+<ul class="style1 style7">
+  <li>Haga  Click en <strong>&ldquo;Agregar Clase de Nodo&rdquo;</strong>. </li>
+  <li>Los  campos requeridos para el ingreso de un nueva clase de nodos son:</li>
+  <ul>
+    <li>Nombre  de Cabeza de Prueba</li>
+    <li>Vendedor</li>
+  </ul>
+  <li>Digite  los campos requerido por el sistema para el ingreso el nuevo nodo</li>
+  <li>Haga  Click en <strong>&ldquo;Alta Nuevo Nodo&rdquo;</strong></li>
+  <li>Aparecer&aacute;n  los datos que ingreso del nuevo nodo en una ventana. Si estos est&aacute;n correctos  haga Click en <strong>&ldquo;OK&rdquo;</strong>.</li>
+</ul>
+<p class="style1 style7"><strong>&nbsp;</strong></p>
+<p class="style1 style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>MODIFICAR CLASE DE NODO</strong></p>
+<ul class="style1 style7">
+  <li>Ubicado  sobre la clase de nodo a modificar, en la columna de la derecha haga Click en <strong>&ldquo;Modificar&rdquo;</strong>.</li>
+  <li>La  pantalla mostrara los datos actuales de la clase de nodo, realice las  modificaciones que desee.</li>
+  <li>Haga  Click en <strong>&ldquo;Modificar Clase de Nodo&rdquo;</strong>.</li>
+  <li>Se  mostraran los datos que ingreso para la modificaci&oacute;n de la clase nodo, si est&aacute;n  bien haga Click en <strong>&ldquo;OK&rdquo;</strong>.</li>
+</ul>
+<p class="style1 style7">&nbsp;</p>
+<p class="style1 style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>ELIMNAR CLASE DE NODO</strong></p>
+<ul>
+  <li class="style1 style7">Sobre  el nodo a eliminar haga Click en <strong>&ldquo;Eliminar&rdquo;</strong> en la columna derecha de la pantalla.</li>
+  <li class="style1 style7">Se  abrir&aacute; un cuadro donde se confirmara la eliminaci&oacute;n de la clase de nodo.</li>
+  <li class="style1 style7">Haga  Click en <strong>&ldquo;OK&rdquo;</strong>, si esta completamente  seguro de eliminarlo.</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="Indice.html" class="style6">Indice</a></p>
+</body>
+</html>

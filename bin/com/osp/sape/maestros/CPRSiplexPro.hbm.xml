@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.CPRSiplexPro"
+        table="cpr_siplexpro"
+    >
+
+        <id
+            name="telefono"
+            column="telefono"
+            type="long"
+            unsaved-value="-1"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-CPRSiplexPro.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="central"
+            type="string"
+            update="true"
+            insert="true"
+            column="central"
+        />
+
+        <property
+            name="cpr"
+            type="int"
+            update="true"
+            insert="true"
+            column="cpr"
+        />
+
+        <many-to-one
+            name="tipoNodo"
+            class="com.osp.sape.maestros.TipoNodo"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            column="idtiponodo"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-CPRSiplexPro.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

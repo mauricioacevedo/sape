@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #333333;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.style2 {font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF5900;
+	font-weight: bold;
+}
+.style4 {	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FF6600;
+}
+.style5 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style7 {	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	color: #FF6600;
+}
+-->
+</style>
+</head>
+
+<body>
+<p class="style1"><span class="style2">ACTUALIZAR CPR SERIE  </span></p>
+<p class="style1">&nbsp;</p>
+<p class="style1">Con esta opci&oacute;n se podr&aacute; programar al SAPE para que de acuerdo a la serie  num&eacute;rica que se seleccione se le asigne a las l&iacute;neas el CPR al que pertenece.</p>
+<p class="style1">Para hacer que la programaci&oacute;n de la serie  num&eacute;rica es necesario hacer:</p>
+<ul>
+  <li class="style1">Seleccione  la Central de  la serie num&eacute;rica para actualizar los CPR&rsquo;s</li>
+  <li class="style1">Luego  de haber seleccionado la   Central en el campo &ldquo;Seleccione una Serie&rdquo; con el mouse elija  la serie a la cual desea hacerle la actualizaci&oacute;n. En este campo solo  aparecer&aacute;n las series num&eacute;ricas pertenecientes a dicha central.</li>
+  <li class="style1">En  los cuadros en blanco donde dice &ldquo;Tel&eacute;fono Inicial&rdquo; y &ldquo;Tel&eacute;fono final&rdquo;  aparecer&aacute; autom&aacute;ticamente luego de la selecci&oacute;n de la serie num&eacute;rica, el  tel&eacute;fono con el cual se inicia la serie y con el que finaliza respectivamente.</li>
+  <li class="style1">Con  el mouse haga Click cobre el cuadro en blanco donde dice &ldquo;Habilitado&rdquo;</li>
+  <li class="style1">Luego  haga Click en <strong>&ldquo;Aceptar&rdquo;</strong>.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 align="center" class="style5"> <span class="style7"><a href="Mantenimiento.html" class="style7">SiplexPRO</a></span><span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Indice.html" class="style7">Indice</a></span></h3>
+<h3 class="style1"></h3>
+</body>
+</html>

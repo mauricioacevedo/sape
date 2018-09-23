@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1119,1050" id="com.osp.sape.maestros" metadata="nsuml-1.4" initialized="true" scrolledX="305" scrolledY="120" tag="10" key="32303034303833312073617065">
+  <children xsi:type="editmodel:ClassEditModel" name="CabezaPrueba" location="40,20" size="137,93" id="com.osp.sape.maestros/CabezaPrueba" runTimeClassModel="nombre,proveedor,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/CabezaPrueba#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombre" id="com.osp.sape.maestros/CabezaPrueba#nombre"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="proveedor" id="com.osp.sape.maestros/CabezaPrueba#proveedor"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="EventoSape" location="342,20" size="129,201" id="com.osp.sape.maestros/EventoSape" runTimeClassModel="central,fecha,codigoVer,cliente,site,tipoPrueba,ip,id,telefono">
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="central" id="com.osp.sape.maestros/EventoSape#central"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cliente" id="com.osp.sape.maestros/EventoSape#cliente"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="com.osp.sape.maestros/EventoSape#fecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/EventoSape#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ip" id="com.osp.sape.maestros/EventoSape#ip"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="site" id="com.osp.sape.maestros/EventoSape#site"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefono" id="com.osp.sape.maestros/EventoSape#telefono"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipoPrueba" id="com.osp.sape.maestros/EventoSape#tipoPrueba"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="codigoVer" id="com.osp.sape.maestros/EventoSape#codigoVer"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CodigoVer" location="190,20" size="137,139" id="com.osp.sape.maestros/CodigoVer" runTimeClassModel="clasificacion,codigoVer,comentarios,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="114,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="clasificacion" id="com.osp.sape.maestros/CodigoVer#clasificacion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="codigoVer" id="com.osp.sape.maestros/CodigoVer#codigoVer"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="comentarios" id="com.osp.sape.maestros/CodigoVer#comentarios"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/CodigoVer#id"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="82,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="HistorialUserSipe" location="190,751" size="158,111" id="com.osp.sape.maestros/HistorialUserSipe" runTimeClassModel="fechaInicioEstado,estado,fechaFinEstado,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="135,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="estado" id="com.osp.sape.maestros/HistorialUserSipe#estado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fechaFinEstado" id="com.osp.sape.maestros/HistorialUserSipe#fechaFinEstado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fechaInicioEstado" id="com.osp.sape.maestros/HistorialUserSipe#fechaInicioEstado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/HistorialUserSipe#id"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="HoraPruebaCliente" location="0,280" size="159,255" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente" runTimeClassModel="h2,h23,h5,h20,h19,h22,h1,h24,h6,h3,h4,h21">
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,216">
+      <children xsi:type="editmodel:AttributeEditModel" name="h1" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h19" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h19"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h2" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h20" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h20"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h21" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h21"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h22" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h22"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h23" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h23"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h24" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h24"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h3" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h3"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h4" location="11,190" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h4"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h5" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h5"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h6" location="6,231" id="com.osp.sape.maestros.rutinas/HoraPruebaCliente#h6"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="123,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="HoraPruebaSerieCables" location="190,220" size="196,273" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables" runTimeClassModel="h23,h5,h20,h22,h1,h6,h2,h19,site,h24,h3,h4,h21">
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,234">
+      <children xsi:type="editmodel:AttributeEditModel" name="h1" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h19" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h19"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h2" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h20" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h20"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h21" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h21"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h22" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h22"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h23" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h23"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h24" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h24"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h3" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h3"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h4" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h4"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h5" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h5"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h6" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#h6"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="site" id="com.osp.sape.maestros.rutinas/HoraPruebaSerieCables#site"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Permitidos" location="640,20" size="111,75" id="com.osp.sape.maestros/Permitidos" runTimeClassModel="cliente,ip">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="cliente" id="com.osp.sape.maestros/Permitidos#cliente"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ip" id="com.osp.sape.maestros/Permitidos#ip"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="82,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PruebaBa" location="30,670" size="122,75" id="com.osp.sape.maestros/PruebaBa" runTimeClassModel="resultado,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" location="17,48" id="com.osp.sape.maestros/PruebaBa#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="resultado" id="com.osp.sape.maestros/PruebaBa#resultado"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PruebaBasica" location="590,284" size="188,525" id="com.osp.sape.maestros/PruebaBasica" runTimeClassModel="dcv_tiptoring,idc_tiptoring,velocidadup,acv_tiptoring,rea_ringtoground,acv_frec_tiptoring,id,res_tiptoring,distancia,velocidaddown,acv_ringtoground,iac_frec_tiptoring,res_tiptoground,estado,dispositivo,rea_tiptoring,acv_frec_ringtoground,acv_frec_tiptoground,telefono,dcv_tiptoground,acv_tiptoground,dcv_ringtoground,iac_tiptoring,res_ringtoground,codigoVer,rea_tiptoground,campanario">
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,486">
+      <children xsi:type="editmodel:AttributeEditModel" name="acv_frec_ringtoground" id="com.osp.sape.maestros/PruebaBasica#acv_frec_ringtoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="acv_frec_tiptoground" id="com.osp.sape.maestros/PruebaBasica#acv_frec_tiptoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="acv_frec_tiptoring" id="com.osp.sape.maestros/PruebaBasica#acv_frec_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="acv_ringtoground" id="com.osp.sape.maestros/PruebaBasica#acv_ringtoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="acv_tiptoground" id="com.osp.sape.maestros/PruebaBasica#acv_tiptoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="acv_tiptoring" id="com.osp.sape.maestros/PruebaBasica#acv_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="campanario" id="com.osp.sape.maestros/PruebaBasica#campanario"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="codigoVer" id="com.osp.sape.maestros/PruebaBasica#codigoVer"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dcv_ringtoground" id="com.osp.sape.maestros/PruebaBasica#dcv_ringtoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dcv_tiptoground" id="com.osp.sape.maestros/PruebaBasica#dcv_tiptoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dcv_tiptoring" id="com.osp.sape.maestros/PruebaBasica#dcv_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dispositivo" id="com.osp.sape.maestros/PruebaBasica#dispositivo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="distancia" id="com.osp.sape.maestros/PruebaBasica#distancia"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estado" id="com.osp.sape.maestros/PruebaBasica#estado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="iac_frec_tiptoring" id="com.osp.sape.maestros/PruebaBasica#iac_frec_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="iac_tiptoring" id="com.osp.sape.maestros/PruebaBasica#iac_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/PruebaBasica#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="idc_tiptoring" id="com.osp.sape.maestros/PruebaBasica#idc_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rea_ringtoground" id="com.osp.sape.maestros/PruebaBasica#rea_ringtoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rea_tiptoground" id="com.osp.sape.maestros/PruebaBasica#rea_tiptoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rea_tiptoring" id="com.osp.sape.maestros/PruebaBasica#rea_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="res_ringtoground" id="com.osp.sape.maestros/PruebaBasica#res_ringtoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="res_tiptoground" id="com.osp.sape.maestros/PruebaBasica#res_tiptoground"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="res_tiptoring" id="com.osp.sape.maestros/PruebaBasica#res_tiptoring"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefono" id="com.osp.sape.maestros/PruebaBasica#telefono"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="velocidaddown" id="com.osp.sape.maestros/PruebaBasica#velocidaddown"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="velocidadup" id="com.osp.sape.maestros/PruebaBasica#velocidadup"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PruebaProgramada" location="190,536" size="168,165" id="com.osp.sape.maestros/PruebaProgramada" runTimeClassModel="fechaini,numeroPruebas,telefonoini,fechafin,tipodeprueba,telefonofin,transaccion">
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="fechafin" id="com.osp.sape.maestros/PruebaProgramada#fechafin"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fechaini" id="com.osp.sape.maestros/PruebaProgramada#fechaini"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numeroPruebas" id="com.osp.sape.maestros/PruebaProgramada#numeroPruebas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefonofin" id="com.osp.sape.maestros/PruebaProgramada#telefonofin"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefonoini" id="com.osp.sape.maestros/PruebaProgramada#telefonoini"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipodeprueba" id="com.osp.sape.maestros/PruebaProgramada#tipodeprueba"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="transaccion" id="com.osp.sape.maestros/PruebaProgramada#transaccion"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="126,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PruebaSPP" location="385,536" size="178,111" id="com.osp.sape.maestros/PruebaSPP" runTimeClassModel="transaccion_spp,idpruebaprogramada,codigover,telefono">
+    <children xsi:type="editmodel:CompartmentEditModel" size="155,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="codigover" id="com.osp.sape.maestros/PruebaSPP#codigover"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="idpruebaprogramada" id="com.osp.sape.maestros/PruebaSPP#idpruebaprogramada"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefono" id="com.osp.sape.maestros/PruebaSPP#telefono"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="transaccion_spp" id="com.osp.sape.maestros/PruebaSPP#transaccion_spp"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="87,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="RutinaCliente" location="400,760" size="129,93" id="com.osp.sape.maestros.rutinas/RutinaCliente" runTimeClassModel="nombre,estatus,telefono">
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="estatus" id="com.osp.sape.maestros.rutinas/RutinaCliente#estatus"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombre" id="com.osp.sape.maestros.rutinas/RutinaCliente#nombre"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefono" id="com.osp.sape.maestros.rutinas/RutinaCliente#telefono"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Serie" location="490,20" size="136,193" id="com.osp.sape.maestros/Serie" runTimeClassModel="cabezaId,central,codCentral,toString(),tipocentral,serieInicial,serieFinal,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="cabezaId" id="com.osp.sape.maestros/Serie#cabezaId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="central" id="com.osp.sape.maestros/Serie#central"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="serieFinal" id="com.osp.sape.maestros/Serie#serieFinal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="serieInicial" id="com.osp.sape.maestros/Serie#serieInicial"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipocentral" id="com.osp.sape.maestros/Serie#tipocentral"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="codCentral" id="com.osp.sape.maestros/Serie#codCentral"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/Serie#id"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="68,18">
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="com.osp.sape.maestros/Serie#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="UserSipe" location="34,751" size="118,247" id="com.osp.sape.maestros/UserSipe" runTimeClassModel="nivel,nombre,lenguaje,fechaAlta,grupo,passwd,main([LString;),nick,activo,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="activo" id="com.osp.sape.maestros/UserSipe#activo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fechaAlta" id="com.osp.sape.maestros/UserSipe#fechaAlta"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="grupo" id="com.osp.sape.maestros/UserSipe#grupo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/UserSipe#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lenguaje" id="com.osp.sape.maestros/UserSipe#lenguaje"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nick" id="com.osp.sape.maestros/UserSipe#nick"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nivel" id="com.osp.sape.maestros/UserSipe#nivel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombre" id="com.osp.sape.maestros/UserSipe#nombre"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="passwd" id="com.osp.sape.maestros/UserSipe#passwd"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="76,36">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="com.osp.sape.maestros/UserSipe#main([LString;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TipoNodo" location="404,220" size="152,183" id="com.osp.sape.maestros/TipoNodo" runTimeClassModel="puertoCabeza,tipoCabeza,nombreCabeza,site,puertoServidor,ipCabeza,ipServidor,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,144">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/TipoNodo#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ipCabeza" id="com.osp.sape.maestros/TipoNodo#ipCabeza"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ipServidor" id="com.osp.sape.maestros/TipoNodo#ipServidor"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="puertoCabeza" id="com.osp.sape.maestros/TipoNodo#puertoCabeza"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="puertoServidor" id="com.osp.sape.maestros/TipoNodo#puertoServidor"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="site" id="com.osp.sape.maestros/TipoNodo#site"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipoCabeza" id="com.osp.sape.maestros/TipoNodo#tipoCabeza"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombreCabeza" id="com.osp.sape.maestros/TipoNodo#nombreCabeza"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="78,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ServicioIndicadoresOSS" location="561,755" size="195,129" id="com.osp.sape.maestros/ServicioIndicadoresOSS" runTimeClassModel="cantidad,fechaCarga,cola,estadoOSS,id">
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="cantidad" id="com.osp.sape.maestros/ServicioIndicadoresOSS#cantidad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fechaCarga" id="com.osp.sape.maestros/ServicioIndicadoresOSS#fechaCarga"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cola" id="com.osp.sape.maestros/ServicioIndicadoresOSS#cola"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estadoOSS" id="com.osp.sape.maestros/ServicioIndicadoresOSS#estadoOSS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="com.osp.sape.maestros/ServicioIndicadoresOSS#id"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Cable" location="40,140" size="152,93" id="com.osp.sape.maestros/Cable" runTimeClassModel="central,nombreCable,nombreArmario">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="central" id="com.osp.sape.maestros/Cable#central"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombreArmario" id="com.osp.sape.maestros/Cable#nombreArmario"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombreCable" id="com.osp.sape.maestros/Cable#nombreCable"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="RutinaCable" location="194,873" size="118,157" id="com.osp.sape.maestros.rutinas/RutinaCable" runTimeClassModel="central,nombre,estatus,cable,telefono">
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="cable" id="com.osp.sape.maestros.rutinas/RutinaCable#cable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="central" id="com.osp.sape.maestros.rutinas/RutinaCable#central"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estatus" id="com.osp.sape.maestros.rutinas/RutinaCable#estatus"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombre" id="com.osp.sape.maestros.rutinas/RutinaCable#nombre"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefono" id="com.osp.sape.maestros.rutinas/RutinaCable#telefono"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="HoraPruebaArmario" location="567,0" size="166,309" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario" runTimeClassModel="h23,h5,h20,h22,h1,h6,h2,central,armario,tipoNodo,h19,h24,h3,h4,h21">
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,216">
+      <children xsi:type="editmodel:AttributeEditModel" name="armario" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#armario"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="central" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#central"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h1" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h19" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h19"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h2" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h20" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h20"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h21" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h21"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h22" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h22"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h23" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h23"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h24" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h24"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h3" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h3"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h4" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h4"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h5" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h5"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h6" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#h6"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipoNodo" id="com.osp.sape.maestros.rutinas/HoraPruebaArmario#tipoNodo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="HoraPruebaCable" location="565,105" size="151,309" id="com.osp.sape.maestros.rutinas/HoraPruebaCable" runTimeClassModel="h23,h5,h20,h22,h1,h6,h2,central,tipoNodo,h19,cable,h24,h3,h4,h21">
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,216">
+      <children xsi:type="editmodel:AttributeEditModel" name="cable" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#cable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="central" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#central"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h1" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h19" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h19"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h2" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h20" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h20"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h21" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h21"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h22" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h22"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h23" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h23"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h24" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h24"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h3" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h3"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h4" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h4"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h5" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h5"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="h6" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#h6"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipoNodo" id="com.osp.sape.maestros.rutinas/HoraPruebaCable#tipoNodo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

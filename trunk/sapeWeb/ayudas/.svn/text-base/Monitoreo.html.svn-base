@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style3 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style4 {
+	font-size: 12px;
+	color: #333333;
+}
+.style5 {
+	font-size: 14px;
+	color: #FF5900;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style6 {
+	font-size: 9px;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #ff6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #ff6600 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style5">MONITOREO DE UNA LINEA TELEFONICA </p>
+<p class="style2">&nbsp;</p>
+<p class="style2 style7">Esta opci&oacute;n permite al SAPE realizar  un seguimiento a determinada l&iacute;nea telef&oacute;nica. Con ella se podr&aacute; interactuar con el usuario de la l&iacute;nea en caso que esto se  requiera, como en una comunicaci&oacute;n tripartita. Para realizar el monitoreo hay  que hacer lo siguiente:</p>
+<ul class="style2 style7">
+  <li>Digite  el numero telef&oacute;nico en el campo &ldquo;Tel&eacute;fono&rdquo;, de la opci&oacute;n &ldquo;Pruebas Telef&oacute;nicas&rdquo;</li>
+  <li><span class="style3">Luego  haga Click en <strong>&ldquo;Monitoreo&rdquo;</strong>, y se  abrir&aacute; otra ventana.</span></li>
+  <li>Ingrese  el numero de tel&eacute;fono desde donde se realizar&aacute; el monitoreo. (Este numero telef&oacute;nico  no es el numero al cual se le esta haciendo la prueba si no por donde se escuchar&aacute; a la l&iacute;nea).</li>
+</ul>
+<p>&nbsp;</p>
+<ul class="style2 style7">
+  <li>En  caso de que el cabezal se SiplexPro o Indigo, podr&aacute; seleccionar el tipo de monitoreo  que desea realizar.</li>
+</ul>
+<p class="style4">&nbsp;</p>
+<p class="style2 style7">En las opciones que se pueden ver en la ventana que se abre  para las cabezas SiplexPro e Indigos se encuentran las siguientes:</p>
+<p class="style2 style7"><strong><u>MONITOREAR:</u></strong> Esta opci&oacute;n permite hacer un seguimiento del estado de la  l&iacute;nea que desea, en caso de que la l&iacute;nea se encuentre ocupada entonces se  escuchara la conversaci&oacute;n que en ese momento este teniendo el usuario de la  misma.&nbsp; Dentro de esta opci&oacute;n tambi&eacute;n se  habilita el campo <strong>Dial</strong>. Con Dial el  usuario del SAPE podr&aacute; realizar una llamada desde su PC a un numero telef&oacute;nico  cualquiera, esta llamada permite verificar si desde la l&iacute;nea que se esta  monitoreando se pueden realizar llamadas. La llamada saldr&aacute; como una llamada  realizada desde el tel&eacute;fono que se esta monitoreando pero no se podr&aacute;  establecer conversaci&oacute;n alguna.</p>
+<p class="style2 style7"><strong><u>INTERACTUAR:</u></strong> Aqu&iacute; el usuario del SAPE puede hacer una llamada a la l&iacute;nea  que desea probar, si la l&iacute;nea no esta en uso la llamada entrara como una  llamada normal, en caso de que la l&iacute;nea esta ocupada por el usuario entonces la  llamada entrara como una llamada tripartita. Si se selecciona la opci&oacute;n interactuar se  habilita el campo <strong>Test Dtmf. </strong>&nbsp;Test Dtmf trae a la pantalla las teclas que el  usuario de la l&iacute;nea a la cual se esta probando este marcando en ese momento.</p>
+<p class="style2 style7">  <strong><u>TRACER:</u></strong> Esta opci&oacute;n permite al usuario del SAPE generar un ruido en  el armario al cual pertenece la l&iacute;nea telef&oacute;nica, en caso de que la persona  encargada de reparar dicha l&iacute;nea no la encuentre dentro de este.</p>
+<p class="style2 style7"><strong><u>HOWLER:</u></strong> Esta  prueba genera una sirena en la l&iacute;nea telef&oacute;nica que se este probando para alertar  al usuario de que tiene el tel&eacute;fono descolgado. </p>
+<p class="style2 style7">&nbsp;</p>
+<p class="style2"><a href="Prueba.html" class="style6">Atras</a></p>
+</body>
+</html>

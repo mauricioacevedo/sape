@@ -1,0 +1,132 @@
+package com.osp.sape.servlets.reportes;
+
+/*
+ * 
+ * @author Develop Team XpLoRa
+ * Clase generada en Jul 14, 2006 - 8:30:17 AM
+ */
+
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.gc.acceso.GestorServlet;
+import com.osp.sape.Exceptions.SapeDataException;
+import com.osp.sape.data.DAOFactory;
+import com.osp.sape.data.DAOFactoryImpl;
+import com.osp.sape.data.ReporteadorDAO;
+import com.osp.sape.maestros.ReporteadorPlantilla;
+
+public class ReporteadorServlet extends GestorServlet {
+	
+	private ReporteadorDAO reporteadorDAO;
+	
+    public void init() throws ServletException {
+        super.init();
+        
+        DAOFactory daoFactory = DAOFactoryImpl.getInstance(); 
+        reporteadorDAO = daoFactory.getReporteadorDAO();
+        dfFecha = new DecimalFormat("00");
+    }
+
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+        // en la variable operacion se obtiene la solicitud a tramitar por este servlet        
+        String operacion = request.getParameter("operacion");
+        if (debug) logs.info("Peticion realizada, operacion=["+operacion+"]");
+        
+        
+        if(operacion==null||operacion.equals("") || operacion.equals("inicio")){
+        	inicioReporteador(request, response);
+        	return;
+        }else if(operacion.equals("cargarReporteador")){
+        	operacionCargarReporteador(request,response);
+        	return;
+        }
+		
+		//request.getRequestDispatcher("/reporteador.jsp").forward(request, response);
+	}
+	
+	private void operacionCargarReporteador(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+		
+		String id2 = request.getParameter("id");
+		ReporteadorPlantilla r = null;
+		try{
+			int id = Integer.parseInt(id2);
+			r = reporteadorDAO.getReporteadorPlantilla(id);
+		}catch (NumberFormatException e) {
+			error(e,request,response);
+			return;
+		} catch (SapeDataException e) {
+			error(e,request,response);
+			return;
+		}
+		request.setAttribute("reporteador",r);
+		inicioReporteador(request,response);
+	}
+	
+	private void inicioReporteador(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		List listaCampos = getListaCampos();
+		
+		List rs = null;
+		
+		try {
+			rs=reporteadorDAO.getAllReporteadorPlantillas();
+		} catch (SapeDataException e) {
+			error(e,request,response);
+			return;
+		}
+		
+		request.setAttribute("listaCampos", listaCampos);
+		request.setAttribute("listaReporteadores", rs);
+		redireccionarConPlantilla("reporteador", request, response);
+	}
+	
+	private List getListaCampos() {
+		System.out.println("getListaCampos");
+		
+		List listaCampos = new ArrayList();
+		listaCampos.add("prueba; # Prueba");
+		listaCampos.add("usuario;Usuario");
+		listaCampos.add("telefono;Telefono");
+		listaCampos.add("tipoprueba;Tipoprueba");
+		listaCampos.add("fecha;Fecha Prueba");
+		listaCampos.add("site;Site");
+		listaCampos.add("duracion;Duracion");
+		listaCampos.add("central;Central");
+		listaCampos.add("codv;Codigo Ver");
+		listaCampos.add("estado;Estado");
+		listaCampos.add("voltajeAC_AB;Voltaje AC AB");
+		listaCampos.add("voltajeAC_AT;Voltaje AC AT");
+		listaCampos.add("voltajeAC_BT;Voltaje AC BT");
+		listaCampos.add("voltajeDC_AB;Voltaje DC AB");
+		listaCampos.add("voltajeDC_AT;Voltaje DC AT");
+		listaCampos.add("voltajeDC_AB;Voltaje DC AB");
+		listaCampos.add("resAB;Resistencia AB");
+		listaCampos.add("resAT;Resistencia AT");
+		listaCampos.add("resBT;Resistencia BT");
+		listaCampos.add("capAB;Capacitancia AB");
+		listaCampos.add("capAT;Capacitancia AT");
+		listaCampos.add("capBT;Capacitancia BT");
+		listaCampos.add("calificacionPar;Calificacion Par");
+		listaCampos.add("distancia;distancia");
+		listaCampos.add("velUp;Velocidad Up");
+		listaCampos.add("velDown;Velocidad Down");
+		listaCampos.add("calificacionDatos;Calificacion Datos");
+		listaCampos.add("numeroRutina;# Rutina");
+		listaCampos.add("tipoRutina;Tipo Rutina");
+		listaCampos.add("usuarioRutina;Usuario Rutina");
+		listaCampos.add("fechaRutina;Fecha Rutina");
+		listaCampos.add("numPruebaProgramada;# Prueba Prog");
+		
+		return listaCampos;
+	}
+	
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.siplexpro.PING"
+        table="siplexpro_configuracionadsl"
+    >
+
+        <id
+            name="idCabeza"
+            column="idcabeza"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-PING.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="tipo"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_tipo"
+        />
+
+        <property
+            name="vpi"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_vpi"
+        />
+
+        <property
+            name="vci"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_vci"
+        />
+
+        <property
+            name="localIp"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_local_ip"
+        />
+
+        <property
+            name="ip"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_ip"
+        />
+
+        <property
+            name="login"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_login"
+        />
+
+        <property
+            name="domain"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_domain"
+        />
+
+        <property
+            name="password"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_password"
+        />
+
+        <property
+            name="encapType"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_encap_type"
+        />
+
+        <property
+            name="gateway"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_gateway"
+        />
+
+        <property
+            name="subMask"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_sub_mask"
+        />
+
+        <property
+            name="lanType"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_lan_type"
+        />
+
+        <property
+            name="fcsCont"
+            type="string"
+            update="true"
+            insert="true"
+            column="ping_fcs_cont"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PING.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

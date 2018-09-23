@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 2.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-2.0.dtd">
+
+<!-- Generated file - Do not edit! -->
+
+<hibernate-configuration>
+
+	<!-- a SessionFactory instance listed as /jndi/name -->
+	<session-factory>
+
+		<!-- properties -->
+		<property name="dialect">net.sf.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="show_sql">false</property>
+		<property name="use_outer_join">false</property>
+			<property name="connection.username">sape_web</property>
+			<property name="connection.password">Animo</property>
+			<property name="connection.driver_class">org.postgresql.Driver</property>
+			<property name="hibernate.cglib.use_reflection_optimizer">false</property>
+			<property name="connection.url">jdbc:postgresql://192.168.0.124/gestor</property>
+
+		<!-- mapping files -->
+		<mapping resource="com/osp/sape/maestros/ServicioIndicadoresOSS.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/Permitidos.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/ProcesosSape.hbm.xml"/>
+	</session-factory>
+ </hibernate-configuration>
+
+ 

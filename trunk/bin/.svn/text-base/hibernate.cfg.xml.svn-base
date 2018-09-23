@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 2.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-2.0.dtd">
+
+<!-- Generated file - Do not edit! -->
+
+<hibernate-configuration>
+
+	<!-- a SessionFactory instance listed as /jndi/name -->
+	<session-factory>
+
+		<!-- properties -->
+		<property name="dialect">net.sf.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="show_sql">false</property>
+		<property name="use_outer_join">false</property>
+			<property name="connection.username">sape_web</property>
+			<property name="connection.password">Animo</property>
+			<property name="connection.driver_class">org.postgresql.Driver</property>
+			<property name="connection.url">jdbc:postgresql://10.100.66.11/ipe</property>
+
+		<!-- mapping files -->
+		<mapping resource="com/osp/sape/maestros/Armarios.hbm.xml"/>
+		<mapping resource="com/osp/sape/reportes/ViewReportePruebas.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/RutinaCable.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/siplexpro/PING.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/PruebaBasica.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/UserSipe.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/PruebaSiplexPRO.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/siplexpro/ParMatrizSiplexPro.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/ConfiguracionEWSD.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/ServicioIndicadoresOSS.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/FastEpm.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/auditoria/Visita.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/SiplexPROAutotest.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/SiplexproLI.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/siplexpro/PruebaPing.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/EventoSape.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/CabezaPrueba.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/siplexpro/DSLAM.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/Cable.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/CodigoVerETB.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/Rutinas.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/auditoria/RastroSape.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/siplexpro/IP.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/HoraPruebaCliente.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/TipoPrueba.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/siplexpro/PruebaEstadisticasConexion.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/HoraPruebaCliente_BORRAR.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/IndigoEpm.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/PruebaProgramada.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/CodigoVer.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/Permitidos.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/siplexpro/CPE.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/Categorias.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/CPRSiplexPro.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/CalificacionEPM.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/TipoNodo.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/ProcesosSape.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/RutinaArmario.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/RutinaCliente.hbm.xml"/>
+		<mapping resource="com/osp/sape/reportes/ReporteadorPlantilla.hbm.xml"/>
+		<mapping resource="com/osp/sape/reportes/RequerimientosCola.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/Serie.hbm.xml"/>
+		<mapping resource="com/osp/sape/maestros/rutinas/PruebaSPP.hbm.xml"/>
+	</session-factory>
+
+</hibernate-configuration>

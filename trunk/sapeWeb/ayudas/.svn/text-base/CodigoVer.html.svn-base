@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FF5900;
+	font-weight: bold;
+}
+.style6 {	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #ff6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #ff6600 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style2">CODIGO VER </p>
+<p class="style1">&nbsp;</p>
+<p class="style1 style7">Son  los diferentes c&oacute;digos asignados a cada uno de los resultados de las  pruebas realizadas a las l&iacute;neas telef&oacute;nicas. En la pantalla <strong>&quot;Codigo Ver&quot; </strong> se explica en 3 columnas los c&oacute;digos as&iacute;:</p>
+<ol class="style7">
+  <li class="style1"><em>C&oacute;digo Ver:</em> Es un c&oacute;digo  dado a los posibles resultados arrojados en las pruebas; este puede ser  num&eacute;rico o en letras.</li>
+  <li class="style1"><em>Descripci&oacute;n:</em> Es  el nombre dado al c&oacute;digo ver.</li>
+  <li class="style1"><em>Comentario:</em> Es una explicaci&oacute;n  detallada del c&oacute;digo ver.</li>
+</ol>
+<p class="style1 style7">Para descargar todos  los c&oacute;digos ver que existen en el sistema, en el lado derecho de la pantalla  donde dice &ldquo;Exportar&rdquo; seleccione con el puntero del mouse el formato con el  cual se abrir&aacute; el archivo, luego haga Click en recuadro <strong>&ldquo;Aceptar&rdquo;</strong>.
+<p class="style1 style7">&nbsp;</p>
+<p class="style1 style7"><strong>AGREGAR NUEVO  CODIGO VER</strong></p>
+  <ul class="style1 style7">
+    <li>Haga  Click en <strong>&ldquo;Agregar Nuevo C&oacute;digo&rdquo;</strong><em>.</em></li>
+    <li>Ingrese  los datos requeridos.</li>
+    <li>Haga  Click en <strong>&ldquo;Alta C&oacute;digo Ver&rdquo;</strong>.</li>
+    <li>Se  abre una ventana donde se ven los datos ingresados para el nuevo c&oacute;digo. Si  estos est&aacute;n correctos haga Click en <strong>&ldquo;OK&rdquo;</strong> o presione la tecla <strong>ENTER</strong>.</li>
+    </ul>
+  <p class="style1 style7">&nbsp;</p>
+  <p class="style1 style7"><strong> MODIFICAR CODIGO VER</strong></p>
+  <ul class="style1 style7">
+    <li>En la  columna del lado derecho del listado sobre cada c&oacute;digo ver aparece la opci&oacute;n <strong>&ldquo;Modificar&rdquo;</strong>, haga Click sobre el c&oacute;digo  a modificar</li>
+    <li>Realice  los cambios que se requieran.</li>
+    <li>Haga  Clic en <strong>&ldquo;Modificar C&oacute;digo Ver&rdquo;</strong>.</li>
+    <li>Luego  se abre una ventana con los datos cambiados, si estos est&aacute;n correctos haga Clic  en <strong>&ldquo;OK&rdquo;</strong>.</li>
+    </ul>
+  <p class="style1 style7">&nbsp;</p>
+  <p class="style1 style7"><strong>ELIMINAR CODIGO VER</strong></p>
+  <ul>
+    <li class="style1 style7">Sobre  la columna derecha de la pantalla y ubicado en el c&oacute;digo que se desea eliminar,  haga Click en <strong>&ldquo;Eliminar&rdquo;</strong></li>
+    <li class="style1 style7">Se  abrir&aacute; un cuadro donde se pide la confirmaci&oacute;n de la eliminaci&oacute;n del c&oacute;digo.</li>
+    <li class="style1 style7">Haga  Click en <strong>&ldquo;OK&rdquo;</strong>.</li>
+    <li class="style1"><span class="style1 style7">El  c&oacute;digo se eliminar</span><span class="style7">&aacute; del sistema, se visualizar&aacute;n los cambios despu&eacute;s de iniciar  nuevamente la sesi&oacute;n. </span>
+      <p class="style1 style7">&nbsp;</p>
+    </li>
+  </ul>
+  <a href="Indice.html" class="style6">Indice</a>
+</body>
+</html>

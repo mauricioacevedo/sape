@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.rutinas.HoraPruebaCliente"
+        table="hrprueba_clientes"
+    >
+
+        <id
+            name="h00"
+            column="h00"
+            type="java.lang.String"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-HoraPruebaCliente.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="h01"
+            type="string"
+            update="true"
+            insert="true"
+            column="h01"
+        />
+
+        <property
+            name="h02"
+            type="string"
+            update="true"
+            insert="true"
+            column="h02"
+        />
+
+        <property
+            name="h03"
+            type="string"
+            update="true"
+            insert="true"
+            column="h03"
+        />
+
+        <property
+            name="h04"
+            type="string"
+            update="true"
+            insert="true"
+            column="h04"
+        />
+
+        <property
+            name="h05"
+            type="string"
+            update="true"
+            insert="true"
+            column="h05"
+        />
+
+        <property
+            name="h06"
+            type="string"
+            update="true"
+            insert="true"
+            column="h06"
+        />
+
+        <property
+            name="h07"
+            type="string"
+            update="true"
+            insert="true"
+            column="h07"
+        />
+
+        <property
+            name="h08"
+            type="string"
+            update="true"
+            insert="true"
+            column="h08"
+        />
+
+        <property
+            name="h09"
+            type="string"
+            update="true"
+            insert="true"
+            column="h09"
+        />
+
+        <property
+            name="h10"
+            type="string"
+            update="true"
+            insert="true"
+            column="h10"
+        />
+
+        <property
+            name="h11"
+            type="string"
+            update="true"
+            insert="true"
+            column="h11"
+        />
+
+        <property
+            name="h12"
+            type="string"
+            update="true"
+            insert="true"
+            column="h12"
+        />
+
+        <property
+            name="h13"
+            type="string"
+            update="true"
+            insert="true"
+            column="h13"
+        />
+
+        <property
+            name="h14"
+            type="string"
+            update="true"
+            insert="true"
+            column="h14"
+        />
+
+        <property
+            name="h15"
+            type="string"
+            update="true"
+            insert="true"
+            column="h15"
+        />
+
+        <property
+            name="h16"
+            type="string"
+            update="true"
+            insert="true"
+            column="h16"
+        />
+
+        <property
+            name="h17"
+            type="string"
+            update="true"
+            insert="true"
+            column="h17"
+        />
+
+        <property
+            name="h18"
+            type="string"
+            update="true"
+            insert="true"
+            column="h18"
+        />
+
+        <property
+            name="h19"
+            type="string"
+            update="true"
+            insert="true"
+            column="h19"
+        />
+
+        <property
+            name="h20"
+            type="string"
+            update="true"
+            insert="true"
+            column="h20"
+        />
+
+        <property
+            name="h21"
+            type="string"
+            update="true"
+            insert="true"
+            column="h21"
+        />
+
+        <property
+            name="h22"
+            type="string"
+            update="true"
+            insert="true"
+            column="h22"
+        />
+
+        <property
+            name="h23"
+            type="string"
+            update="true"
+            insert="true"
+            column="h23"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-HoraPruebaCliente.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.siplexpro.IP"
+        table="siplexpro_configuracionadsl"
+    >
+
+        <id
+            name="idCabeza"
+            column="idcabeza"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-IP.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="ipDest"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip_ip_dest"
+        />
+
+        <property
+            name="totalPings"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip_total_pings"
+        />
+
+        <property
+            name="timeout"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip_timeout"
+        />
+
+        <property
+            name="packetSize"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip_packet_size"
+        />
+
+        <property
+            name="maxHops"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip_max_hops"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-IP.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

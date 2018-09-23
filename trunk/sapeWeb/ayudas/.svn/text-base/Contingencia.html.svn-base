@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style2 {font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF5900;
+	font-weight: bold;
+}
+.style4 {font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #ff6600;
+}
+.style5 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style7 {font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	color: #ff6600;
+}
+.style8 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+-->
+</style>
+</head>
+
+<body>
+<p class="style2">CONTINGENCIA</p>
+<p class="style2">&nbsp;</p>
+<p class="style8">En esta pantalla aparecen todas las  cabezas existentes, cada cabeza cuenta con dos direcciones IP, la primera es la IP Cabeza la cual se  realiza la conexi&oacute;n con la cabeza a trav&eacute;s de MODEM y la segunda es la direcci&oacute;n  IP Esclavo la cual se utiliza como una direcci&oacute;n de contingencia, esta direcci&oacute;n  permite tener una conexi&oacute;n con la cabeza por medio de la Red Corporativa, y  se utiliza en caso de que la conexi&oacute;n con el MODEM falle.</p>
+<span class="style8">Para  realizar el intercambio de conexi&oacute;n con la cabeza, es decir, cambio de conexi&oacute;n  v&iacute;a MODEM a Red Corporativa o viceversa por alguna falla o problema que &eacute;sta presente,  es necesario seleccionar con el mouse en el cuadro que aparece en la columna  izquierda de la pantalla, la cabeza que requiere ser modificada su tipo de  conexi&oacute;n y luego hace Click <strong>&ldquo;Cambiar&rdquo;</strong>,  y aparece en la pantalla inmediatamente el cambio realizado.</span>
+<p class="style2">&nbsp;</p>
+<p>&nbsp;</p>
+<h3 align="center" class="style5"> <span class="style7"><a href="Mantenimiento.html" class="style7">SiplexPRO</a></span><span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Indice.html" class="style7">Indice</a></span></h3>
+<p class="style2">&nbsp;</p>
+</body>
+
+
+
+</html>

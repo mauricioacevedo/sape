@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secuencias>
+
+  <secuencia0>
+	<codv>12</codv>
+	<cola>REPLI</cola>
+	<codigo>0213</codigo>
+  </secuencia0>
+
+  <secuencia1>
+	<codv>13</codv>
+	<cola>DIST</cola>
+	<codigo>0210</codigo>
+  </secuencia1>
+  
+  
+  <secuencia2>
+	<codv>17</codv>
+	<cola>DIST</cola>
+	<codigo>0210</codigo>
+  </secuencia2>
+  
+  
+  <secuencia3>
+	<codv>14</codv>
+	<cola>REPLI</cola>
+	<codigo>0210</codigo>
+  </secuencia3>
+  
+  <secuencia4>
+	<codv>16</codv>
+	<cola>REPLI</cola>
+	<codigo>0210</codigo>
+  </secuencia4>
+  
+   
+  <secuencia5>
+	<codv>21</codv>
+	<cola>DIST</cola>
+	<codigo>0209</codigo>
+  </secuencia5>
+  
+  <secuencia6>
+	<codv>22</codv>
+	<cola>REPLI</cola>
+	<codigo>0209</codigo>
+  </secuencia6>
+  
+  <secuencia7>
+	<codv>23</codv>
+	<cola>ANALI</cola>
+	<codigo>0209</codigo>
+  </secuencia7>
+  
+  <secuencia8>
+	<codv>24</codv>
+	<cola>ANALI</cola>
+	<codigo>0209</codigo>
+  </secuencia8>
+  
+  <secuencia9>
+	<codv>25</codv>
+	<cola>REPLI</cola>
+	<codigo>0208</codigo>
+  </secuencia9>
+  
+  <secuencia10>
+	<codv>26</codv>
+	<cola>REPLI</cola>
+	<codigo>0208</codigo>
+  </secuencia10>
+  
+    <secuencia11>
+	<codv>28</codv>
+	<cola>REPLI</cola>
+	<codigo>0208</codigo>
+  </secuencia11>
+  
+  
+  <secuencia12>
+	<codv>29</codv>
+	<cola>DIST</cola>
+	<codigo>0208</codigo>
+  </secuencia12>
+  
+  <secuencia13>
+	<codv>30</codv>
+	<cola>DIST</cola>
+	<codigo>0207</codigo>
+  </secuencia13>
+  
+  <secuencia14>
+  	<codv>31</codv>
+	<cola>DIST</cola>
+	<codigo>0207</codigo>
+  </secuencia14>
+  
+  <secuencia15>
+  	<codv>32</codv>
+	<cola>DIST</cola>
+	<codigo>0207</codigo>
+  </secuencia15>
+  
+  <secuencia16>
+  	<codv>33</codv>
+	<cola>DIST</cola>
+	<codigo>0207</codigo>
+  </secuencia16>
+  
+  <secuencia17>
+  	<codv>41</codv>
+	<cola>REPLI</cola>
+	<codigo>0259</codigo>
+  </secuencia17>
+  
+  <secuencia18>
+  	<codv>43</codv>
+	<cola>REPLI</cola>
+	<codigo>0259</codigo>
+  </secuencia18>
+  
+  
+  <secuencia19>
+  	<codv>42</codv>
+	<cola>REPLI</cola>
+	<codigo>0259</codigo>
+  </secuencia19>
+  
+  <secuencia20>
+  	<codv>44</codv>
+	<cola>REPLI</cola>
+	<codigo>0259</codigo>
+  </secuencia20>
+  
+  
+  <secuencia21>
+  	<codv>45</codv>
+	<cola>REPLI</cola>
+	<codigo>0207</codigo>
+  </secuencia21>
+  
+  <secuencia22>
+  	<codv>40</codv>
+	<cola>CERRAR</cola>
+	<codigo>0803</codigo>
+	
+  </secuencia22>
+  
+  <secuencia23>
+  	<codv>00</codv>
+	<cola>CERRAR</cola>
+	<codigo>0803</codigo>
+  </secuencia23>
+  
+  <secuencia24>
+  	<codv>01</codv>
+	<cola>CERRAR</cola>
+	<codigo>0803</codigo>
+  </secuencia24>
+  
+  
+  <condicion-cerrar>
+  	<clienteRepetido>2</clienteRepetido>
+	<siCola>ANALI</siCola>
+	<siCodigo>0204</siCodigo>
+	<noCodigo>0803</noCodigo>
+	<noUsuario>SAPE</noUsuario>
+  </condicion-cerrar>
+
+
+  <usuarioFenix>
+  	<nombre>SAPE</nombre>
+  </usuarioFenix>
+
+  
+  <condicion-error>
+  	<cola>ANALI</cola>
+  	<codigo>0200</codigo>
+  </condicion-error>
+  
+  
+  <secuenciaGRANC>
+  	<colaDia></colaDia>
+	<codigoDia></codigoDia>
+	<colaNoche></colaNoche>
+	<codigoNoche></codigoNoche>
+	<horaGrancNoche></horaGrancNoche>
+  </secuenciaGRANC>
+  
+</secuencias>
+<!-- Archivo para la configuracion de el jsp evaluacionResultados.jsp -->
+<!-- 	Este archivo tendra en sus tag de 'condicionXX' algunos tag de html para 
+		que el texto se vea de forma adecuada al cargar el texto en el jsp.
+-->
+

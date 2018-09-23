@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.rutinas.HoraPruebaCliente_BORRAR"
+        table="hrprueba_clientes"
+    >
+
+        <id
+            name="h19"
+            column="h19"
+            type="java.lang.String"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-HoraPruebaCliente_BORRAR.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="h20"
+            type="string"
+            update="true"
+            insert="true"
+            column="h20"
+        />
+
+        <property
+            name="h21"
+            type="string"
+            update="true"
+            insert="true"
+            column="h21"
+        />
+
+        <property
+            name="h22"
+            type="string"
+            update="true"
+            insert="true"
+            column="h22"
+        />
+
+        <property
+            name="h23"
+            type="string"
+            update="true"
+            insert="true"
+            column="h23"
+        />
+
+        <property
+            name="h24"
+            type="string"
+            update="true"
+            insert="true"
+            column="h24"
+        />
+
+        <property
+            name="h1"
+            type="string"
+            update="true"
+            insert="true"
+            column="h1"
+        />
+
+        <property
+            name="h2"
+            type="string"
+            update="true"
+            insert="true"
+            column="h2"
+        />
+
+        <property
+            name="h3"
+            type="string"
+            update="true"
+            insert="true"
+            column="h3"
+        />
+
+        <property
+            name="h4"
+            type="string"
+            update="true"
+            insert="true"
+            column="h4"
+        />
+
+        <property
+            name="h5"
+            type="string"
+            update="true"
+            insert="true"
+            column="h5"
+        />
+
+        <property
+            name="h6"
+            type="string"
+            update="true"
+            insert="true"
+            column="h6"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-HoraPruebaCliente_BORRAR.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

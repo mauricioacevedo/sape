@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.reportes.RequerimientosCola"
+        table="requerimientoscola"
+    >
+
+        <id
+            name="ticketPrueba"
+            column="ticket_prueba"
+            type="long"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-RequerimientosCola.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="identificador"
+            type="string"
+            update="true"
+            insert="true"
+            column="identificador"
+        />
+
+        <property
+            name="tipo_nodo"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipo_nodo"
+        />
+
+        <property
+            name="area_trabajo_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="area_trabajo_id"
+        />
+
+        <property
+            name="cable"
+            type="string"
+            update="true"
+            insert="true"
+            column="cable"
+        />
+
+        <property
+            name="strip_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="strip_id"
+        />
+
+        <property
+            name="armario_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="armario_id"
+        />
+
+        <property
+            name="par_primario_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="par_primario_id"
+        />
+
+        <property
+            name="caja_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="caja_id"
+        />
+
+        <property
+            name="par_secundario_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="par_secundario_id"
+        />
+
+        <property
+            name="cola_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="cola_id"
+        />
+
+        <property
+            name="secuencia"
+            type="string"
+            update="true"
+            insert="true"
+            column="secuencia"
+        />
+
+        <property
+            name="estado"
+            type="string"
+            update="true"
+            insert="true"
+            column="estado"
+        />
+
+        <property
+            name="subzona_id"
+            type="string"
+            update="true"
+            insert="true"
+            column="subzona_id"
+        />
+
+        <property
+            name="fecha"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fecha"
+        />
+
+        <property
+            name="codObservacion"
+            type="string"
+            update="true"
+            insert="true"
+            column="codobserva"
+        />
+
+        <property
+            name="colaEnruta"
+            type="string"
+            update="true"
+            insert="true"
+            column="cola_enruta"
+        />
+
+        <property
+            name="producto"
+            type="string"
+            update="true"
+            insert="true"
+            column="producto_id"
+        />
+
+        <property
+            name="tipoCliente"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipo_cliente"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-RequerimientosCola.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

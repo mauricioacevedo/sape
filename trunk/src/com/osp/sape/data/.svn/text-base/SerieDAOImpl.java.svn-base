@@ -1,0 +1,475 @@
+/*
+ * Created on Apr 3, 2005
+ */
+package com.osp.sape.data;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Session;
+import net.sf.hibernate.Transaction;
+
+import com.osp.sape.Exceptions.SapeDataException;
+import com.osp.sape.maestros.Serie;
+import com.osp.sape.maestros.rutinas.ReporteRutinasCableArmario;
+import com.osp.sape.reportes.SerieReportes;
+
+
+/**
+ * 
+ * @author Andres Aristizabal
+ */
+public class SerieDAOImpl extends HibernateObject implements SerieDAO {
+    
+    private org.apache.log4j.Logger logs;
+    
+    public SerieDAOImpl() {
+        logs = org.apache.log4j.Logger.getLogger(getClass());
+    }
+
+    protected HibernateConfiguration getHibernateConfiguration() {
+    	return HibernateConfigurationSape.getInstance();
+    }
+    
+//    protected Configuration getConfiguration() throws HibernateException {
+//        if (configuration == null) {
+//            configuration = new Configuration();
+//            try {
+//                configuration.configure();
+//            } catch (HibernateException e) {
+//                logs.error(e);
+//            }
+//        }
+//        return configuration;
+//    }
+
+    public void eliminarSerie(int id) throws SapeDataException {
+        if (logs.isDebugEnabled()) logs.debug("eliminarSerie: " + id);
+        try {
+            eliminarObjeto(getSerie(id));
+      } catch (HibernateException e) {
+          throw new SapeDataException(e);
+      }
+
+    }
+
+    public void insertarSerie(Serie c) throws SapeDataException {
+        if (logs.isDebugEnabled()) logs.debug("insertarSerie: " + c);
+        try {
+            insertarObjeto(c);
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }    
+
+    }
+
+    public Serie getSerie(int id) throws SapeDataException {
+        if (logs.isDebugEnabled()) logs.debug("getSerie: " + id);
+        Serie retorno = null;
+        try {
+            retorno = (Serie) cargarObjeto(Serie.class, new Integer(id));
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }
+        return retorno;
+    }
+
+    
+    public List getAllSerie() throws SapeDataException {
+        if (logs.isDebugEnabled()) logs.debug("getAllSerie");
+        List lt = null;
+        Session session = null;
+        HibernateException exception = null;
+        try{
+            session= getSession();
+            lt = session.find("from Serie u order by u.serieInicial");
+            session.flush();
+        }catch(HibernateException e){
+            exception = e;
+        } finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+                exception = e;
+            }
+        }
+        if (exception != null) throw new SapeDataException(exception);
+        return lt;
+    }
+
+    public void actualizarSerie(Serie u) throws SapeDataException {
+        if (logs.isDebugEnabled()) logs.debug("actualizarSerie: " + u);
+        try {
+               actualizarObjeto(u);
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }
+
+    } 
+    
+    
+    
+    public Serie buscarSerie(String telefono) throws SapeDataException {
+    	if (logs.isDebugEnabled()) logs.debug("buscarSerie: " + telefono);
+        Serie retorno = null;
+        Session session = null;
+        Exception exception = null;
+        Transaction tx = null;
+        try{
+            session= getSession();
+            tx = session.beginTransaction();
+            String sql = "from Serie s where " + telefono + " between inicial and final";
+            logs.debug(sql);
+            List l = session.find(sql);
+            if (l.size() > 0) retorno = (Serie)l.get(0);
+            tx.commit();
+            session.flush();
+        }catch(HibernateException e){
+            logs.error(e);
+        	exception = e;
+        	try {
+				tx.rollback();
+			} catch (HibernateException e1) {
+				logs.error("Haciendo el rollback: (" + telefono + ")" + e1);
+				exception = e1;
+			}
+        } finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+                logs.error("Cerrando la session: (" + telefono + ")" + e);
+            	exception =e;
+            }
+        } 
+        
+        if(exception != null) throw new SapeDataException(exception);
+        return retorno;
+    }  
+
+    public List buscarSeriesPorCentralTecnologia(String central,String tec) throws SapeDataException {
+    	if (logs.isDebugEnabled()) logs.debug("buscarSeriesPorCentral: " + central+", "+tec);
+        Session session = null;
+        Exception exception = null;
+        List l = null;
+        try{
+            session= getSession();
+
+            String sql = "from Serie s where s.central = '" + central + "'"+
+            (tec != null && !tec.equals("")?" and s.tipocentral = '"+tec+"'":"");
+            logs.debug(sql);
+            l = session.find(sql);
+            session.flush();
+        }catch(HibernateException e){
+            logs.error(e);
+        	exception = e;
+        } finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+                logs.error(e);
+            	exception =e;
+            }
+        } 
+        
+        if(exception != null) throw new SapeDataException(exception);
+        return l;
+
+    }  
+/*    
+    public List buscarSeriesPorCentral(String central) throws SapeDataException {
+    	if (logs.isDebugEnabled()) logs.debug("buscarSeriesPorCentral: " + central);
+        Session session = null;
+        Exception exception = null;
+        List l = null;
+        try{
+            session= getSession();
+
+            String sql = "from Serie s where s.central = '" + central + "'";
+            logs.debug(sql);
+            l = session.find(sql);
+            session.flush();
+        }catch(HibernateException e){
+            logs.error(e);
+        	exception = e;
+        } finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+                logs.error(e);
+            	exception =e;
+            }
+        } 
+        
+        if(exception != null) throw new SapeDataException(exception);
+        return l;
+    }  
+*/
+
+    public Vector getUmbrales() throws SapeDataException{
+        if (logs.isDebugEnabled()) logs.debug("getUmbrales");
+        
+        Vector reportes = new Vector();
+        Session session = null;
+        ResultSet rs=null;
+        Connection co = null;
+        Exception exception = null;
+        try {
+            session = getSession();
+            co = session.connection();
+        } catch (HibernateException e) {
+            exception = e;
+        } 
+        if(exception != null){
+        	try{
+        		if(session != null) session.close();
+        	}catch(HibernateException e){
+        		throw new SapeDataException(e);
+        	}
+        }
+        
+        try{
+            
+		    rs = co.createStatement().
+		    executeQuery(" SELECT s.*, site, tipocabeza, ipcabeza,"+
+		    " puertocabeza, nombre, provedor from series s left join"+
+		    " tiponodo t on (s.cabezaid = t.idtiponodo)left join"+
+		    " cabezaprueba c on (c.idcabeza = t.tipocabeza);");
+		    
+		    String inicial=null, FINAL=null, central=null, tipocentral=null;
+//		    String idcabeza=null;
+//		    String tipocabeza=null;
+		    String ipcabeza=null, puertocabeza=null,site=null;
+		    String nombre=null, proveedor=null;
+		    
+		            
+		    while(rs.next()){
+		        inicial = rs.getString("inicial");
+		        FINAL = rs.getString("final");
+		        central= rs.getString("central");
+		        tipocentral= rs.getString("tipocentral");
+//		        idcabeza= rs.getString("cabezaid");                 
+		        site = rs.getString("site");
+//		        tipocabeza = rs.getString("tipocabeza");
+		        ipcabeza = rs.getString("ipcabeza");
+		        puertocabeza = rs.getString("puertocabeza");           
+		        nombre = rs.getString("nombre");
+		        proveedor =rs.getString("provedor");
+		
+		        SerieReportes sr = new SerieReportes();
+		        
+		        sr.setCentral(central);
+		        sr.setFINAL(FINAL);
+		        sr.setInicial(inicial);
+		        sr.setIpCabeza(ipcabeza);
+		        sr.setPuertocabeza(puertocabeza);
+		        sr.setTipoCentral(tipocentral);
+		        sr.setSite(site);
+		        sr.setNombre(nombre);
+		        sr.setProveedor(proveedor);
+		        reportes.add(sr);
+		        sr=null;           
+		    }
+        }catch(SQLException e){
+            exception = e;
+        }finally{
+            try{
+                session.close();
+            }catch (HibernateException e) {
+                exception = e;
+            }
+        }
+        
+        if(exception != null) throw new SapeDataException(exception);
+        return reportes;
+    }
+    
+    public List getListadoInicialRutinas()throws SapeDataException{
+        Session session = null;
+        ResultSet rs=null;
+        Connection co = null;
+        List l = new ArrayList();
+        Exception exception = null;
+        try {
+            session = getSession();
+            co = session.connection();
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }
+        
+        try{
+            
+            rs=co.createStatement().executeQuery("SELECT distinct(central),tipocentral FROM series ORDER BY central");
+            
+            while(rs.next()){
+                
+                Serie s = new Serie();
+                s.setCentral(rs.getString(1));
+                s.setTipocentral(rs.getString(2));
+                
+                l.add(s);
+            }
+            
+        }catch(SQLException err){
+            exception = err;            
+        }finally{
+            try{
+                session.close();
+            }catch (HibernateException e) {
+                exception = e;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return l;
+    }
+    
+    
+    public List getAllTipoCentrales() throws SapeDataException{
+        //DEVUELVE TODAS LAS TECNOLOGIAS DISPONIBLES EN LA TABLA SERIES.
+        Session session = null;
+        ResultSet rs=null;
+        Connection co = null;
+        List l = new ArrayList();
+        Exception exception = null;
+        
+        try {
+            session = getSession();
+            co = session.connection();
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }
+        
+        try{
+            
+            rs=co.createStatement().executeQuery("SELECT distinct(tipocentral) FROM series where cabezaid <> 0  ORDER BY tipocentral");
+            
+            while(rs.next()){
+                
+                String s = rs.getString(1);
+                l.add(s);
+            }
+            
+        }catch(SQLException err){
+            exception = err;            
+        }finally{
+            try{
+                session.close();
+            }catch (HibernateException e) {
+                exception = e;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return l;
+    }
+
+    //ESTE METODO DEVUELVE UNA LISTA DE LISTAS!!!!!
+    // EN CADA UNA DE LAS LISTAS ESTAN LAS CENTRALES KE PERTENECEN A CADA TECNOLOGIA
+    
+    public List getCentralesPorTecnologia(String tec)throws SapeDataException {
+    	if (logs.isDebugEnabled()) logs.debug("getCentralesPorTecnologia: " +tec);
+        Session session = null;
+        ResultSet rs=null;
+        Connection co = null;
+        List l = new ArrayList();
+        Exception exception = null;
+        try {
+            session = getSession();
+            co = session.connection();
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }
+        
+        try{
+            //XXX LA TECNOLOGIA DEBE ESTA EN UPPERCASE!!!!
+            rs=co.createStatement().executeQuery("select distinct(central) from series where tipocentral like '%"+tec.toUpperCase()+"%' order by central");
+            while(rs.next()){
+                String s = rs.getString(1);
+                l.add(s);
+            }
+            
+        }catch(SQLException err){
+            exception = err;            
+        }finally{
+            try{
+                session.close();
+            }catch (HibernateException e) {
+                exception = e;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return l;        
+    }
+    
+    public List getAllCentrales()throws SapeDataException {
+    	if (logs.isDebugEnabled()) logs.debug("getAllCentrales");
+        Session session = null;
+        ResultSet rs=null;
+        Connection co = null;
+        List l = new ArrayList();
+        Exception exception = null;
+        try {
+            session = getSession();
+            co = session.connection();
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }
+        
+        try{
+            //XXX LA TECNOLOGIA DEBE ESTA EN UPPERCASE!!!!
+            rs=co.createStatement().executeQuery("select distinct(central) from series order by central ASC");
+            while(rs.next()){
+                String s = rs.getString(1);
+                l.add(s);
+            }
+            
+        }catch(SQLException err){
+            exception = err;            
+        }finally{
+            try{
+                session.close();
+            }catch (HibernateException e) {
+                exception = e;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return l;        
+    }
+    
+    public List getListasCentralesPorTecnologia() throws SapeDataException {
+        Session session = null;
+        List l = new ArrayList();
+        Exception exception = null;
+        List listaTipos = getAllTipoCentrales();
+        try {
+            session = getSession();
+        } catch (HibernateException e) {
+            throw new SapeDataException(e);
+        }
+        
+        try{
+            for(int i=0;i<listaTipos.size();i++){
+                String tecnol=(String)listaTipos.get(i);
+                List l1=getCentralesPorTecnologia(tecnol); 
+                
+                l.add(new ReporteRutinasCableArmario(tecnol,l1));
+                
+                System.out.println("tec="+tecnol+" i="+i+" lista="+l);
+            }
+            
+        }catch(Exception err){
+            exception = err;            
+        }finally{
+            try{
+                session.close();
+            }catch (HibernateException e) {
+                exception = e;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return l;
+    }
+}

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1003,635" id="com.osp.sape.data" metadata="nsuml-1.4" initialized="true" zoom="0.75" scrolledX="25" tag="10" key="32303034303833312073617065">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.5/@sourceConnections.0" name="DAOFactory" location="185,30" size="150,103" stereotype="interface" id="com.osp.sape.data/DAOFactory" runTimeClassModel="getUsuarioDAO(),getTipoNodoDAO(),getCodigosVerDAO()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="127,36">
+      <children xsi:type="editmodel:MethodEditModel" name="getUsuarioDAO" id="com.osp.sape.data/DAOFactory#getUsuarioDAO()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCodigosVerDAO" id="com.osp.sape.data/DAOFactory#getCodigosVerDAO()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipoNodoDAO" id="com.osp.sape.data/DAOFactory#getTipoNodoDAO()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="com.osp.sape.data/DAOFactory->com.osp.sape.data/UsuarioDAO" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan" autoLocated="true">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«use»" size="31,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="20,103" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,20"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="com.osp.sape.data/DAOFactory->com.osp.sape.data/CodigosVerDAO" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan" autoLocated="true">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«use»" size="31,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="97,103" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="52,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" source="//@children.0" target="//@children.6" targetEnd="//@children.0/@sourceConnections.2/@children.1" sourceEnd="//@children.0/@sourceConnections.2/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="150,78" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="56,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" source="//@children.0" target="//@children.9" targetEnd="//@children.0/@sourceConnections.3/@children.1" sourceEnd="//@children.0/@sourceConnections.3/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="130,103" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="99,-1"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.4/@sourceConnections.0" name="UsuarioDAO" location="10,210" size="139,157" stereotype="interface" id="com.osp.sape.data/UsuarioDAO" runTimeClassModel="getUsuario(I),eliminarUsuario(I),actualizarUsuario(Lcom.osp.sape.maestros.UserSipe;),eliminarUsuario(Lcom.osp.sape.maestros.UserSipe;),insertarUsuario(Lcom.osp.sape.maestros.UserSipe;),getAllUsuarios()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,108">
+      <children xsi:type="editmodel:MethodEditModel" name="insertarUsuario" id="com.osp.sape.data/UsuarioDAO#insertarUsuario(Lcom.osp.sape.maestros.UserSipe;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarUsuario" id="com.osp.sape.data/UsuarioDAO#eliminarUsuario(Lcom.osp.sape.maestros.UserSipe;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarUsuario" id="com.osp.sape.data/UsuarioDAO#eliminarUsuario(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUsuario" id="com.osp.sape.data/UsuarioDAO#getUsuario(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actualizarUsuario" id="com.osp.sape.data/UsuarioDAO#actualizarUsuario(Lcom.osp.sape.maestros.UserSipe;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllUsuarios" id="com.osp.sape.data/UsuarioDAO#getAllUsuarios()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.0/@sourceConnections.1" name="CodigosVerDAO" location="230,218" size="144,139" stereotype="interface" id="com.osp.sape.data/CodigosVerDAO" runTimeClassModel="eliminarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;),getCodigoVer(Ljava.lang.String;),eliminarCodigoVer(Ljava.lang.String;),insertarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;),getAllCodigosVer()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,90">
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarCodigoVer" id="com.osp.sape.data/CodigosVerDAO#eliminarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarCodigoVer" id="com.osp.sape.data/CodigosVerDAO#eliminarCodigoVer(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCodigoVer" id="com.osp.sape.data/CodigosVerDAO#getCodigoVer(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarCodigoVer" id="com.osp.sape.data/CodigosVerDAO#insertarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllCodigosVer" id="com.osp.sape.data/CodigosVerDAO#getAllCodigosVer()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CodigosVerDAOImpl" location="185,440" size="172,157" id="com.osp.sape.data/CodigosVerDAOImpl" runTimeClassModel="CodigosVerDAOImpl(),eliminarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;),getCodigoVer(Ljava.lang.String;),eliminarCodigoVer(Ljava.lang.String;),insertarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;),getAllCodigosVer()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="132,108">
+      <children xsi:type="editmodel:MethodEditModel" name="CodigosVerDAOImpl" id="com.osp.sape.data/CodigosVerDAOImpl#CodigosVerDAOImpl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarCodigoVer" id="com.osp.sape.data/CodigosVerDAOImpl#eliminarCodigoVer(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarCodigoVer" id="com.osp.sape.data/CodigosVerDAOImpl#eliminarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarCodigoVer" id="com.osp.sape.data/CodigosVerDAOImpl#insertarCodigoVer(Lcom.osp.sape.maestros.CodigoVer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCodigoVer" id="com.osp.sape.data/CodigosVerDAOImpl#getCodigoVer(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllCodigosVer" id="com.osp.sape.data/CodigosVerDAOImpl#getAllCodigosVer()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="com.osp.sape.data/CodigosVerDAO&lt;-com.osp.sape.data/CodigosVerDAOImpl" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,139"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="UsuarioDAOImpl" location="1,440" size="147,175" id="com.osp.sape.data/UsuarioDAOImpl" runTimeClassModel="getUsuario(I),eliminarUsuario(I),actualizarUsuario(Lcom.osp.sape.maestros.UserSipe;),eliminarUsuario(Lcom.osp.sape.maestros.UserSipe;),insertarUsuario(Lcom.osp.sape.maestros.UserSipe;),getAllUsuarios(),UsuarioDAOImpl()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,126">
+      <children xsi:type="editmodel:MethodEditModel" name="UsuarioDAOImpl" id="com.osp.sape.data/UsuarioDAOImpl#UsuarioDAOImpl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarUsuario" id="com.osp.sape.data/UsuarioDAOImpl#eliminarUsuario(Lcom.osp.sape.maestros.UserSipe;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarUsuario" id="com.osp.sape.data/UsuarioDAOImpl#eliminarUsuario(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUsuario" id="com.osp.sape.data/UsuarioDAOImpl#getUsuario(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarUsuario" id="com.osp.sape.data/UsuarioDAOImpl#insertarUsuario(Lcom.osp.sape.maestros.UserSipe;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actualizarUsuario" id="com.osp.sape.data/UsuarioDAOImpl#actualizarUsuario(Lcom.osp.sape.maestros.UserSipe;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllUsuarios" id="com.osp.sape.data/UsuarioDAOImpl#getAllUsuarios()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="com.osp.sape.data/UsuarioDAO&lt;-com.osp.sape.data/UsuarioDAOImpl" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="67,157"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="DAOFactoryImpl" location="629,21" size="150,121" id="com.osp.sape.data/DAOFactoryImpl" runTimeClassModel="getUsuarioDAO(),DAOFactoryImpl(),getInstance(),getTipoNodoDAO(),getCodigosVerDAO()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="127,54">
+      <children xsi:type="editmodel:MethodEditModel" name="getCodigosVerDAO" id="com.osp.sape.data/DAOFactoryImpl#getCodigosVerDAO()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUsuarioDAO" id="com.osp.sape.data/DAOFactoryImpl#getUsuarioDAO()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="com.osp.sape.data/DAOFactoryImpl#getInstance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipoNodoDAO" id="com.osp.sape.data/DAOFactoryImpl#getTipoNodoDAO()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="com.osp.sape.data/DAOFactory&lt;-com.osp.sape.data/DAOFactoryImpl" source="//@children.5" target="//@children.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,60" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="150,51"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.7/@sourceConnections.0 //@children.0/@sourceConnections.2" name="TipoNodoDAO" location="440,220" size="138,121" stereotype="interface" id="com.osp.sape.data/TipoNodoDAO" runTimeClassModel="eliminarTipoNodo(),insertarTipoNodo(),getTipoNodo(),getAllTipoNodo()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="115,36">
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarTipoNodo" id="com.osp.sape.data/TipoNodoDAO#eliminarTipoNodo(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipoNodo" id="com.osp.sape.data/TipoNodoDAO#getTipoNodo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarTipoNodo" id="com.osp.sape.data/TipoNodoDAO#insertarTipoNodo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllTipoNodo" id="com.osp.sape.data/TipoNodoDAO#getAllTipoNodo()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TipoNodoDAOImpl" location="459,440" size="160,121" id="com.osp.sape.data/TipoNodoDAOImpl" runTimeClassModel="eliminarTipoNodo(),insertarTipoNodo(),getTipoNodo(),getAllTipoNodo()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="115,36">
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarTipoNodo" id="com.osp.sape.data/TipoNodoDAOImpl#eliminarTipoNodo(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipoNodo" id="com.osp.sape.data/TipoNodoDAOImpl#getTipoNodo(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarTipoNodo" id="com.osp.sape.data/TipoNodoDAOImpl#insertarTipoNodo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllTipoNodo" id="com.osp.sape.data/TipoNodoDAOImpl#getAllTipoNodo()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="com.osp.sape.data/TipoNodoDAO&lt;-com.osp.sape.data/TipoNodoDAOImpl" source="//@children.7" target="//@children.6" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="72,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="77,121"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;use>>" location="509,159" size="43,13" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.3 //@children.10/@sourceConnections.0" name="CabezaPruebaDAO" location="609,217" size="164,121" stereotype="interface" id="com.osp.sape.data/CabezaPruebaDAO" runTimeClassModel="insertarCabezaPrueba(),eliminarcabezaPrueba(),getCabezaPrueba(),getAllCabezaPrueba()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel">
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarcabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAO#eliminarcabezaPrueba(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllCabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAO#getAllCabezaPrueba()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAO#getCabezaPrueba(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarCabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAO#insertarCabezaPrueba(Lcom.osp.sape.maestros.CabezaPrueba;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CabezaPruebaDAOImpl" location="639,440" size="188,121" id="com.osp.sape.data/CabezaPruebaDAOImpl" runTimeClassModel="eliminarcabezaPrueba(Ljava.lang.String;),getCabezaPrueba(Ljava.lang.String;),getAllCabezaPrueba(),insertarCabezaPrueba(Lcom.osp.sape.maestros.CabezaPrueba;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel">
+      <children xsi:type="editmodel:MethodEditModel" name="getCabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAOImpl#getCabezaPrueba(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAllCabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAOImpl#getAllCabezaPrueba()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminarcabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAOImpl#eliminarcabezaPrueba(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarCabezaPrueba" id="com.osp.sape.data/CabezaPruebaDAOImpl#insertarCabezaPrueba(Lcom.osp.sape.maestros.CabezaPrueba;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="com.osp.sape.data/CabezaPruebaDAO&lt;-com.osp.sape.data/CabezaPruebaDAOImpl" source="//@children.10" target="//@children.9" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="83,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,121"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,90 @@
+/*
+ * 
+ * @author Develop Team XpLoRa
+ * Clase generada en Jun 8, 2006 - 10:34:32 AM
+ */
+
+package com.gc.utils;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.gc.acceso.GestorServlet;
+import com.osp.sape.Exceptions.SapeDataException;
+import com.osp.sape.data.DAOFactoryImpl;
+import com.osp.sape.data.VisitasDAO;
+import com.osp.sape.maestros.UserSipe;
+
+public class VisitasServlet extends GestorServlet{
+
+	private VisitasDAO visitasDAO;
+	
+	/**
+	 * Recordemos que super.init() inicializa el logger y la vble debug. 
+	 */
+	public void init() throws ServletException {
+		super.init();
+		visitasDAO = DAOFactoryImpl.getInstance().getVisitasDAO();
+	}
+	
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+    	if(debug) logs.debug("Acceso al servlet por metodo POST.");
+    	doGet(request,response);
+    }
+	
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+        String operacion = request.getParameter("operacion");
+        
+        UserSipe usuario=(UserSipe)request.getSession().getAttribute("usuario");
+        
+        if(usuario == null){
+        	redireccionar(acciones.getLoginPage(),request,response);
+        	return;
+        }
+        
+        if (debug)logs.debug("doGet: operacion=["+operacion+"]");
+        
+        if (operacion == null || operacion.equals("")||operacion.equals("inicio")) {
+        	inicio(request,response);
+        }
+    }
+    
+    private void inicio(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
+    	if (debug)logs.debug("operacion: inicio");
+    	
+    	getVisitas(request,response);
+    }
+    
+    
+    private void getVisitas(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException {
+    	if (debug)logs.debug("operacion: vetVisitas");
+    	
+    	String fIni = request.getParameter("fIni");
+    	String fFin = request.getParameter("fFin");
+    	String user = request.getParameter("user");
+    	
+    	if(fIni==null||fIni.equals("")||fFin==null||fFin.equals(""))
+    		fIni=fFin=getFechaHoy();
+    	
+    	List l = null;
+    	
+    	try {
+			l=visitasDAO.buscarVisita(fIni,fFin,user);
+		} catch (SapeDataException e) {
+			logs.error(e);
+			error(e,request,response);
+			return;
+		}
+		
+		request.setAttribute("listaVisitas",l);
+		request.setAttribute("fIni",fIni);
+		request.setAttribute("fFin",fFin);
+		request.setAttribute("user",(user==null?"":user));
+		
+		redireccionarConPlantilla("visitas",request,response);
+    }
+}

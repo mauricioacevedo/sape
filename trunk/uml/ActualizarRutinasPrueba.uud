@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:UseCaseDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ActualizarRutinasPrueba" metadata="nsuml-1.4" initialized="true" tag="10" key="32303034303833312073617065">
+  <children xsi:type="editmodel:SystemEditModel" location="110,70" size="581,311" itemName="Rutinas de Pruebas">
+    <children xsi:type="editmodel:UseCaseEditModel" location="63,106" size="158,33" description="" itemName="Adminitrar Rutinas por cable" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="239,192" size="175,33" description="" itemName="Administrar Rutinas por aramrio" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="334,105" size="169,33" description="" itemName="Administrar Rutinas por cliente" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="243,58" size="206,33" description="" itemName="Administrar Rutinas por serie numerica" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+  </children>
+  <diagramOptions xsi:type="options:UseCaseDiagramOptions" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+</editmodel:UseCaseDiagramEditModel>

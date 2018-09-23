@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sape-config>
+	<ruta-servicios value="/usr/java/tomcat/webapps/sape/WEB-INF/config-servicios.xml" />
+	<!-- ruta-eval-resultados value="/usr/java/tomcat/webapps/sape/WEB-INF/evaluacionResultados.xml" /-->
+	<ruta-eval-resultados value="/opt/gude/sqltcl/evaluacionResultados.tcl" />
+	<ruta-gude-conf-tcl value="/opt/gude/sqltcl/gude.conf.tcl" />
+	<ruta-codigos-falla value="/usr/java/tomcat/webapps/sape/WEB-INF/codigosFalla.xml" />
+	<ruta-archivos-temporales value="/tmp" />
+	<servicio-gude>
+		<ip>172.18.58.105</ip>
+		<puerto>11112</puerto>
+	</servicio-gude>
+	<servicios-gude>
+		<servicio name="desbloqueo">3</servicio>
+		<servicio name="atu">7</servicio>
+		<servicio name="clip">8</servicio>
+		<servicio name="categorias">9</servicio>
+		<servicio name="prueba">12</servicio>
+		<servicio name="importarCable">18</servicio>
+		<servicio name="importarArmario">19</servicio>
+	</servicios-gude>
+</sape-config>

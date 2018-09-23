@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.IndigoEpm"
+        table="indigos_epm"
+    >
+
+        <id
+            name="id"
+            column="id_indigo"
+            type="long"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">id_indigos_epm</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-IndigoEpm.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="ip"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip_indigo"
+        />
+
+        <property
+            name="numeroIndigo"
+            type="string"
+            update="true"
+            insert="true"
+            column="numero_indigo"
+        />
+
+        <property
+            name="port"
+            type="string"
+            update="true"
+            insert="true"
+            column="puerto_indigo"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-IndigoEpm.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

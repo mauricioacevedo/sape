@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.siplexpro.CPE"
+        table="siplexpro_configuracionadsl"
+    >
+
+        <id
+            name="idCabeza"
+            column="idcabeza"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-CPE.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="std"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_std"
+        />
+
+        <property
+            name="txPwrAtt"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_tx_pwr_att"
+        />
+
+        <property
+            name="upMargin"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_up_margin"
+        />
+
+        <property
+            name="dwnMargin"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_dwn_margin"
+        />
+
+        <property
+            name="ntr"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_ntr"
+        />
+
+        <property
+            name="pmode"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_pmode"
+        />
+
+        <property
+            name="toneOrdering"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_tone_ordering"
+        />
+
+        <property
+            name="escapeFastRetrain"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_escape_fast_retrain"
+        />
+
+        <property
+            name="fastRetrainEnable"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_fast_retrain_enable"
+        />
+
+        <property
+            name="bitSwap"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_bit_swap"
+        />
+
+        <property
+            name="usBitSwap"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_us_bit_swap"
+        />
+
+        <property
+            name="codingGain"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_coding_gain"
+        />
+
+        <property
+            name="spd1As0Latency"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_spd1_as0_latency"
+        />
+
+        <property
+            name="spd1Ls0Latency"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_spd1_ls0_latency"
+        />
+
+        <property
+            name="spd1As0Bytes"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_spd1_as0_bytes"
+        />
+
+        <property
+            name="spd1Ls0Bytes"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_spd1_ls0_bytes"
+        />
+
+        <property
+            name="spd4As0Bytes"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_spd4_as0_bytes"
+        />
+
+        <property
+            name="spd4Ls0Bytes"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_spd4_ls0_bytes"
+        />
+
+        <property
+            name="negTime"
+            type="string"
+            update="true"
+            insert="true"
+            column="cpe_neg_time"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-CPE.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

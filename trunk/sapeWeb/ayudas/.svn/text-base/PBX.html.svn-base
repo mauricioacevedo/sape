@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style4 {
+	font-size: 14px;
+	color: #FF5900;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style6 {
+	font-size: 10px;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #FF6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #FF6600 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style4">PRUEBA PBX</p>
+<p class="style1"> <br />
+</p>
+<p class="style2 style7">Desde esta pantalla se tienen dos posibles formas de realizar la ejecuci&oacute;n de una prueba, la primera para las l&iacute;neas pertenecientes a un PBX y la segunda es para diferentes l&iacute;neas telef&oacute;nicas independientemente si estas son de un PBX o no. </p>
+<p class="style2 style7">&nbsp;</p>
+<p class="style2 style7"><strong>EJECUCION DE UNA PRUEBA ELECTRICA PARA UN PBX </strong></p>
+<p class="style2 style7">&#149;&nbsp; En la pantalla “Prueba”, haga Clic en la opci&oacute;n <strong>“Prueba PBX”<em>.</em></strong></p>
+<p class="style2 style7">&#149;&nbsp; En el campo “Tel&eacute;fono”, ingrese el tel&eacute;fono principal del PBX, y haga click en probar. Unos segundo mas tarde en la pantalla aparecer&aacute;n la cantidad de l&iacute;neas que tiene dicho PBX.</p>
+<p class="style2 style7">&#149;&nbsp; Para ver el resultado de cada una de las pruebas realizadas al PBX, haga clic en <strong>“ Ver Pruebas ” </strong>. Se abrir&aacute; una nueva pantalla en donde aparece el resultado cada una de las pruebas realizadas por el usuario que programe la prueba para el PBX durante todo el d&iacute;a, dentro de estas se encontrar&aacute;n entonces las pruebas el&eacute;ctricas realizadas al PBX, es necesario esperar unos segundos para poder visualizar el resultado de estas. </p>
+<p class="style2 style7">&nbsp; </p>
+<p class="style2 style7">&nbsp; </p>
+<p class="style2 style7">&nbsp; </p>
+<p class="style2 style7"><strong>EJECUCION DE UNA PRUEBA ELECTRICA PARA VARIAS LINEAS TELEFONICAS </strong></p>
+<p class="style2 style7"><em>&nbsp; </em>&#149;&nbsp; Ubicado sobre la pantalla “Prueba PBX” en el campo “Tel&eacute;fono”, ingrese los n&uacute;meros telef&oacute;nicos de las l&iacute;neas a probar, para esto es necesario que entre cada n&uacute;mero haya un espaci<em>o.</em></p>
+<p class="style2 style7">&#149;&nbsp; Haga Clic en probar y luego de unos segundos aparecer&aacute; en la pantalla un mensaje con la cantidad de tel&eacute;fonos que el sistema encola para realizarle la prueba el&eacute;ctrica. </p>
+<p class="style2 style7"> &#149;&nbsp; Para ver el resultado el&eacute;ctrico de las pruebas, haga click <strong>“ Ver Pruebas ” </strong>. En la ventana que se abre aparecen todas las pruebas que el usuario a realizado durante el d&iacute;a, para ver el resultado de las que se programaron por medio de esta opci&oacute;n es necesario esperar unos segundo para que se puedan ver los resultado en esta pantalla. </p>
+<p class="style2 style7">&nbsp; </p>
+<p class="style2 style7 style2 style7">&nbsp;</p>
+<p class="style2 style7 style2 style7"><strong>REGRESAR A PRUEBAS TELEFONICAS </strong></p>
+<ul class="style2 style7 style2 style7">
+  <li>Haga Clic en <strong>&ldquo;Regresar&rdquo;</strong>.</li>
+  <li>Aparecer&aacute; nuevamente en la pantalla  PRUEBAS TELEFONICAS.</li>
+</ul>
+<p class="style2 style7 style2 style7">&nbsp;</p>
+<p class="style2 style7 style2 style7">&nbsp;</p>
+<p class="style2"><a href="Indice.html" class="style6">Indice</a></p>
+</body>
+</html>

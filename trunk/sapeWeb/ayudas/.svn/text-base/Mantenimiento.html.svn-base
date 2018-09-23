@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #ff6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #ff6600 }
+ a:hover {color:#000000}
+
+.style2 {	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF5900;
+	font-weight: bold;
+}
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+.style11 {
+	color: #FF6600;
+	font-weight: bold;
+	font-size: 12px;
+}
+.style12 {
+	color: #FF6600;
+	font-weight: bold;
+}
+.style14 {color: #FF6600; font-weight: bold; font-style: italic; }
+.style7 {font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<p><span class="style2">SIPLEXPRO</span></p>
+<p>&nbsp;</p>
+<p class="style3">Esta  pagina cuenta con cuatro opciones las cuales permiten realizar lo siguiente:</p>
+<ol class="style3">
+  <li>    <em><span class="style12"><a href="cpr.html" class="style11">CPR&rsquo;s SiplexPRO</a></span>:</em> El  CPR es una parte del SiplexPRO, que tiene asociado una cantidad de n&uacute;meros  telef&oacute;nicos pertenecientes a la central. Cada cabezal puede tener varios CPR`s.  Esta opci&oacute;n permite conocer en determinada l&iacute;nea telef&oacute;nica en que CPR se  encuentra, en caso de que la l&iacute;nea presente error al realizar la prueba el&eacute;ctrica,  con esta opci&oacute;n se le podr&aacute; asignar el CPR y as&iacute; poder ejecutarla.</li>
+  <li><span class="style14"><a href="Desbloquear.html" class="style11">Desbloqueo Cabezas</a></span>:</em> Esta opci&oacute;n permite resetear la cabeza para que se reinicie, siempre y cuando  exista una conexi&oacute;n con la misma.</li>
+  <li><span class="style14"><a href="Actualizar.html" class="style11">Actualizar CPR Serie</a></span><em>:</em> Esta  opci&oacute;n permite que el SAPE realice la asignaci&oacute;n autom&aacute;tica de los CPR&rsquo;s a la  l&iacute;neas telef&oacute;nicas de una serie num&eacute;rica.</li>
+  <li><a href="Contingencia.html"><span class="style11"><em>Contingencia</em></span></a><em>:</em> En esta pantalla se puede realizar el cambio  manual de la comunicaci&oacute;n de las cabezas, ya sea v&iacute;a MODEM o por la Red  Corporativa de la empresa.</li>
+</ol>
+<p class="style3">&nbsp;</p>
+<p class="style3">&nbsp;</p>
+<p class="style3"><a href="Indice.html" class="style7">Indice</a></p>
+</body>
+</html>

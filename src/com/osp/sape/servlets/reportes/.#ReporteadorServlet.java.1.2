@@ -1,0 +1,135 @@
+package com.osp.sape.servlets.reportes;
+
+/*
+ * 
+ * @author Develop Team XpLoRa
+ * Clase generada en Jul 14, 2006 - 8:30:17 AM
+ */
+
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.gc.acceso.GestorServlet;
+
+import com.osp.sape.Exceptions.SapeDataException;
+import com.osp.sape.data.DAOFactory;
+import com.osp.sape.data.DAOFactoryImpl;
+import com.osp.sape.data.ReporteadorDAO;
+import com.osp.sape.reportes.ReporteadorPlantilla;
+import com.osp.sape.reportes.CampoReporteador;
+
+
+public class ReporteadorServlet extends GestorServlet {
+	
+	private ReporteadorDAO reporteadorDAO;
+	
+    public void init() throws ServletException {
+        super.init();
+        
+        DAOFactory daoFactory = DAOFactoryImpl.getInstance(); 
+        reporteadorDAO = daoFactory.getReporteadorDAO();
+        dfFecha = new DecimalFormat("00");
+    }
+
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+        // en la variable operacion se obtiene la solicitud a tramitar por este servlet        
+        String operacion = request.getParameter("operacion");
+        if (debug) logs.info("Peticion realizada, operacion=["+operacion+"]");
+        
+        
+        if(operacion==null||operacion.equals("") || operacion.equals("inicio")){
+        	inicioReporteador(request, response);
+        	return;
+        }else if(operacion.equals("cargarReporteador")){
+        	operacionCargarReporteador(request,response);
+        	return;
+        }
+		
+		//request.getRequestDispatcher("/reporteador.jsp").forward(request, response);
+	}
+	
+	private void operacionCargarReporteador(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+		
+		String id2 = request.getParameter("id");
+		ReporteadorPlantilla r = null;
+		try{
+			int id = Integer.parseInt(id2);
+			r = reporteadorDAO.getReporteadorPlantilla(id);
+		}catch (NumberFormatException e) {
+			error(e,request,response);
+			return;
+		} catch (SapeDataException e) {
+			error(e,request,response);
+			return;
+		}
+		request.setAttribute("reporteador",r);
+		inicioReporteador(request,response);
+	}
+	
+	private void inicioReporteador(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		List listaCampos = getListaCampos();
+		
+		List rs = null;
+		
+		try {
+			rs=reporteadorDAO.getAllReporteadorPlantillas();
+		} catch (SapeDataException e) {
+			error(e,request,response);
+			return;
+		}
+		
+		request.setAttribute("listaCampos", listaCampos);
+		request.setAttribute("listaReporteadores", rs);
+		redireccionarConPlantilla("reporteador", request, response);
+	}
+	
+	private List getListaCampos() {
+
+		if (debug) logs.debug("getListaCampos");
+		
+		List listaCampos = new ArrayList();
+		listaCampos.add(new CampoReporteador("prueba", "# Prueba", true));
+		listaCampos.add(new CampoReporteador("usuario", "Usuario", true));
+		listaCampos.add(new CampoReporteador("telefono", "Telefono", true));
+		listaCampos.add(new CampoReporteador("tipoprueba", "Tipoprueba", true));
+		listaCampos.add(new CampoReporteador("fecha", "Fecha Prueba", true));
+		listaCampos.add(new CampoReporteador("site", "Tipo Nodo", true));
+		listaCampos.add(new CampoReporteador("duracion", "Duraci&oacute;n", true));
+		listaCampos.add(new CampoReporteador("central", "Central", true));
+		listaCampos.add(new CampoReporteador("codv" , "C&oacute;digo Ver", true));
+		listaCampos.add(new CampoReporteador("estado" , "Estado", true));
+		listaCampos.add(new CampoReporteador("voltajeAC_AB", "Voltaje AC AB", false));
+		listaCampos.add(new CampoReporteador("voltajeAC_AT" , "Voltaje AC AT", false));
+		listaCampos.add(new CampoReporteador("voltajeAC_BT", "Voltaje AC BT", false));
+		listaCampos.add(new CampoReporteador("voltajeDC_AB" , "Voltaje DC AB", false));
+		listaCampos.add(new CampoReporteador("voltajeDC_AT", "Voltaje DC AT", false));
+		listaCampos.add(new CampoReporteador("voltajeDC_AB", "Voltaje DC AB", false));
+		listaCampos.add(new CampoReporteador("resAB", "Resistencia AB", false));
+		listaCampos.add(new CampoReporteador("resAT", "Resistencia AT", false));
+		listaCampos.add(new CampoReporteador("resBT", "Resistencia BT", false));
+		listaCampos.add(new CampoReporteador("capAB", "Capacitancia AB", false));
+		listaCampos.add(new CampoReporteador("capAT", "Capacitancia AT", false));
+		listaCampos.add(new CampoReporteador("capBT", "Capacitancia BT", false));
+		listaCampos.add(new CampoReporteador("calificacionPar", "Calificacion Par", true));
+		listaCampos.add(new CampoReporteador("distancia", "Distancia", true));
+		listaCampos.add(new CampoReporteador("velUp" , "Velocidad Up", false));
+		listaCampos.add(new CampoReporteador("velDown" , "Velocidad Down", false));
+		listaCampos.add(new CampoReporteador("calificacionDatos", "Calificacion Datos", true));
+		listaCampos.add(new CampoReporteador("numeroRutina", "# Rutina", true));
+		listaCampos.add(new CampoReporteador("tipoRutina", "Tipo Rutina", true));
+		listaCampos.add(new CampoReporteador("usuarioRutina", "Usuario Rutina", true));
+		listaCampos.add(new CampoReporteador("fechaRutina", "Fecha Rutina", true));
+		listaCampos.add(new CampoReporteador("numPruebaProgramada", "# Prueba Prog", true));
+		
+		return listaCampos;
+	}
+	
+}

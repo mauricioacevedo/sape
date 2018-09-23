@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.PruebaBasica"
+        table="prueba_basica"
+    >
+
+        <id
+            name="id"
+            column="idprueba_basica"
+            type="long"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-PruebaBasica.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="telefono"
+            type="long"
+            update="true"
+            insert="true"
+            column="telefono"
+        />
+
+        <property
+            name="dispositivo"
+            type="string"
+            update="true"
+            insert="true"
+            column="dispositivo"
+        />
+
+        <property
+            name="campanario"
+            type="string"
+            update="true"
+            insert="true"
+            column="campanario"
+        />
+
+        <property
+            name="acv_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="acv_tiptoring"
+        />
+
+        <property
+            name="acv_frec_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="acv_frec_tiptoring"
+        />
+
+        <property
+            name="acv_tiptoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="acv_tiptoground"
+        />
+
+        <property
+            name="acv_frec_tiptoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="acv_frec_tiptoground"
+        />
+
+        <property
+            name="acv_ringtoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="acv_ringtoground"
+        />
+
+        <property
+            name="acv_frec_ringtoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="acv_frec_ringtoground"
+        />
+
+        <property
+            name="dcv_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="dcv_tiptoring"
+        />
+
+        <property
+            name="dcv_tiptoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="dcv_tiptoground"
+        />
+
+        <property
+            name="dcv_ringtoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="dcv_ringtoground"
+        />
+
+        <property
+            name="iac_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="iac_tiptoring"
+        />
+
+        <property
+            name="iac_frec_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="iac_frec_tiptoring"
+        />
+
+        <property
+            name="idc_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="idc_tiptoring"
+        />
+
+        <property
+            name="res_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="res_tiptoring"
+        />
+
+        <property
+            name="res_tiptoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="res_tiptoground"
+        />
+
+        <property
+            name="res_ringtoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="res_ringtoground"
+        />
+
+        <property
+            name="rea_tiptoring"
+            type="string"
+            update="true"
+            insert="true"
+            column="rea_tiptoring"
+        />
+
+        <property
+            name="rea_tiptoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="rea_tiptoground"
+        />
+
+        <property
+            name="rea_ringtoground"
+            type="string"
+            update="true"
+            insert="true"
+            column="rea_ringtoground"
+        />
+
+        <property
+            name="distancia"
+            type="string"
+            update="true"
+            insert="true"
+            column="distancia"
+        />
+
+        <property
+            name="codigoVer"
+            type="string"
+            update="true"
+            insert="true"
+            column="codv"
+        />
+
+        <property
+            name="velocidadup"
+            type="string"
+            update="true"
+            insert="true"
+            column="velocidadup"
+        />
+
+        <property
+            name="velocidaddown"
+            type="string"
+            update="true"
+            insert="true"
+            column="velocidaddown"
+        />
+
+        <property
+            name="estado"
+            type="string"
+            update="true"
+            insert="true"
+            column="estado"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PruebaBasica.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

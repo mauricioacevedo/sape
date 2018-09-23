@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.rutinas.PruebaSPP"
+        table="pruebaspp"
+    >
+
+        <id
+            name="idpruebapp"
+            column="idpruebapp"
+            type="java.lang.Integer"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">idpruebaspp</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-PruebaSPP.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="transaccion_spp"
+            type="integer"
+            update="true"
+            insert="true"
+            column="transaccion_spp"
+        />
+
+        <property
+            name="codigover"
+            type="string"
+            update="true"
+            insert="true"
+            column="codigover"
+        />
+
+        <property
+            name="telefono"
+            type="long"
+            update="true"
+            insert="true"
+            column="telefono"
+        />
+
+        <many-to-one
+            name="idpruebaprogramada"
+            class="com.osp.sape.maestros.rutinas.PruebaProgramada"
+            cascade="none"
+            outer-join="auto"
+            update="false"
+            insert="false"
+            column="idpruebaprogramada"
+        />
+
+        <property
+            name="calificacion"
+            type="string"
+            update="true"
+            insert="true"
+            column="calificacion"
+        />
+
+        <property
+            name="capacitancias"
+            type="string"
+            update="true"
+            insert="true"
+            column="capacitancia"
+        />
+
+        <property
+            name="resistencias"
+            type="string"
+            update="true"
+            insert="true"
+            column="resistencia"
+        />
+
+        <property
+            name="calificacionDatos"
+            type="string"
+            update="true"
+            insert="true"
+            column="calificaciondatos"
+        />
+
+        <property
+            name="velocidadDown"
+            type="string"
+            update="true"
+            insert="true"
+            column="veldown"
+        />
+
+        <property
+            name="velocidadUP"
+            type="string"
+            update="true"
+            insert="true"
+            column="velup"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PruebaSPP.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

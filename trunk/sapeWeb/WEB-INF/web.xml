@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-app_2_4.xsd"
+    version="2.4">
+
+  <display-name>Sistema Administrativo de Pruebas Extendidas - S A P E -</display-name>
+
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>resources.application</param-value>
+  </context-param>
+
+	<listener>
+		<listener-class>com.gc.utils.GestorSessionListener</listener-class>
+	</listener>
+
+	<servlet>                                         
+	   <servlet-name>ActionServlet</servlet-name>           
+	   <servlet-class>com.gc.acceso.ActionServlet</servlet-class> 
+	</servlet>  
+
+  <servlet-mapping>
+    <servlet-name>ActionServlet</servlet-name>
+    <url-pattern>/actionSape</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>InicialServlet</servlet-name>
+    <servlet-class>com.osp.sape.servlets.InicialServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>RecogerParametrosTCLServlet</servlet-name>
+    <servlet-class>com.osp.sape.servlets.RecogerParametrosTCLServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <!-- Standard Action Servlet Mapping -->
+    <servlet-name>RecogerParametrosTCLServlet</servlet-name>
+    <url-pattern>/parametros/RecogerParametrosTCLServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.gc.utils.UploadServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <!-- Standard Action Servlet Mapping -->
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/utils/UploadServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <session-config>
+      <session-timeout>45</session-timeout>
+  </session-config>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

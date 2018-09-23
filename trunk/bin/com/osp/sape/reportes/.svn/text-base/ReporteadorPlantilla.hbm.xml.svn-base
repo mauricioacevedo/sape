@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.reportes.ReporteadorPlantilla"
+        table="reporteadorplantilla"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">idreporteador</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-ReporteadorPlantilla.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="campos"
+            type="string"
+            update="true"
+            insert="true"
+            column="campos"
+        />
+
+        <property
+            name="colCondicion"
+            type="string"
+            update="true"
+            insert="true"
+            column="colcondicion"
+        />
+
+        <property
+            name="desdeFecha"
+            type="string"
+            update="true"
+            insert="true"
+            column="desdefecha"
+        />
+
+        <property
+            name="etiquetas"
+            type="string"
+            update="true"
+            insert="true"
+            column="etiquetas"
+        />
+
+        <property
+            name="fechaCambio"
+            type="string"
+            update="true"
+            insert="true"
+            column="fechacambio"
+        />
+
+        <property
+            name="fechaEnvio"
+            type="string"
+            update="true"
+            insert="true"
+            column="fechaenvio"
+        />
+
+        <property
+            name="hastaFecha"
+            type="string"
+            update="true"
+            insert="true"
+            column="hastafecha"
+        />
+
+        <property
+            name="formato"
+            type="string"
+            update="true"
+            insert="true"
+            column="formato"
+        />
+
+        <property
+            name="orderBy"
+            type="string"
+            update="true"
+            insert="true"
+            column="orderby"
+        />
+
+        <property
+            name="tipoCondicion"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipocondicion"
+        />
+
+        <property
+            name="titulo"
+            type="string"
+            update="true"
+            insert="true"
+            column="titulo"
+        />
+
+        <property
+            name="usuario"
+            type="string"
+            update="true"
+            insert="true"
+            column="usuario"
+        />
+
+        <property
+            name="valorCondicion"
+            type="string"
+            update="true"
+            insert="true"
+            column="valorcondicion"
+        />
+
+        <property
+            name="valorMedio"
+            type="string"
+            update="true"
+            insert="true"
+            column="valormedio"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ReporteadorPlantilla.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

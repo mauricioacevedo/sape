@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.siplexpro.PruebaEstadisticasConexion"
+        table="siplexpro_estadisticasconexion"
+    >
+
+        <id
+            name="idTiponodo"
+            column="id"
+            type="int"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-PruebaEstadisticasConexion.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="codv"
+            type="string"
+            update="true"
+            insert="true"
+            column="codv"
+        />
+
+        <property
+            name="estado"
+            type="string"
+            update="true"
+            insert="true"
+            column="estado"
+        />
+
+        <property
+            name="feCrc"
+            type="string"
+            update="true"
+            insert="true"
+            column="fecrc"
+        />
+
+        <property
+            name="feHec"
+            type="string"
+            update="true"
+            insert="true"
+            column="fehec"
+        />
+
+        <property
+            name="feRsfe"
+            type="string"
+            update="true"
+            insert="true"
+            column="fersfe"
+        />
+
+        <property
+            name="feSef"
+            type="string"
+            update="true"
+            insert="true"
+            column="fesef"
+        />
+
+        <property
+            name="neCrc"
+            type="string"
+            update="true"
+            insert="true"
+            column="necrc"
+        />
+
+        <property
+            name="neHec"
+            type="string"
+            update="true"
+            insert="true"
+            column="nehec"
+        />
+
+        <property
+            name="neRsfe"
+            type="string"
+            update="true"
+            insert="true"
+            column="nersfe"
+        />
+
+        <property
+            name="neSef"
+            type="string"
+            update="true"
+            insert="true"
+            column="nesef"
+        />
+
+        <property
+            name="rxCells"
+            type="string"
+            update="true"
+            insert="true"
+            column="rxcells"
+        />
+
+        <property
+            name="state"
+            type="string"
+            update="true"
+            insert="true"
+            column="state"
+        />
+
+        <property
+            name="txCells"
+            type="string"
+            update="true"
+            insert="true"
+            column="txcells"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PruebaEstadisticasConexion.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

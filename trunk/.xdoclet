@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+<configuration name="hibernate" used="true">
+<task name="hibernatedoclet" used="true" className="xdoclet.modules.hibernate.HibernateDocletTask">
+<attribute name="excludedTags" value="" used="false"/>
+<attribute name="destDir" value="src" used="true"/>
+<attribute name="mergeDir" value="" used="false"/>
+<attribute name="force" value="" used="false"/>
+<attribute name="verbose" value="true" used="true"/>
+<attribute name="addedTags" value="" used="false"/>
+<element name="fileset" used="true">
+<attribute name="dir" value="src/" used="true"/>
+<attribute name="includes" value="**/*.java" used="true"/>
+<attribute name="excludes" value="" used="false"/>
+</element>
+<element name="hibernatecfg" used="true">
+<attribute name="poolSize" value="" used="false"/>
+<attribute name="jdbcUrl" value="jdbc:postgresql:ipe" used="true"/>
+<attribute name="transactionManagerStrategy" value="" used="false"/>
+<attribute name="userTransactionName" value="" used="false"/>
+<attribute name="transactionManagerLookup" value="" used="false"/>
+<attribute name="useOuterJoin" value="" used="false"/>
+<attribute name="showSql" value="false" used="true"/>
+<attribute name="jndiName" value="" used="false"/>
+<attribute name="dataSource" value="" used="false"/>
+<attribute name="dialect" value="net.sf.hibernate.dialect.PostgreSQLDialect" used="true"/>
+<attribute name="driver" value="org.postgresql.Driver" used="true"/>
+<attribute name="userName" value="sape_web" used="true"/>
+<attribute name="password" value="Animo" used="true"/>
+<attribute name="useIds" value="" used="false"/>
+<attribute name="xmlencoding" value="" used="false"/>
+<attribute name="schema" value="" used="false"/>
+<attribute name="validateXML" value="" used="false"/>
+<attribute name="acceptInterfaces" value="" used="false"/>
+<attribute name="acceptAbstractClasses" value="" used="false"/>
+<attribute name="packageSubstitutions" value="" used="false"/>
+<attribute name="packageSubstitutionInheritanceSupported" value="" used="false"/>
+<attribute name="subTaskClassName" value="" used="false"/>
+<attribute name="prefixWithPackageStructure" value="" used="false"/>
+<attribute name="destinationFile" value="" used="false"/>
+<attribute name="templateURL" value="" used="false"/>
+<attribute name="templateFile" value="" used="false"/>
+<attribute name="Extent" value="" used="false"/>
+<attribute name="havingClassTag" value="" used="false"/>
+<attribute name="ofType" value="" used="false"/>
+<attribute name="subTaskName" value="" used="false"/>
+<attribute name="destDir" value="src" used="true"/>
+<attribute name="mergeDir" value="" used="false"/>
+<attribute name="currentMethodTag" value="" used="false"/>
+<attribute name="currentClassTag" value="" used="false"/>
+<attribute name="currentFieldTag" value="" used="false"/>
+<attribute name="currentPackage" value="" used="false"/>
+<attribute name="currentMethod" value="" used="false"/>
+<attribute name="currentConstructor" value="" used="false"/>
+<attribute name="currentField" value="" used="false"/>
+<attribute name="currentClass" value="" used="false"/>
+</element>
+<element name="hibernate" used="true">
+<attribute name="Version" value="2.0" used="true"/>
+<attribute name="useIds" value="" used="false"/>
+<attribute name="xmlencoding" value="" used="false"/>
+<attribute name="schema" value="" used="false"/>
+<attribute name="validateXML" value="" used="false"/>
+<attribute name="acceptInterfaces" value="" used="false"/>
+<attribute name="acceptAbstractClasses" value="" used="false"/>
+<attribute name="packageSubstitutions" value="" used="false"/>
+<attribute name="packageSubstitutionInheritanceSupported" value="" used="false"/>
+<attribute name="subTaskClassName" value="" used="false"/>
+<attribute name="prefixWithPackageStructure" value="" used="false"/>
+<attribute name="destinationFile" value="" used="false"/>
+<attribute name="templateURL" value="" used="false"/>
+<attribute name="templateFile" value="" used="false"/>
+<attribute name="Extent" value="" used="false"/>
+<attribute name="havingClassTag" value="" used="false"/>
+<attribute name="ofType" value="" used="false"/>
+<attribute name="subTaskName" value="" used="false"/>
+<attribute name="destDir" value="mappings" used="false"/>
+<attribute name="mergeDir" value="" used="false"/>
+<attribute name="currentMethodTag" value="" used="false"/>
+<attribute name="currentClassTag" value="" used="false"/>
+<attribute name="currentFieldTag" value="" used="false"/>
+<attribute name="currentPackage" value="" used="false"/>
+<attribute name="currentMethod" value="" used="false"/>
+<attribute name="currentConstructor" value="" used="false"/>
+<attribute name="currentField" value="" used="false"/>
+<attribute name="currentClass" value="" used="false"/>
+</element>
+</task>
+<task name="xdoclet" used="false" className="xdoclet.DocletTask">
+<attribute name="excludedTags" value="" used="false"/>
+<attribute name="destDir" value="" used="false"/>
+<attribute name="mergeDir" value="" used="false"/>
+<attribute name="force" value="andres" used="false"/>
+<attribute name="verbose" value="" used="false"/>
+<attribute name="addedTags" value="" used="false"/>
+</task>
+</configuration>
+</configurations>

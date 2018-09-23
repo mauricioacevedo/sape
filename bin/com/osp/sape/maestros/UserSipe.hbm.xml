@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.UserSipe"
+        table="usersipe"
+    >
+
+        <id
+            name="id"
+            column="idipe"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">idusersipe</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-UserSipe.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="nick"
+            type="string"
+            update="true"
+            insert="true"
+            column="nick"
+        />
+
+        <property
+            name="activo"
+            type="string"
+            update="true"
+            insert="true"
+            column="activo"
+        />
+
+        <property
+            name="passwd"
+            type="string"
+            update="true"
+            insert="true"
+            column="passwd"
+        />
+
+        <property
+            name="nivel"
+            type="string"
+            update="true"
+            insert="true"
+            column="nivel"
+        />
+
+        <property
+            name="fechaAlta"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fechaalta"
+        />
+
+        <property
+            name="nombre"
+            type="string"
+            update="true"
+            insert="true"
+            column="nombre"
+        />
+
+        <property
+            name="contacto"
+            type="string"
+            update="true"
+            insert="true"
+            column="contacto"
+        />
+
+        <property
+            name="lenguaje"
+            type="string"
+            update="true"
+            insert="true"
+            column="lenguaje"
+        />
+
+        <property
+            name="grupo"
+            type="integer"
+            update="true"
+            insert="true"
+            column="grupo"
+            length="2"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-UserSipe.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

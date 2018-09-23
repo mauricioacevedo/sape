@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF5900;
+}
+.style6 {	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #ff6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #ff6600 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+.style10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+<p class="style2">PRIMERA PRUEBA TELEFONO</p>
+<p class="style1">&nbsp;</p>
+<p class="style1 style7">Con esta opci&oacute;n se tiene la posibilidad de observar la cantidad de veces que un tel&eacute;fono ha sido probado durante el d&iacute;a, y tambi&eacute;n el primer resultado el&eacute;ctrico obtenido para dicha l&iacute;nea telef&oacute;nica. </p>
+<p class="style1 style7">Toda la informaci&oacute;n aqu&iacute; contenida se encuentra con la siguiente estructura:</p>
+<ul class="style1 style7">
+
+	<li>Prueba: N&uacute;mero de identificaci&oacute;n de la prueba realizada. Con el se puede ver el primer resultado el&eacute;ctrico de la prueba de la l&iacute;nea telef&oacute;nica. </li>
+	<li>Tel&eacute;fono: N&uacute;mero telef&oacute;nico al que se le ha realizado la prueba el&eacute;ctrica. </li>
+	<li>Cantidad Prueba: N&uacute;mero de veces que ha sido probado un para telef&oacute;nico. </li>
+	<li>Tipo de Prueba: Clase de prueba realizada sobre el par. </li>
+	<li>C&oacute;digo Ver: C&oacute;digo asignado al resultado obtenido en la prueba, este c&oacute;digo ser el obtenido en la primera prueba realizad sobre el par. </li>
+	<li>Estado: Esta opci&oacute;n indica la clasificaci&oacute;n dada al resultado obtenido en la prueba. Este puede ser: 
+	  <ul>
+	    <li>E: &Eacute;xito, la prueba se pudo llegar a t&eacute;rmino, independientemente del resultado de esta. </li>
+        <li> A: Advertencia, la prueba no se pudo culminar por estas la l&iacute;nea o la cabeza de prueba ocupada, por lo tanto es necesario repetir la prueba luego de esperar unos segundos. </li>
+	    <li> F: Fall&oacute;, la prueba no se realizo debido a un acceso met&aacute;lico, timeout </li>
+	  </ul>
+	</li>
+	<li>Site: Nombre de la central sobre la que se ejecuto la prueba el&eacute;ctrica. </li>
+	<li>Usuario: Nombre o identificaci&oacute;n de la persona que ejecuto la prueba el&eacute;ctrica. </li>
+	<li>Fecha: Fecha y hora en la que se realizo por primera vez la prueba el&eacute;ctrica al par. </li>
+	<li>Duraci&oacute;n: Tiempo que tardo en ejecutarse la prueba el&eacute;ctrica. </li>
+</ul>
+<p class="style1 style7">&nbsp;</p>
+<p class="style1 style7"><strong>PARA CONSULTAR  UNA PRUEBA</strong></p>
+<ul class="style1 style7">
+  <li>En la  parte derecha de la pantalla aparece el campo &ldquo;Buscar por:&rdquo; con el mouse  seleccione la opci&oacute;n con la cual desea filtrar la b&uacute;squeda. Dentro de estas  opciones est&aacute;n: Prueba, Tel&eacute;fono, C&oacute;digo Ver, Usuario, Central y Tecnolog&iacute;a<em>.</em></li>
+  <li>Digite  en el recuadro en blanco de acuerdo a la opci&oacute;n seleccionada los datos requeridos  para la consulta.</li>
+  <li>Con  el mouse en el campo &ldquo;DESDE&rdquo; haga Click en <strong>&ldquo;(aaaa-mm-dd)&rdquo;</strong> y se abrir&aacute; un cuadro con el calendario. Seleccione el d&iacute;a, el mes y el a&ntilde;o. A  partir de esta fecha se iniciara la consulta.</li>
+  <li>Con  el mouse en el campo &ldquo;HASTA&rdquo; haga Click en <strong>&ldquo;(aaaa-mm-dd)&rdquo;</strong> y se abrir&aacute; otro cuadro con el calendario. Seleccione el d&iacute;a, el mes y el a&ntilde;o y  esta ser&aacute; la fecha final la consulta.</li>
+  <li>Haga  Click en <strong>&ldquo;Aceptar&rdquo;</strong>.</li>
+</ul>
+<p class="style7">&nbsp;</p>
+<p class="style7 style1">Para visualizar el resultado el&eacute;ctrico obtenido sobre el par, haga click sobre el n&uacute;mero que aparece en la columna “Prueba”, y en una nueva ventana aparecer&aacute; el resultado el&eacute;ctrico de la prueba.</p>
+<p class="style7">&nbsp;</p>
+<p class="style7"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><span class="style10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NOTA:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En la parte final del listado de la  consulta aparece la opci&oacute;n &ldquo;Exportar a&rdquo;, seleccione con el mouse el formato con  el cual se abrir&aacute; el archivo en donde se visualizar&aacute; la misma informaci&oacute;n que  aparece en la pantalla. Esta opci&oacute;n permite al usuario realizar un manejo mucho  mas practico de la informaci&oacute;n.</span></p>
+<br clear="all" />
+<p><a href="Indice.html" class="style6">Indice</a></p>
+<p class="style1">&nbsp;</p>
+</body>
+</html>

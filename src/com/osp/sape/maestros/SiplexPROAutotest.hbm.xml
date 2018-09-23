@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.SiplexPROAutotest"
+        table="siplexpro_autotest"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">idsiplexpro_autotest</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-SiplexPROAutotest.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="idtiponodo"
+            type="int"
+            update="true"
+            insert="true"
+            column="idtiponodo"
+        />
+
+        <property
+            name="fecha"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fecha"
+        />
+
+        <property
+            name="procesador"
+            type="string"
+            update="true"
+            insert="true"
+            column="procesador"
+        />
+
+        <property
+            name="modulo_pruebas"
+            type="string"
+            update="true"
+            insert="true"
+            column="modulo_pruebas"
+        />
+
+        <property
+            name="ethernet"
+            type="string"
+            update="true"
+            insert="true"
+            column="ethernet"
+        />
+
+        <property
+            name="modem"
+            type="string"
+            update="true"
+            insert="true"
+            column="modem"
+        />
+
+        <property
+            name="flash_mem"
+            type="string"
+            update="true"
+            insert="true"
+            column="flash_mem"
+        />
+
+        <property
+            name="tarjeta_expansion"
+            type="string"
+            update="true"
+            insert="true"
+            column="tarjeta_expansion"
+        />
+
+        <property
+            name="controlador_troncal"
+            type="string"
+            update="true"
+            insert="true"
+            column="controlador_troncal"
+        />
+
+        <property
+            name="observacion"
+            type="string"
+            update="true"
+            insert="true"
+            column="observacion"
+        />
+
+        <property
+            name="ultimoUsuario"
+            type="string"
+            update="true"
+            insert="true"
+            column="ultimousuario"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-SiplexPROAutotest.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.rutinas.RutinaArmario"
+        table="rutina_armario"
+    >
+
+        <id
+            name="telefono"
+            column="telefono"
+            type="int"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-RutinaArmario.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="tipoCliente"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipocliente"
+        />
+
+        <property
+            name="direccion"
+            type="string"
+            update="true"
+            insert="true"
+            column="direccion"
+        />
+
+        <property
+            name="armario"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="armario"
+        />
+
+        <property
+            name="estatus"
+            type="string"
+            update="true"
+            insert="true"
+            column="estatus"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-RutinaArmario.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:UseCaseDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="SapeActual" metadata="nsuml-1.4" initialized="true" tag="10" key="32303034303833312073617065">
+  <children xsi:type="editmodel:SystemEditModel" location="137,45" size="604,311" itemName="Sape">
+    <children xsi:type="editmodel:UseCaseEditModel" location="55,28" size="99,33" description="" itemName="Validar Ingreso" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="110,133" size="99,33" description="" itemName="Probar Telefono" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank="">
+      <sourceConnections xsi:type="editmodel:IncludesEditModel" source="//@children.0/@children.1" target="//@children.0/@children.2" targetEnd="//@children.0/@children.1/@sourceConnections.0/@children.1" label="//@children.0/@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.0/@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="49,33" attachSource="true"/>
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="77,0"/>
+        <children xsi:type="editmodel:WireLabelEditModel" name="«includes»" size="53,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="editmodel:UseCaseEditModel" targetConnections="//@children.0/@children.1/@sourceConnections.0" location="82,211" size="147,33" description="" itemName="Mostrar Nodos de Prueba" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="279,108" size="147,33" description="" itemName="Actualizar Rutinas Prueba" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="350,54" size="134,33" description="" itemName="Realizar Mantenimiento" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="330,181" size="112,49" description="" itemName="Consultar Reportes" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="68,74" size="116,33" description="" itemName="Gestionar Servicios" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="198,19" size="99,33" description="" itemName="Consultar Alarmas" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="495,11" size="99,33" description="" itemName="Mostrar Ayudas" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+  </children>
+  <children xsi:type="editmodel:UseCaseActorEditModel" location="0,80" size="135,126" stereotype="" itemName="???????????????????"/>
+  <diagramOptions xsi:type="options:UseCaseDiagramOptions" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+</editmodel:UseCaseDiagramEditModel>

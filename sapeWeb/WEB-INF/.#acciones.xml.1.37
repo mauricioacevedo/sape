@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+	<index-page destiny="index.jsp" />
+	<!--index-page destiny="servlet/com.osp.sape.servlets.PruebaTelefonoServlet" /-->
+	<restricted-page destiny="/restrictedPage.jsp" />
+	<login-page destiny="/index.jsp" />
+	<default-rol value="visitante" /> 
+	<actions>
+		<action name="inicio" destiny="servlet/com.gc.acceso.InicioServlet" />
+		<action name="salir" destiny="servlet/com.gc.acceso.InicioServlet" />
+		<action name="pruebaTelefono" destiny="servlet/com.osp.sape.servlets.PruebaTelefonoServlet">
+		<role>1</role> <!-- operador -->
+		<role>2</role> <!-- administrador -->
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="mantenimiento" destiny="servlet/com.osp.sape.servlets.MantenimientoServlet">
+		<role>1</role> <!-- operador -->
+		<role>2</role> <!-- administrador -->
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="mantenimientoSiplexPro" destiny="servlet/com.osp.sape.servlets.mantenimiento.MantenimientoSiplexProServlet">
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="reportes" destiny="servlet/com.osp.sape.servlets.ReportesServlet">
+		<role>1</role> <!-- operador -->
+		<role>2</role> <!-- administrador -->
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="telefonosColas" destiny="servlet/com.osp.sape.servlets.ReportesColasServlet">
+		<role>1</role> <!-- operador -->
+		<role>2</role> <!-- administrador -->
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="indicadores" destiny="servlet/com.osp.sape.servlets.IndicadoresServlet">
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="indicadoresPorCentral" destiny="servlet/com.osp.sape.servlets.IndicadoresPorCentralServlet">
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="indicadoresPrimeraPrueba" destiny="servlet/com.osp.sape.servlets.indicadores.IndicadoresPrimeraPruebaServlet">
+		<role>3</role> <!-- supervisor -->
+		</action>
+
+		<action name="rutinas" destiny="servlet/com.osp.sape.servlets.RutinasServlet">
+		<role>1</role> 
+		<role>2</role> 
+		<role>3</role> 
+		</action>
+		<action name="rutinasArmario" destiny="servlet/com.osp.sape.servlets.rutinas.RutinasArmarioServlet">
+		<role>2</role> <!-- administrador -->
+		<role>3</role> <!-- supervisor -->
+		</action>
+		<action name="rutinasCable" destiny="servlet/com.osp.sape.servlets.rutinas.RutinasCableServlet">
+		<role>1</role> <!-- operador -->
+		<role>2</role> <!-- administrador -->
+		<role>3</role> <!-- supervisor -->
+		</action>
+	</actions>
+
+
+
+
+	<templates>
+		
+		<template name="loginError">/index.jsp</template>
+		<!--ReportesServlet -->
+		<template name="pruebaProgramada">/reportes/pruebaProgramada.jsp</template>
+		<template name="inicioReportes">/reportes/inicioReportes.jsp</template>
+		<template name="consultaPruebas">/reportes/consultaPruebas.jsp</template>
+		<template name="consultaRutinaPruebas">/reportes/consultaRutinaPruebas.jsp</template>
+		<template name="ventanaDetallesRutinaPruebas">/reportes/ventanaDetallesRutinaPruebas.jsp</template>
+		<template name="grafica/mostrarGrafica">/reportes/grafica/mostrarGrafica.jsp</template>
+		<template name="temporalReportes">/reportes/tmp/</template><!-- esta es la carpeta donde se guardan los reportes ke se generan en algun formato(xls, csv, pdf) -->
+		<template name="consultaTelefonosTSTLI">/reportes/consultaTelefonosTSTLI.jsp</template>
+		<template name="consultaEfectividadPrueba">/reportes/consultaEfectividadPrueba.jsp</template>
+		<template name="ventanaDetallesEfectividadPrueba">/reportes/ventanaDetallesEfectividadPrueba.jsp</template>
+		<template name="graficaEfectividadPruebas">/reportes/graficaEfectividadPruebas.jsp</template>
+		<template name="cprsTipoNodo">/reportes/cprsTipoNodo.jsp</template>
+		<template name="listaCabezasCentral">/reportes/listaCabezasCentral.jsp</template>
+
+		<!--PruebaTelefonoServlet -->
+		<template name="PruebaTelefono">/prueba_telefono/PruebaTelefono.jsp</template>
+		<template name="DetallePruebaBasica">/prueba_telefono/DetallePruebaBasica.jsp</template>
+		<template name="categorias">/prueba_telefono/categorias.jsp</template>
+		<template name="telnetInteractivas">/prueba_telefono/telnetInteractiva.jsp</template>
+		<template name="pruebasClip">/prueba_telefono/pruebaClip.jsp</template>
+		<template name="pruebaAtu">/prueba_telefono/pruebaAtu.jsp</template>
+
+		<!--MantenimientoServlet -->
+		<template name="evaluacionResultados">/mantenimiento/evaluacionResultados.jsp</template>
+		<template name="mantenimientoArmarios">/mantenimiento/mantenimientoArmarios.jsp</template>
+		<template name="pantallaProcesosSape">/mantenimiento/pantallaProcesosSape.jsp</template>
+		<template name="modificarProceso">/mantenimiento/modificarProceso.jsp</template>
+
+		<template name="MantenimientoGeneral">/mantenimiento/MantenimientoGeneral.jsp</template>
+		<template name="MantenimientoMensaje">/mantenimiento/MantenimientoMensaje.jsp</template>
+				
+		<template name="MantenimientoUsuarios">/mantenimiento/MantenimientoUsuarios.jsp</template>
+		<template name="MantenimientoNuevoUsuario">/mantenimiento/MantenimientoNuevoUsuario.jsp</template>
+		<template name="MantenimientoModificarUsuario">/mantenimiento/MantenimientoModificarUsuario.jsp</template>
+		<template name="MantenimientoModificarUsuarioNivel">/mantenimiento/MantenimientoModificarUsuarioNivel.jsp</template>
+		
+		<template name="MantenimientoTipoNodo">/mantenimiento/MantenimientoTipoNodo.jsp</template>
+		<template name="MantenimientoModificarTipoNodo">/mantenimiento/MantenimientoModificarTipoNodo.jsp</template>		
+		<template name="MantenimientoNuevoTipoNodo">/mantenimiento/MantenimientoNuevoTipoNodo.jsp</template>				
+		
+		<template name="MantenimientoSerie">/mantenimiento/MantenimientoSerie.jsp</template>
+		<template name="MantenimientoModificarSerie">/mantenimiento/MantenimientoModificarSerie.jsp</template>
+		<template name="MantenimientoNuevoSerie">/mantenimiento/MantenimientoNuevoSerie.jsp</template>						
+
+		<template name="MantenimientoCodigosVer">/mantenimiento/MantenimientoCodigosVer.jsp</template>
+		<template name="MantenimientoModificarCodigoVer">/mantenimiento/MantenimientoModificarCodigoVer.jsp</template>
+		<template name="MantenimientoNuevoCodigo">/mantenimiento/MantenimientoNuevoCodigo.jsp</template>
+							
+		<template name="MantenimientoPermitidos">/mantenimiento/MantenimientoPermitidos.jsp</template>
+		<template name="MantenimientoModificarPermitidos">/mantenimiento/MantenimientoModificarPermitidos.jsp</template>
+		<template name="MantenimientoNuevoPermitidos">/mantenimiento/MantenimientoNuevoPermitidos.jsp</template>		
+		
+		<template name="telnet">/mantenimiento/telnet.jsp</template>
+		<template name="MantenimientoBasedeDatos">/mantenimiento/MantenimientoBasedeDatos.jsp</template>
+		
+		<template name="MantenimientoCabezaPrueba">/mantenimiento/MantenimientoCabezaPrueba.jsp</template>
+		<template name="MantenimientoModificarCabezaPrueba">/mantenimiento/MantenimientoModificarCabezaPrueba.jsp</template>
+		<template name="MantenimientoNuevoCabezaPrueba">/mantenimiento/MantenimientoNuevoCabezaPrueba.jsp</template>		
+		<template name="umbralesSAPE">/mantenimiento/umbralesSAPE.jsp</template>
+		<template name="MantenimientoCprs">/mantenimiento/siplexpro/mantenimientoCprs.jsp</template>
+		<template name="mantenimientoSiplexPRO">/mantenimiento/siplexpro/mantenimientoSiplexPRO.jsp</template>
+		<template name="actualizarCPRSerie">/mantenimiento/siplexpro/actualizarCPRSerie.jsp</template>		
+		<template name="desbloqueoSiplexPRO">/mantenimiento/siplexpro/desbloqueoSiplexPRO.jsp</template>
+		<template name="contingenciaSiplexPRO">/mantenimiento/siplexpro/contingenciaSiplexPRO.jsp</template>
+		<!-- MantenimientoSiplexProServlet -->
+		<template name="matrizSiplexPro">/mantenimiento/siplexpro/matrizSiplexPro.jsp</template>
+		<template name="editarParMatriz">/mantenimiento/siplexpro/editarParMatriz.jsp</template>
+
+		<!--IndicadoresServlet -->
+		<template name="inicioIndicadores">/indicadores/inicioIndicadores.jsp</template>
+		<template name="inicioIndicadoresColas">/indicadores/inicioIndicadoresColas.jsp</template>
+		<template name="graficaTSTLI">/indicadores/graficaTSTLI.jsp</template>
+		<template name="mostrarIndicadorDoble">/indicadores/mostrarIndicadorDoble.jsp</template>
+		<template name="mantenimientoColas">/indicadores/mantenimientoColas.jsp</template>
+		<template name="agregarAlarma">/indicadores/AgregarAlarma.jsp</template>
+		<template name="agregarCola">/indicadores/AgregarCola.jsp</template>
+		<template name="mostrarAlarma">/indicadores/mostrarAlarma.jsp</template>
+		<template name="pruebasPorUsuario">/indicadores/pruebasPorUsuario.jsp</template>
+		<template name="estadisticoTelefonos">/indicadores/estadisticoTelefonos.jsp</template>
+		<template name="ventanaDetallesPorUsuario">/indicadores/ventanaDetallesPorUsuario.jsp</template>
+		<template name="estadisticoHoras">/indicadores/estadisticoHoras.jsp</template>
+		<template name="indicadoresCabezales">/indicadores/indicadoresCabezales.jsp</template>
+		<template name="estadisticoCodigosVer">/indicadores/estadisticoCodigosVer.jsp</template>
+		<template name="estadisticoPorCentral">/indicadores/estadisticoPorCentral.jsp</template>
+		<template name="detallesCentral">/indicadores/detallesCentral.jsp</template>
+		<template name="primeraPruebaTelefono">/indicadores/primeraPruebaTelefono.jsp</template>
+
+		<!--RutinasServlet -->
+		<template name="inicioRutinas">/rutinas/inicioRutinas.jsp</template>
+		<template name="inicioClientes">/rutinas/inicioClientes.jsp</template>
+		<template name="inicioCables">/rutinas/inicioCables.jsp</template>
+		<template name="inicioArmarios">/rutinas/inicioArmarios.jsp</template>
+		<template name="inicioColas">/rutinas/inicioColas.jsp</template>
+		<template name="pantallaRutinaClientes">/rutinas/pantallaRutinaClientes.jsp</template>
+		<template name="pantallaRutinaArmarios">/rutinas/pantallaRutinaArmarios.jsp</template>
+		<template name="pantallaRutinaCables">/rutinas/pantallaRutinaCables.jsp</template>
+		<template name="programacionClientes">/rutinas/programacionClientes.jsp</template>
+		<template name="programacionArmarios">/rutinas/programacionArmarios.jsp</template>
+		<template name="programacionCables">/rutinas/programacionCables.jsp</template>
+		<template name="programacionCableArmario">/rutinas/programacionCableArmario.jsp</template>
+		<template name="importeMasivos">/rutinas/importeMasivos.jsp</template>
+		<template name="resultadoImporteMasivos">/rutinas/resultadoImporteMasivos.jsp</template>
+		<template name="codigosFalla">/rutinas/codigosFalla.jsp</template>
+		<template name="nuevoCodigoFalla">/rutinas/nuevoCodigoFalla.jsp</template>
+		<template name="pantallaRutinaColas">/rutinas/pantallaRutinaColas.jsp</template>
+
+		<template name="ventanaConsultaPruebas">/reportes/ventanaConsultaPruebas.jsp</template>
+
+
+		<template name="error">/error/error.jsp</template>
+		<template name="msgGeneral">/msgGeneral/msgGeneral.jsp</template>
+	</templates>
+</application>

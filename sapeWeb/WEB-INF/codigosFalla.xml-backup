@@ -1,0 +1,521 @@
+<CodigosDeFalla>
+  <colas>
+	<!-- cola value=""><!-- Aqui en value colocamos el nombre de la cola!  
+		<codigo></codigo><!-- el codigo de Falla asociado a esta cola!!!
+	</cola-->
+	<cola value="ANALI">
+		<codigo>0000</codigo>
+	</cola>
+  </colas>
+
+  <codigosFalla>
+   <codigo>
+    <fallaId>0000</fallaId>
+    <nombre>Sin falla</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0200</fallaId>
+    <nombre>Sin Prueba</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0207</fallaId>
+    <nombre>Abierto</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0208</fallaId>
+    <nombre>Corto</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0201</fallaId>
+    <nombre>Cita con prioridad</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0202</fallaId>
+    <nombre>Ver Observaciones y Comentarios</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0203</fallaId>
+    <nombre>Aparato de ellos</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0204</fallaId>
+    <nombre>Revisar el aparato</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0205</fallaId>
+    <nombre>Ganancia de Pares o revisar Portadora</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0206</fallaId>
+    <nombre>Revisar en la central</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0209</fallaId>
+    <nombre>Tierra</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0210</fallaId>
+    <nombre>Cruzamiento</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0211</fallaId>
+    <nombre>Bajo Aislamiento</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0212</fallaId>
+    <nombre>Diafonía</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0213</fallaId>
+    <nombre>Corriente alterna</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0214</fallaId>
+    <nombre>Ruido</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0215</fallaId>
+    <nombre>Inducción con otros teléfonos</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0216</fallaId>
+    <nombre>Emisora</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0217</fallaId>
+    <nombre>Invertido con otro teléfono</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0218</fallaId>
+    <nombre>A x B</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0219</fallaId>
+    <nombre>Inversión de hilos</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0220</fallaId>
+    <nombre>Poste en mal estado</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0221</fallaId>
+    <nombre>Armario en mal estado</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0222</fallaId>
+    <nombre>Organizar líneas de acometida</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0223</fallaId>
+    <nombre>Organizar cable</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0224</fallaId>
+    <nombre>Rotular par</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0225</fallaId>
+    <nombre>Verificar dirección / Red</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0226</fallaId>
+    <nombre>Traslado ilegal</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0227</fallaId>
+    <nombre>Intermitente</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0228</fallaId>
+    <nombre>Aislado / Bloqueado</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0229</fallaId>
+    <nombre>Alcancia</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0230</fallaId>
+    <nombre>Falla en fuente / nte</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0231</fallaId>
+    <nombre>Pendiente por llaves</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0232</fallaId>
+    <nombre>Sin nivel</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0233</fallaId>
+    <nombre>Error de Bits</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0234</fallaId>
+    <nombre>Programación OMCR</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0235</fallaId>
+    <nombre>Puerta Abierta ( Públicos )..</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0236</fallaId>
+    <nombre>Receptora ( Públicos )</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0237</fallaId>
+    <nombre>Vandalismo</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0238</fallaId>
+    <nombre>Larga Distancia ( Públicos )</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0239</fallaId>
+    <nombre>Boquilla Obstruída ( Públicos )</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0240</fallaId>
+    <nombre>Falla en equipos del cliente</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0241</fallaId>
+    <nombre>Falla en red interna (MN)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0242</fallaId>
+    <nombre>Corte de Energía</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0243</fallaId>
+    <nombre>Falla a nivel de pares (MN)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0244</fallaId>
+    <nombre>Falla en el cableado de MN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0245</fallaId>
+    <nombre>Modem remoto sin gestión (MN)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0246</fallaId>
+    <nombre>Modem RMT desconfigurado (MN)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0247</fallaId>
+    <nombre>Caídas en el enlace x MN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0248</fallaId>
+    <nombre>Falla generada por EPM no MN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0249</fallaId>
+    <nombre>Falla técnica por terceros</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0250</fallaId>
+    <nombre>Mantenimiento de puertos vs cliente</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0251</fallaId>
+    <nombre>Falla a nivel de protocolo</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0252</fallaId>
+    <nombre>Otras MN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0253</fallaId>
+    <nombre>Problemas de Internet</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0254</fallaId>
+    <nombre>Sin tono en el Distribuidor</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0255</fallaId>
+    <nombre>Revisar Linea Interna</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0257</fallaId>
+    <nombre>Bueno en Nodos, Mal para la red</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0258</fallaId>
+    <nombre>Instalación/Cambio NO completo</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0259</fallaId>
+    <nombre>Desbalanceo capacitivo</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0260</fallaId>
+    <nombre>Equipo Apagado (Radio)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0261</fallaId>
+    <nombre>Falla de Energia (Radio)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0262</fallaId>
+    <nombre>Falla de Fuente (Radio)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>1085</fallaId>
+    <nombre>Cuenta no existe</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>1086</fallaId>
+    <nombre>Categoría No Autorizada</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>1087</fallaId>
+    <nombre>Cuenta y Clave Incorrecta</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>1088</fallaId>
+    <nombre>Número Bloqueado</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>1089</fallaId>
+    <nombre>No marca ningún dígito</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T133</fallaId>
+    <nombre>Reconfiguracion de CPE WIFI</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T144</fallaId>
+    <nombre>Negociacion de la interfaz Ethernet con los switches y conce</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T145</fallaId>
+    <nombre>Problemas de asociacion entre Access Point y Repetidores</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T146</fallaId>
+    <nombre>Consumo del enlace por encima del CIR</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T147</fallaId>
+    <nombre>Direcciones IP duplicadas</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T148</fallaId>
+    <nombre>Rutas de Destinos no configuradas</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T149</fallaId>
+    <nombre>Configuracion del CPE</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T150</fallaId>
+    <nombre>Problemas de sincronismo en los equipos</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T151</fallaId>
+    <nombre>Politicas de restriccion de trafico</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T152</fallaId>
+    <nombre>Daño fisico del CPE o Router</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T153</fallaId>
+    <nombre>Congestion de la red por colisiones y errores de redundancia</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T154</fallaId>
+    <nombre>Problemas en el establecimiento del tunel</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T167</fallaId>
+    <nombre>Cambio de parametros en la configuracion</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T168</fallaId>
+    <nombre>Falla de puerto en CPE</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T169</fallaId>
+    <nombre>Averia en cable de conexion entre CPE y patchpanel</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T170</fallaId>
+    <nombre>Falla en tarjeta de CPE</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T171</fallaId>
+    <nombre>Reconfiguración CPE</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T172</fallaId>
+    <nombre>Problema de Cableado de Red</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T173</fallaId>
+    <nombre>Averia en el rectificador</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T174</fallaId>
+    <nombre>Falla en baterias de respaldo</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T175</fallaId>
+    <nombre>Averia en red de fibra optica</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I229</fallaId>
+    <nombre>Bloqueo de Equipos</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I230</fallaId>
+    <nombre>Virus en la red Cliente</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I231</fallaId>
+    <nombre>Exceso de Trafico</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T177</fallaId>
+    <nombre>Requiere Cambio de CPE</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T178</fallaId>
+    <nombre>Reset al CPE</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T179</fallaId>
+    <nombre>Bloqueo CPE</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I919</fallaId>
+    <nombre>El equipo de cliente no se registra</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I920</fallaId>
+    <nombre>Problemas de login y password</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I921</fallaId>
+    <nombre>Problemas con la administración delegada</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I922</fallaId>
+    <nombre>problemas con la administración de usuarios</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I923</fallaId>
+    <nombre>Enrutamiento errado de llamadas</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I924</fallaId>
+    <nombre>Problemas en las llamadas a la PSTN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I925</fallaId>
+    <nombre>Problemas con el correo de voz</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I926</fallaId>
+    <nombre>Problemas con los servicios especiales</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I927</fallaId>
+    <nombre>Problemas en la marcación abreviada</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I928</fallaId>
+    <nombre>Inconsistencias en los reportes de consumos</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I929</fallaId>
+    <nombre>Problemas en la asignación de categorías</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I930</fallaId>
+    <nombre>Problemas con las llamadas entrantes y salientes a la PSTN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I931</fallaId>
+    <nombre>Mala identificación del número del abonado</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I932</fallaId>
+    <nombre>Problemas eléctricos del HardPhone o ATA</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I933</fallaId>
+    <nombre>Desconfiguración del HardPhone o ATA</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I934</fallaId>
+    <nombre>El HardPhone o ATA no indica conexión a la red</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I935</fallaId>
+    <nombre>Problemas en los servicios asociados al HardPhone</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I936</fallaId>
+    <nombre>Problemas en el ancho de banda del enlace WAN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I937</fallaId>
+    <nombre>Problemas en la calidad del servicio en la LAN</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I938</fallaId>
+    <nombre>Problemas en la multimedia del cliente</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I939</fallaId>
+    <nombre>Exceso en la cantidad de llamadas permitidas</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I940</fallaId>
+    <nombre>Problemas de interferencia</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>T134</fallaId>
+    <nombre>Cambio modem WIFI</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0263</fallaId>
+    <nombre>Robo de equipo</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>0264</fallaId>
+    <nombre>Problemas en el identificador (nodos)</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I201</fallaId>
+    <nombre>Correo Desconfigurado</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I202</fallaId>
+    <nombre>Software de Correo</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I203</fallaId>
+    <nombre>Software de Navegación</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I204</fallaId>
+    <nombre>Problemas de Servicio</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I205</fallaId>
+    <nombre>Problemas del cliente</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I206</fallaId>
+    <nombre>Web de mail hosting</nombre>
+   </codigo>
+   <codigo>
+    <fallaId>I207</fallaId>
+    <nombre>Ruido en la línea</nombre>
+   </codigo>
+  </codigosFalla>
+</CodigosDeFalla>

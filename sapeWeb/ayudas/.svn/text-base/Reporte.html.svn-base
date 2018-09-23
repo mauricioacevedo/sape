@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<p class="style1">Se observa la pantalla de Reportes, que consta de un men&uacute; de opciones,  el cual permite hacer un an&aacute;lisis sobre el comportamiento de SAPE y estas se  encuentran definidas as&iacute;:</p>
+<ol>
+<ul class="style1">
+  <li><strong><em>Consulta de Tel&eacute;fonos en  TSTLI:</em></strong> muestra todas  las l&iacute;neas telef&oacute;nicas que han sido recibidas por TSTLI y la cola a la cual han  sido enrutadas.</li>
+  <li><strong><em>Consulta de Pruebas:</em></strong> Muestra todas las pruebas el&eacute;ctricas que  se han ejecutado en el sistemas.</li>
+  <li><strong><em>Efectividad de la Prueba:</em></strong> Contabiliza todas las pruebas el&eacute;ctricas que se han ejecutado en el  sistema en las diferentes cabezas a petici&oacute;n de un usuario. </li>
+  <li><strong><em>Rutina de Pruebas por  Evento:</em></strong> Muestra el reporte de las pruebas el&eacute;ctricas  programadas, clasificadas por armario, cable o cliente. </li>
+  <li><strong><em>Pruebas Programadas:</em></strong> Muestra los reportes de las rutinas que  fueron programadas, con excepci&oacute;n de la opci&oacute;n anterior aqu&iacute; se consulta  espec&iacute;ficamente cierta pruebas. </li>
+</ul>
+</body>
+</html>

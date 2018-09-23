@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style2 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; }
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FF5900;
+	font-weight: bold;
+}
+.style5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #ff6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #ff6600 }
+ a:hover {color:#000000}
+.style6 {color: #666666}
+.style7 {
+	color: #0000FF;
+	font-weight: bold;
+}
+.style8 {color: #333333}
+.style9 {
+	font-size: 12px;
+	color: #333333;
+}
+.style10 {font-size: 12px}
+</style>
+
+</head>
+
+<body>
+<p align="left" class="style3">RESULTADO DE LA PRUEBA ELECTRICA </p>
+<p class="style2">&nbsp;</p>
+<p class="style2 style6"><span class="style8">Si requiere una descripci&oacute;n m&aacute;s detallada de los resultados  obtenidos en la prueba, haga Click en</span> <span class="style7">&ldquo;Prueba  Terminada&rdquo;</span> <span class="style8">y se abre una nueva ventana con lo siguiente.</span></p>
+<p class="style2 style8">En los resultados se encuentra discriminada la  siguiente informaci&oacute;n:</p>
+<ol start="1" type="1" class="style2 style8">
+  <li><strong><em>Informaci&oacute;n       de la Prueba</em></strong><strong><em>:</em></strong> La conforman los dos primeros renglones, all&iacute; se encuentra lo siguiente:</li>
+     <ul type="disc">
+       <li><strong>Prueba        N&uacute;mero: </strong>N&uacute;mero asignado por SAPE para        cada una de las pruebas que se realicen a trav&eacute;s de el. Este numero es        &uacute;nico e irrepetible</li>
+       <li><strong>Tel&eacute;fono:</strong> El n&uacute;mero telef&oacute;nico al que se le realizo la prueba.</li>
+       <li><strong>Usuario:</strong> El usuario que ejecuto la prueba.</li>
+       <li><strong>Tipo        Prueba:</strong> El tipo de prueba que se realizo        en la prueba.</li>
+       <li><strong>Repique:</strong> Esta opci&oacute;n no esta habilitada (ND - No disponible). Con ella se detectan        aparatos telef&oacute;nicos al final de las l&iacute;neas telef&oacute;nicas.</li>
+       <li><strong>Fecha:</strong> La fecha y la hora en que se ejecuto la prueba.</li>
+       <li><strong>Duraci&oacute;n:</strong> El tiempo que tardo la ejecuci&oacute;n de la prueba.</li>
+       <li><strong>Central:</strong> Nombre de la central telef&oacute;nica a la que pertenece la l&iacute;nea telef&oacute;nica.</li>
+       <li><strong>Tecnolog&iacute;a:</strong> Equipo de prueba empleado en la central telef&oacute;nica para la p<span class="style10">rueba de las        l&iacute;neas telef<span class="style1  style8">&oacute;nicas.</span></span></li>
+     </ul>
+     <p>&nbsp;</p>
+</ol>
+<ol start="2" type="1" class="style1 style9">
+  <li><strong><em>Valores       el&eacute;ctricos de la prueba:</em></strong> Son los resultados el&eacute;ctricos de la prueba representados en la       intersecci&oacute;n de las filas y las columnas. Las filas representan los       valores de los hilos A&ndash;T, B&ndash;T, A&ndash;B, y las columnas representan los valores       de voltajes, resistencia, capacitancia, aislamiento, ruido, seg&uacute;n el tipo       de prueba que se ejecute. Los valores son:</li>
+</ol>
+<ul class="style1 style9">
+  <li><strong>VAC:</strong> Lectura de voltaje de Corriente Alterna en Voltios para cada uno de los hilos  (A-T, B-T, A-B).</li>
+  <li><strong>VDC:</strong> Lectura de voltaje de Corriente Directa en Voltios para cada uno de los hilos  (A-T, B-T, A-B).</li>
+  <li><strong>RES:</strong> Lectura de la resistencia de aislamiento en MegaOhmios para cada uno de los hilos  (A-T, B-T, A-B).</li>
+  <li><strong>CAP:</strong> Lectura de capacitancia en nanoFaradios para cada uno de los hilos (A-T, B-T,  A-B).</li>
+  <li><strong>FREC:</strong> Lectura de la frecuencia de VAC en Hertzios para cada uno de los hilos (A-T,  B-T, A-B).</li>
+  <li><strong>CAP  TOTAL:</strong> Lectura de la capacitancia total para cada uno de los hilos  (A-T, B-T, A-B), en ella se mide la impedancia del aparato telef&oacute;nico que se  encuentra al final de la l&iacute;nea.</li>
+  <li><strong>IAC:</strong> Lectura de corriente en miliAmperios para los hilos A-B, este valor es dado  cuando los valores de VAC son grandes y por lo tanto se puede determinar el  valor de la corriente en el par.</li>
+  <li><strong>IDC:</strong> Lectura de corriente en miliAmperios para los hilos A-B, este valor es dado  cuando los valores de VDC son grandes y por lo tanto se puede determinar el  valor de la corriente en el par</li>
+  <li><strong>FREC:</strong> Lectura de la frecuencia de IAC para los hilos A-B en Hertzios.</li>
+  <li><strong>Distancia:</strong> Es la distancia en metros de la linea entre el cliente y el MDF y se obtiene de  la conversi&oacute;n de las capacitancias en la misma (52 nf por Kil&oacute;metro  aproximadamente).</li>
+  <li><strong>C&oacute;digo  Ver:</strong> Es un c&oacute;digo asignado a cada uno de los posibles resultados  que SAPE puede dar al realizar una prueba el&eacute;ctrica a una l&iacute;nea telef&oacute;nica.  Este puede ser num&eacute;rico, o alfanum&eacute;rico.</li>
+</ul>
+<p class="style1 style9">&nbsp;</p>
+<ol start="3" type="1" class="style1 style9">
+  <li><strong><em>Descripci&oacute;n       de la prueba:</em></strong> Aqu&iacute; se encuentra el diagn&oacute;stico de la prueba, uno es para la prueba       f&iacute;sica del par y el otro es la capacidad en velocidad del par. Se       encuentra de la siguiente manera: </li>
+</ol>
+<ol start="3" type="1" class="style1 style9">
+  <ul type="disc">
+    <li><strong>Descripci&oacute;n 1:</strong> Es la definici&oacute;n del c&oacute;digo        ver que dio como resultado en la prueba el&eacute;ctrica. </li>
+    <li><span class="style1 style9"><strong>Descripci&oacute;n 2:</strong> La  capacidad en velocidad que tiene el par para los servicios Xhdsl.</span></li>
+  </ul>
+  <p>&nbsp;</p>
+</ol>
+<p align="center" class="style5">
+<a href="Prueba.html">Prueba</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="Indice.html">Indice</a></p>
+<p class="style1">&nbsp;</p>
+</body>
+ 
+</html>

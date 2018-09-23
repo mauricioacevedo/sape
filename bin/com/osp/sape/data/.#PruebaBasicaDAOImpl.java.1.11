@@ -1,0 +1,420 @@
+/*
+ * Created on Apr 14, 2005
+ */
+package com.osp.sape.data;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.MappingException;
+import net.sf.hibernate.Session;
+import net.sf.hibernate.Transaction;
+import net.sf.hibernate.cfg.Configuration;
+
+import com.osp.sape.Exceptions.SapeDataException;
+import com.osp.sape.maestros.PruebaBasica;
+
+/**
+ * 
+ * @author Andres Aristizabal
+ */
+public class PruebaBasicaDAOImpl extends HibernateObject implements
+        PruebaBasicaDAO {
+
+    private org.apache.log4j.Logger logs;
+    
+    public PruebaBasicaDAOImpl() {
+        logs = org.apache.log4j.Logger.getLogger(getClass());
+    }
+    
+    protected Configuration getConfiguration() throws MappingException {
+        if (configuration == null) {
+            configuration = new Configuration();
+            try {
+                configuration.configure();
+            } catch (HibernateException e) {
+                logs.error(e);
+            }
+        }
+        return configuration;
+    }
+
+
+    public PruebaBasica getPruebaBasica(long id) throws SapeDataException {
+    	PruebaBasica retorno = null;
+        try {
+            retorno = (PruebaBasica) cargarObjeto(PruebaBasica.class, new Long(id));
+        } catch (HibernateException e) {
+        	throw new SapeDataException(e);
+        }
+        return retorno;        
+    }
+
+    public List getAllPruebaBasica() throws SapeDataException {
+        
+    	Session session = null;
+        List l = new ArrayList();
+    	Exception exception = null;
+    	try{
+            session= getSession();
+            l = session.find("from PruebaBasica p order by p.id");
+            session.flush();
+            session.close();
+	    }catch(HibernateException e){
+	        exception =e;
+	    }finally{
+        	try{
+        		if(session != null) session.close();
+        	}catch(HibernateException e){
+        		exception=e;
+        	}
+        }
+	    
+	    if(exception != null) throw new SapeDataException(exception);
+        return l;
+    }
+    
+    public String getGrafica(long ticket) throws SapeDataException{
+        if (logs.isDebugEnabled()) logs.debug("getGrafica: " + ticket);
+        
+        String ret=null;
+        Session session = null;
+        Exception exception = null;
+        try{
+            session= getSession();
+            Statement st= session.connection().createStatement();
+            
+            st.execute("select * from prueba_extendida where id='"+ticket+"'");
+            
+            ResultSet rs=st.getResultSet();
+
+            if (rs.next()) {
+                ret= rs.getString(2);
+            }
+            session.close();
+        }catch(HibernateException e){
+            exception =e;
+        } catch (SQLException e) {
+        	exception =e;
+        } finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+            	exception =e;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return ret;
+    }
+    
+    public List getEstadisticoTelefonos(String tel, String fIni, String fFin) throws SapeDataException{
+    	
+        if (logs.isDebugEnabled()) logs.debug("getEstadisticoTelefonos: tel=" + tel+", fIni="+fIni+", fFin="+fFin );
+        
+        List total = new ArrayList(), tmp = null;
+        Session session = null;
+        Exception exception = null;
+        Statement st = null;
+        
+        Transaction tx = null;
+        try {
+            session= getSession();
+            st= session.connection().createStatement();
+        	tx = session.beginTransaction();
+        	st.execute("drop table tmpSAPE");
+        	tx.commit();
+        } catch (SQLException e) {
+        	try {
+				tx.rollback();
+			} catch (HibernateException e1) {
+				logs.error(e);
+			}
+        } catch (HibernateException e) {
+        	logs.error(e);
+        	exception = e;
+        } finally {
+        	try{
+        		if(session != null) session.close();
+        	}catch (HibernateException e) {
+				exception = e;
+			}
+        }
+        if(exception != null) throw new SapeDataException(exception);
+ 
+        
+        exception = null;
+        
+        try{
+            
+            String sqlTemp = "select p.idprueba_basica,e.fecha_inicial,p.codv,e.cliente,"+
+            "e.estado into temp tmpSAPE from eventossape e,prueba_basica p where "+
+            "e.ideventossape = p.idprueba_basica and e.telefono = '"+tel+"' "+
+            "and e.fecha_inicial between '"+fIni+" 00:00:00' and '"+fFin+" 23:59:59'";
+            
+            if(logs.isDebugEnabled()) logs.debug("SQL TABLA TEMP: \n"+sqlTemp);
+            
+            st.execute(sqlTemp);
+            
+            String sql = "select count(*),p.codv,(select clasificacion from codigosver where codigover = p.codv) "+
+            			" from tmpSAPE p group by p.codv order by p.codv ASC";
+            
+            /*String sql = "select count(*),p.codv,"+
+            	"(select clasificacion from codigosver where codigover = p.codv)"+
+            	" from eventossape e,prueba_basica p where e.ideventossape = p.idprueba_basica and "+
+            	" e.telefono = '"+tel+"' and e.fecha_inicial between"+
+            	" '"+fIni+" 00:00:00' and '"+fFin+" 23:59:59' group by p.codv order by p.codv ASC";*/
+            
+            if(logs.isDebugEnabled()) logs.debug("Lista de codsv: \n"+sql);
+            
+            ResultSet rs=st.executeQuery(sql);
+            
+            tmp = new ArrayList();
+            int i = 0;
+            String data[] = null;
+            
+            while(rs.next()){
+            	
+            	data = new String[3];
+            	data[0] = rs.getString(1);
+            	data[1] = rs.getString(2);
+            	data[2] = rs.getString(3);
+            	
+            	tmp.add(i,data);
+            	i++;
+            }
+            // en la primera pos. esta la relacion de codigos ver!!!!!
+            total.add(0,tmp);
+            
+//            sql = " select count(*),p.estado from prueba_basica p, eventossape e"+
+//            	" where e.ideventossape = p.idprueba_basica and e.telefono = '"+tel+"'"+
+//            	" and  e.fecha_inicial between '"+fIni+" 00:00:00' and '"+fFin+" 23:59:59' "+
+//            	" group by p.estado";
+            
+            sql = "select count(estado),estado from tmpSAPE group by estado";
+            
+            /*sql = " select count(estado), e.estado from eventossape e"+
+        	" where e.telefono = '"+tel+"'"+
+        	" and  e.fecha_inicial between '"+fIni+" 00:00:00' and '"+fFin+" 23:59:59' "+
+        	" group by e.estado";*/
+            
+            if(logs.isDebugEnabled()) logs.debug("Relacion de estados: \n"+sql);
+            
+            rs=st.executeQuery(sql);
+            //TODO falta asignar los valores a un vector y mandar al jsp estadisticoTelefonos.jsp
+            
+            tmp = new ArrayList();
+            
+            i = 0;
+            while (rs.next()) {
+            	
+            	data = new String[2];
+            	data[0] = rs.getString(1);//pocision 1: count.
+            	String estado = rs.getString(2);//pocision 2: estado. 
+            		//Reemplazo el estado por la palabra completa.
+//            	System.out.println("ESTADO: " + estado);
+            	if (estado.equals("E")) { 
+            		estado = "EXITO";
+            	} else if (estado.equals("F")) {
+            		estado = "FALLO";
+            	} else if (estado.equals("A")) {
+            		estado = "ADVERTENCIA";
+            	} else {
+            		estado = "INESPERADO";	
+            	}
+            	data[1] = estado;
+            	tmp.add(i,data);
+            	i++;
+            }
+            total.add(1,tmp);
+            
+            
+            sql = "select count(*),cliente,estado from tmpSAPE group by cliente,estado "+
+            	  "order by cliente ASC";
+            
+            /*           
+            sql = "select count(*),e.cliente,e.estado from eventossape e,prueba_basica p "+
+            "where e.ideventossape = p.idprueba_basica and e.telefono = '"+tel+"' "+
+            "and e.fecha_inicial between '"+fIni+" 00:00:00' and '"+fFin+" 23:59:59' "+
+            "group by e.cliente,e.estado order by e.cliente ASC;";*/
+
+            if(logs.isDebugEnabled()) logs.debug("Relacion de clientes: \n"+sql);
+            rs=st.executeQuery(sql);
+            
+            tmp = new ArrayList();
+            
+            i = 0;
+            while (rs.next()) {
+            	
+            	data = new String[3];
+            	data[0] = rs.getString(1);//pocision 1: count.
+            	data[1] = rs.getString(2);//pocision 2: cliente.
+            	data[2] = rs.getString(3);//pocision 3: estado.
+            	tmp.add(i,data);
+            	i++;
+            }
+            total.add(2,tmp);
+            
+            sql = "select idprueba_basica,fecha_inicial,codv from tmpSAPE "+
+            	  "order by fecha_inicial ASC";
+            /*
+            sql = "select p.idprueba_basica,e.fecha_inicial,p.codv from eventossape e,prueba_basica p "+
+            "where e.ideventossape = p.idprueba_basica and e.telefono = '"+tel+"' "+
+            "and e.fecha_inicial between '"+fIni+" 00:00:00' and '"+fFin+" 23:59:59' "+
+            "order by e.fecha_inicial ASC";*/
+
+            if(logs.isDebugEnabled()) logs.debug("Primera prueba y ultima: \n"+sql);
+            rs=st.executeQuery(sql);
+            
+            tmp = new ArrayList();
+            
+            i = 0;
+            Object data1[] = null; 
+            while (rs.next()) {
+            	
+            	data1 = new Object[3];
+            	data1[0] = rs.getString(1);//pocision 1: idPruebaBasica.
+            	
+            	data1[1] = rs.getString(3);//pocision 3: codv.
+            	
+            	data1[2] = rs.getTimestamp(2);//pocision 2: Fecha.
+            	if(i == 0){
+            		tmp.add(0,data1);
+            		data1 = null;
+            	}
+            	i++;
+            }
+            
+            if(i ==0){//no habian registros para este telefono.
+                total.add(3,null);
+            }else{
+                tmp.add(1,data1);
+                total.add(3,tmp);
+            }
+            
+
+            
+            session.close();
+        }catch(HibernateException e){
+            exception =e;
+        } catch (SQLException e) {
+        	exception =e;
+        } finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+            	exception =e;
+            }
+        }
+        if(exception != null) throw new SapeDataException(exception);
+        return total;
+    	
+    }
+    
+    public List getEstadisticoPorCodv(String fIni, String fFin) throws SapeDataException{
+    	
+    	boolean logEnabled = logs.isDebugEnabled();
+    	
+    	if(logEnabled) logs.debug("getEstadisticoPorCodv: fIni=["+fIni+"], fFin=["+fFin+"]");
+    	
+		Exception exception = null;
+		Session session = null;
+        Statement st = null;
+        Transaction tx = null;
+        List total = new ArrayList();
+        
+        
+        
+        try {
+			session = getSession();
+			
+			st = session.connection().createStatement();
+			
+			try{
+				tx = session.beginTransaction();
+				st.execute("drop table eventossapeTemporal");
+				tx.commit();
+			}catch(SQLException e){
+				tx.rollback();
+			}
+			
+			String sql = "";
+			
+			sql = "select ideventossape as id into temp eventossapeTemporal"+
+			" from eventossape where fecha_inicial between '"+fIni+"'"+
+			" and '"+fFin+"'";
+			
+			if(logEnabled) logs.debug("SQL1: \n"+sql);
+			
+			st.execute(sql);
+			
+			sql = "select codv, (select clasificacion from codigosver where codigover = codv),count(*)"+
+			" from prueba_basica where idprueba_basica in (select id from eventossapeTemporal) group by codv order by codv";
+			
+			if(logEnabled) logs.debug("SQL2: \n"+sql);
+			
+			ResultSet rs = st.executeQuery(sql);
+			String data[] = null;
+			int i =0;
+			
+			while(rs.next()){
+				data = new String[3];
+				data[0] = rs.getString(1);// codigover
+				data[1] = rs.getString(2);//descripcion del codigover
+				data[2] = rs.getString(3);// cantidad
+				total.add(i,data);
+				i++;
+			}
+			
+			
+		} catch (HibernateException e) {
+			exception = e;
+		} catch (SQLException e) {
+			exception = e;
+		} finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            	exception =e;
+            }
+		}
+        
+		if(exception != null) throw new SapeDataException(exception);
+        return total;
+    }
+    
+    public List getEstadosCentral(String fechaIni, String fechaFin) throws SapeDataException {
+    	if (logs.isDebugEnabled()) logs.debug("getEstadosCentral");
+    	Exception exception = null;
+    	Session session = null;
+    	List retorno = null;
+		try {
+			session = getSession();
+			retorno = session.createQuery("select new com.osp.sape.indicadores.ViewEstadosCentral ( " +
+					"e.central, e.estado, count(e) ) " +
+					"from EventoSape e " +
+					"where e.fechaInicial between '" + fechaIni + " 00:00:00' and '" + fechaFin + " 23:59:59' " +
+					"group by e.central, e.estado order by e.central").list();
+			session.flush();
+		} catch (HibernateException e) {
+			logs.error(e);
+			exception = e;
+		} finally {
+            try {
+                if (session != null) session.close();
+            } catch (HibernateException e) {
+            	logs.error(e);
+            	exception =e;
+            }
+		}
+		if (exception != null) {
+			throw new SapeDataException(exception);
+		}
+    	return retorno;
+    }
+    
+}

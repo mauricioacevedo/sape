@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.EventoSape"
+        table="eventossape"
+    >
+
+        <id
+            name="id"
+            column="ideventossape"
+            type="long"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">ideventossape</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-EventoSape.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="cliente"
+            type="string"
+            update="true"
+            insert="true"
+            column="cliente"
+        />
+
+        <property
+            name="ip"
+            type="string"
+            update="true"
+            insert="true"
+            column="ip"
+        />
+
+        <property
+            name="telefono"
+            type="string"
+            update="true"
+            insert="true"
+            column="telefono"
+        />
+
+        <property
+            name="tipoPrueba"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipoprueba"
+        />
+
+        <property
+            name="site"
+            type="string"
+            update="true"
+            insert="true"
+            column="site"
+        />
+
+        <property
+            name="fechaInicial"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fecha_inicial"
+        />
+
+        <property
+            name="fechaFinal"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fecha_final"
+        />
+
+        <property
+            name="central"
+            type="string"
+            update="true"
+            insert="true"
+            column="central"
+        />
+
+        <property
+            name="estado"
+            type="string"
+            update="true"
+            insert="true"
+            column="estado"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-EventoSape.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

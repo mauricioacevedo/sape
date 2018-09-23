@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:UseCaseDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="SapeMantenimiento" metadata="nsuml-1.4" initialized="true" tag="10" key="32303034303833312073617065">
+  <children xsi:type="editmodel:SystemEditModel" location="135,65" size="531,271" itemName="Realizar Mantenimiento">
+    <children xsi:type="editmodel:UseCaseEditModel" location="85,74" size="99,33" description="" itemName="Usuarios" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="330,122" size="99,33" description="" itemName="Umbrales" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank="">
+      <sourceConnections xsi:type="editmodel:IncludesEditModel" source="//@children.0/@children.1" target="//@children.0/@children.8" targetEnd="//@children.0/@children.1/@sourceConnections.0/@children.1" label="//@children.0/@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.0/@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="30,0" attachSource="true"/>
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="68,33"/>
+        <children xsi:type="editmodel:WireLabelEditModel" name="«includes»" size="53,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="editmodel:UseCaseEditModel" location="96,209" size="99,33" description="" itemName="Tipo de Nodos" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="234,192" size="99,33" description="" itemName="Base de datos" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="356,198" size="99,33" description="" itemName="Series Numericas" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="205,97" size="99,33" description="" itemName="Clase de nodos" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="419,41" size="99,33" description="" itemName="Codigos Ver" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="40,139" size="99,33" description="" itemName="Ips permitidos" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" targetConnections="//@children.0/@children.1/@sourceConnections.0" location="292,22" size="99,33" description="" itemName="Conectar Telnet" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+  </children>
+  <diagramOptions xsi:type="options:UseCaseDiagramOptions" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+</editmodel:UseCaseDiagramEditModel>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+.style3 {
+	font-size: 14px;
+	color: #FF5900;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #ff6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #ff6600 }
+ a:hover {color:#000000}
+.style5 {color: #333333}
+.style6 {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.style7 {
+	color: #ff6600;
+	font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+<p class="style3">INDICE</p>
+<p class="style1">&nbsp;</p>
+<p class="style4">PRUEBA TELEFONICA </p>
+<ol class="style1">
+  <li>Realizaci&oacute;n de una &quot;<a href="Prueba.html">Prueba Telef&oacute;nica</a>&quot;.</li>
+  <li>Realizaci&oacute;n de una &quot;<a href="Clip.html">Prueba Clip</a>&quot;.</li>
+  <li>Realizaci&oacute;n de una &quot;<a href="PBX.html">Prueba PBX</a>&quot;.</li>
+  <li>Explicaci&oacute;n de las diferentes <a href="tipoPruebas.html">tipos de pruebas</a> realizadas por SAPE . </li>
+</ol>
+<p class="style4">RUTINA</p>
+<ol class="style1">
+  <li>Programar un &quot;<a href="Rarmario.html">Armario</a>&quot;.</li>
+  <li>Programar un &quot;<a href="Rcable.html">Cable</a>&quot;.</li>
+  <li>Programar &quot;<a href="Rcliente.html">Cliente</a>&quot;.</li>
+  <li>Programar &quot;Colas&quot;.</li>
+</ol>
+<p class="style4">MANTENIMIENTO</p>
+<ol class="style1">
+  <li>&quot;<a href="Usuario.html">Usuario</a>&quot;.</li>
+  <li>&quot;<a href="Procesosautomaticos.html">Procesos Autom&aacute;ticos</a>&quot;.</li>
+  <li>&quot;<a href="Tiponodo.html">Tipo de Nodos</a>&quot;.</li>
+  <li>&quot;<a href="Base.html">Base de Datos</a>&quot;.</li>
+  <li>&quot;<a href="Serie.html">Series Num&eacute;ricas</a>&quot;.</li>
+  <li>&quot;<a href="ClaseNodo.html">Clase de Nodos</a>&quot;.</li>
+  <li>&quot;<a href="CodigoVer.html">C&oacute;digo Ver</a>&quot;.</li>
+  <li>&quot;<span class="style7"><a href="Evaluacion.html">Evaluaci&oacute;n de Resultados</a></span>&quot; </li>
+  <li>&quot;<a href="Ip.html">IP's Permitidos</a>&quot;.</li>
+  <li>&quot;<a href="Mantenimiento.html">Manteminiento SiplexPRO</a>&quot;.</li>
+  <li>&quot;<a href="Armario.html">Armarios</a>&quot;.</li>
+  <li>&quot;<a href="Umbrales.html">Umbrales</a>&quot;.</li>
+</ol>
+<p class="style4">REPORTE</p>
+<ol class="style1">
+  <li>&quot;<a href="Tstli.html">Consulta de tel&eacute;fono en TSTLI</a>&quot;.</li>
+  <li>&quot;<a href="Consultaprueba.html">Consulta de Pruebas</a>&quot;.</li>
+  <li>&quot;<a href="Efectividadprueba.html">Efectividad de Prueba</a>&quot;.</li>
+  <li>&quot;<a href="Pruebaporevento.html">Rutina de pruebas por Evento</a>&quot;.</li>
+  <li>&quot;<a href="Pruebaprogramada.html">Pruebas Programadas</a>&quot;.</li>
+</ol>
+<p class="style4">INDICADORES</p>
+<ol class="style5">
+  <li class="style6">&quot;<a href="Gestioncolas.html">Gesti&oacute;n de Colas</a>&quot;.</li>
+  <li class="style6">&quot;<a href="Estausuario.html">Estad&iacute;sticas  Usuario</a>&quot;.</li>
+  <li class="style6">&quot;<a href="Estatelefono.html">Estad&iacute;sticas   Tel&eacute;fonos</a>&quot;.</li>
+  <li class="style6">&quot;<a href="Estahora.html">Estad&iacute;sticas por Horas</a>&quot;.</li>
+  <li class="style6">&quot;<a href="Estacodigover.html">Estad&iacute;sticas por Codigo Ver</a>&quot;.</li>
+  <li class="style6">&quot;<a href="IndicadoresCabezales.html">Indicadores de Cabezales</a>&quot;</li>
+  <li class="style6">&quot;<a href="Estacentral.html">Estad&iacute;sticas por Central</a>&quot;</li>
+  <li class="style6">&quot;<a href="Indicadoreststli.html">Indicadores TSTLI</a>&quot;.   </li>
+  <li class="style6">&quot;<a href="Primeraprueba.html">Primera Prueba Tel&eacute;fono</a>&quot;. </li>
+</ol>
+
+</body>
+
+</html>

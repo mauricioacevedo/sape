@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config-servicios>
+  <colas>
+    <cola>
+      <nombre>GRANC</nombre>
+      <descripcion>COLA DE GRANDES CLIENTES</descripcion>
+    </cola>
+    <cola>
+      <nombre>TSTLI</nombre>
+      <descripcion>COLA TSTLI</descripcion>
+    </cola>
+    <cola>
+      <nombre>REPLI</nombre>
+      <descripcion>ESTA ES UNA PRUEBA</descripcion>
+    </cola>
+    <cola>
+      <nombre>LOC</nombre>
+      <descripcion>cola de distribuidor</descripcion>
+    </cola>
+    <cola>
+      <nombre>DSPLI</nombre>
+      <descripcion>despachador de lineas</descripcion>
+    </cola>
+    <cola>
+      <nombre>DIST</nombre>
+      <descripcion>Distribuidor_2</descripcion>
+    </cola>
+    <cola>
+      <nombre>ANACA</nombre>
+      <descripcion>Analizador de cables</descripcion>
+    </cola>
+    <cola>
+      <nombre>REGEN</nombre>
+      <descripcion>Reclamos Generales</descripcion>
+    </cola>
+    <cola>
+      <nombre>TSTCDM</nombre>
+      <descripcion>Prueba de Inalambricos</descripcion>
+    </cola>
+    <cola>
+      <nombre>ANALI</nombre>
+      <descripcion>Analisis de lineas</descripcion>
+    </cola>
+  </colas>
+  <alarmas-pendientes>
+    <alarma>
+      <cola>GRANC</cola>
+      <limite>70</limite>
+      <avisar>supervisor</avisar>
+      <mensaje>Ojo Granc</mensaje>
+      <medio tipo="beeper">
+        <valor>26181</valor>
+      </medio>
+      <recordar>20</recordar>
+    </alarma>
+  </alarmas-pendientes>
+  <servicioAlarma>
+    <medio-beeper>
+      <url-server>http://www.buscapersonas.com.co/buscapersonas/pager.cgi</url-server>
+      <host>200.13.224.98</host>
+      <codificacion>UTF-8</codificacion>
+    </medio-beeper>
+    <medio-correo>
+      <server-smtp>ospinternational.com</server-smtp>
+      <from-mail>macevedo@osplaboratories.com</from-mail>
+      <subject>Mensaje de alerta</subject>
+  	  <autenticar>true</autenticar>
+      <user>macevedo</user>
+      <password>andrax11</password>
+    </medio-correo>
+    <medio-smsOla>
+        <url1>http://200.75.48.236/smsgrouptext/</url1>
+        <urlPost>http://200.75.48.236/smsgrouptext/JSP/wt3.jsp</urlPost>
+    </medio-smsOla>
+  </servicioAlarma>
+</config-servicios>
+<!-- a este archivo estan accediendo IndicadoresServlet y servicioAlarma. -->
+

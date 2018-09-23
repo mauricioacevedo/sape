@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:UseCaseDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ProbarTelefonos" metadata="nsuml-1.4" initialized="true" tag="10" key="32303034303833312073617065">
+  <children xsi:type="editmodel:SystemEditModel" location="80,50" size="531,231" itemName="Probar Telefonos">
+    <children xsi:type="editmodel:UseCaseEditModel" targetConnections="//@children.0/@children.2/@sourceConnections.0 //@children.0/@children.3/@sourceConnections.0 //@children.0/@children.4/@sourceConnections.0 //@children.0/@children.5/@sourceConnections.0" location="242,84" size="102,34" description="" itemName="Probar Telefono" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="85,89" size="102,34" description="" itemName="Pedir Telefono" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank=""/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="376,34" size="102,34" description="" itemName="Probar NEC" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank="">
+      <sourceConnections xsi:type="editmodel:UseCaseGeneralizationEditModel" source="//@children.0/@children.2" target="//@children.0/@children.0" targetEnd="//@children.0/@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="5,34" attachSource="true"/>
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="97,0"/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="editmodel:UseCaseEditModel" location="378,113" size="102,34" description="" itemName="Probar AXE" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank="">
+      <sourceConnections xsi:type="editmodel:UseCaseGeneralizationEditModel" source="//@children.0/@children.3" target="//@children.0/@children.0" targetEnd="//@children.0/@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="0,2" attachSource="true"/>
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="102,31"/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="editmodel:UseCaseEditModel" location="387,176" size="102,34" description="" itemName="Probar SIPLEX" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank="">
+      <sourceConnections xsi:type="editmodel:UseCaseGeneralizationEditModel" source="//@children.0/@children.4" target="//@children.0/@children.0" targetEnd="//@children.0/@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="24,0" attachSource="true"/>
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="78,34"/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="editmodel:UseCaseEditModel" location="230,187" size="102,34" description="" itemName="Probar Indigo" alternativeFlows="{}" normalFlow="" postCondition="" preCondition="" rank="">
+      <sourceConnections xsi:type="editmodel:UseCaseGeneralizationEditModel" source="//@children.0/@children.5" target="//@children.0/@children.0" targetEnd="//@children.0/@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="56,0" attachSource="true"/>
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="44,34"/>
+      </sourceConnections>
+    </children>
+  </children>
+  <diagramOptions xsi:type="options:UseCaseDiagramOptions" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+</editmodel:UseCaseDiagramEditModel>

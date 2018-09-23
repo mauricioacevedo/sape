@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FF6633;
+	font-weight: bold;
+}
+.style6 {	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #E7A500}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #E7A500 }
+ a:hover {color:#000000}
+.style7 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style2">ESTADISTICAS POR CODIGO VER </p>
+<p class="style1">&nbsp;</p>
+<p class="style1">En la p&aacute;gina de Estad&iacute;sticas por C&oacute;digo Ver se podr&aacute;  observar los diferentes c&oacute;digos y la cantidad de veces que estos han dado como  resultado de la prueba el&eacute;ctrica. Se observa adem&aacute;s una peque&ntilde;a descripci&oacute;n del  mismo y una grafica para un an&aacute;lisis mas detallado.</p>
+<p class="style1">Esta b&uacute;squeda se puede realizar para determinado  periodo de tiempo, y para ello, con el mouse en el campo &ldquo;DESDE&rdquo; haga Click en  &ldquo;(aaaa-mm-dd)&rdquo; y se abrir&aacute; un cuadro con el calendario. Seleccione el d&iacute;a, el  mes y el a&ntilde;o. A partir de esta fecha se iniciara la consulta. Y luego con el  mouse en el campo &ldquo;HASTA&rdquo; haga Click en &ldquo;(aaaa-mm-dd)&rdquo; y se abrir&aacute; otro cuadro  con el calendario. Seleccione el d&iacute;a, el mes y el a&ntilde;o y esta ser&aacute; la fecha  final la consulta. Haga click en <strong>&ldquo;ACEPTAR&rdquo;</strong>.</p>
+<p class="style1 style7">&nbsp;</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a href="Indice.html" class="style6">Indice</a> </p>
+</body>
+</html>

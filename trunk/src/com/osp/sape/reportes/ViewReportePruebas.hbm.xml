@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.reportes.ViewReportePruebas"
+        table="view_reporte_pruebasTemp"
+    >
+
+        <id
+            name="ticket"
+            column="ticket"
+            type="long"
+            unsaved-value="-1"
+        >
+            <generator class="assigned">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-ViewReportePruebas.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="estado"
+            type="string"
+            update="true"
+            insert="true"
+            column="estado"
+        />
+
+        <property
+            name="central"
+            type="string"
+            update="true"
+            insert="true"
+            column="central"
+        />
+
+        <property
+            name="codigoVer"
+            type="string"
+            update="true"
+            insert="true"
+            column="codv"
+        />
+
+        <property
+            name="duracion"
+            type="string"
+            update="true"
+            insert="true"
+            column="duracion"
+        />
+
+        <property
+            name="fecha"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="fecha"
+        />
+
+        <property
+            name="telefono"
+            type="string"
+            update="true"
+            insert="true"
+            column="telefono"
+        />
+
+        <property
+            name="tipoPrueba"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipoprueba"
+        />
+
+        <property
+            name="usuario"
+            type="string"
+            update="true"
+            insert="true"
+            column="usuario"
+        />
+
+        <property
+            name="descripcionCodv"
+            type="string"
+            update="true"
+            insert="true"
+            column="descripcion"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ViewReportePruebas.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

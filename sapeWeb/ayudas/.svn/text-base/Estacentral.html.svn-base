@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style5 {	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF6633;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #E7A500}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #E7A500 }
+ a:hover {color:#000000}
+.style6 {font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style8 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+</style>
+</head>
+
+<body>
+<p class="style5">ESTADISTICAS POR CENTRAL</p>
+<p class="style5">&nbsp;</p>
+<p class="style8">En la p&aacute;gina se puede observar la cantidad de pruebas  que se han realizado en cada una de las centrales, independientemente de la tecnolog&iacute;a  que empleen en cada una de ellas para realizar las pruebas.</p>
+<p class="style8">La pantalla cuenta con ocho columnas que describen lo  siguiente:</p>
+<ul class="style8">
+  <li><em>Central:</em> Las diferentes centrales existentes.</li>
+  <li><em>&Eacute;xito:</em> Cantidad de pruebas que se pudieron realizar porque  se tuvo conexi&oacute;n con la cabeza de prueba en cada una de las centrales.</li>
+  <li><em>Advertencia:</em> Cantidad de pruebas que al realizarse se encontr&oacute;  con la l&iacute;nea o la cabeza ocupada y por lo tanto se debe repetir la prueba. Esta  cantidad esta dada para cada una de las centrales.</li>
+  <li><em>Fallo:</em> Cantidad de pruebas que no se realizaron por haber  conexi&oacute;n con la cabeza. Cantidad dada para cada una de las cabezas.</li>
+  <li><em>Inesperados:</em> Cantidad de pruebas que no presentaron ning&uacute;n valor  como resultado sino ND (No disponible).</li>
+  <li><em>Efectividad: </em>Total de pruebas que se realizaron y que arrojaron  alg&uacute;n resultado. Es el producto de la suma de la columna &Eacute;xito y Advertencia.</li>
+  <li><em>Total:</em> Total de pruebas realizadas en cada una de las  centrales.</li>
+  <li><em>Efectividad %:</em> Valor en porcentaje de la efectividad de las pruebas  en las centrales.</li>
+</ul>
+<p class="style8">&nbsp;</p>
+<p class="style8">Se puede realizar una b&uacute;squeda para determinado  periodo de tiempo, y para ello, con el mouse en el campo &ldquo;DESDE&rdquo; haga Click en  &ldquo;(aaaa-mm-dd)&rdquo; y se abrir&aacute; un cuadro con el calendario. Seleccione el d&iacute;a, el  mes y el a&ntilde;o. A partir de esta fecha se iniciara la consulta. Y luego con el  mouse en el campo &ldquo;HASTA&rdquo; haga Click en &ldquo;(aaaa-mm-dd)&rdquo; y se abrir&aacute; otro cuadro  con el calendario. Seleccione el d&iacute;a, el mes y el a&ntilde;o y esta ser&aacute; la fecha  final la consulta. Haga click en <strong>&ldquo;ACEPTAR&rdquo;</strong>.  Los resultados aparecer&aacute;n en la pantalla.</p>
+<p class="style8">&nbsp;</p>
+<p class="style8"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VER ESTADISTICO POR CODIGO VER EN  UNA CENTRAL</strong></p>
+<p class="style8">Para tener ver en m&aacute;s detalle los C&oacute;digos Ver en cada  central, es necesario hacer lo siguiente:</p>
+<ul class="style8">
+  <li>Ubique  primero la central a consultar, luego haga clic sobre ella.</li>
+  <li>En  esta pantalla tambi&eacute;n se puede realizar desde una fecha determinada. Con el  mouse en el campo &ldquo;DESDE&rdquo; haga Click en &ldquo;(aaaa-mm-dd)&rdquo; y se abrir&aacute; un cuadro  con el calendario. Seleccione el d&iacute;a, el mes y el a&ntilde;o. A partir de esta fecha  se iniciara la consulta. Y luego con el mouse en el campo &ldquo;HASTA&rdquo; haga Click en  &ldquo;(aaaa-mm-dd)&rdquo; y se abrir&aacute; otro cuadro con el calendario. Seleccione el d&iacute;a, el  mes y el a&ntilde;o y esta ser&aacute; la fecha final la consulta. Haga click en <strong>&ldquo;ACEPTAR&rdquo;</strong>.</li>
+</ul>
+<p class="style8">&nbsp;</p>
+<p class="style8"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VER DETALLES POR CENTRAL</strong></p>
+<p class="style8">Desde la columna total se puede ver en detalle los c&oacute;digos  ver que han dados las pruebas el&eacute;ctricas.</p>
+<ul class="style8">
+  <li>Ubicado  sobre la columna &ldquo;Total&rdquo; de la central a consultar, haga click.</li>
+  <li>Se abrir&aacute;  una nueva ventana<em>. </em>En  ella se observa la siguiente informaci&oacute;n:</li>
+  <ul>
+    <li><em>Fecha:</em> Fecha en la que se realizaron pruebas.</li>
+    <li><em>Central:</em> Nombre de la central.</li>
+    <li><em>Tipo de Nodo:</em> Tecnolog&iacute;a de prueba empleada en la central.</li>
+    <li><em>C&oacute;digo Ver:</em> Los c&oacute;digos ver que dieron como resultado de las  pruebas.</li>
+    <li><em>Cantidad: </em>Numero de repeticiones de los C&oacute;digos Ver.</li>
+    <li><em>%: </em>Porcentaje  con relaci&oacute;n a la cantidad de veces de un c&oacute;digo ver con el total de pruebas  que se han realizado en la cabeza de prueba. </li>
+  </ul>
+</ul>
+<p class="style5 style8">&nbsp;</p>
+<p class="style8"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VER  GRAFICAS </strong></p>
+<ul>
+  <li class="style8">Desde  la columna &ldquo;Efectividad&rdquo; se puede observar la gr&aacute;fica de la cantidad de pruebas  exitosas, fallidas, con advertencia o inesperadas de cada central. Para  observar la gr&aacute;fica es necesario hacer click sobre el n&uacute;mero que all&iacute; aparece.</li>
+  <li class="style8">En la  parte final de la pantalla aparece <strong>&ldquo;Gr&aacute;ficas  Totales&rdquo;</strong>, aqu&iacute; se puede observar la cantidad total de &eacute;xitos, fallos, advertencias  e inesperados presentados en una forma general en todas las centrales. </li>
+</ul>
+<p class="style5">&nbsp;</p>
+<p class="style5">&nbsp;</p>
+<p class="style5"><a href="Indice.html" class="style6">Indice</a></p>
+</body>
+</html>

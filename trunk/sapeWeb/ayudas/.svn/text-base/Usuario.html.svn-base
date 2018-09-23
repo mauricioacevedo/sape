@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style9 {
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: italic;
+	color: #333333;
+}
+.style10 {font-style: italic; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.style11 {
+	font-size: 12px;
+	color: #333333;
+}
+.style2 {	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FF5900;
+	font-weight: bold;
+}
+.style6 {	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+</style>
+<style type="text/css">
+ a:link { font-weight: bold ; font-size: 12px; text-decoration: underline; color: #ff6600}
+ a:visited { font-weight: bold; font-size: 12px; text-decoration: underline; color: #ff6600 }
+ a:hover {color:#000000}
+.style12 {color: #333333}
+</style>
+</head>
+
+<body>
+<p class="style1"><span class="style2">USUARIOS</span></p>
+<p class="style1">&nbsp;</p>
+<p class="style1 style12">Si hace Click sobre <strong>&ldquo;Usuarios&rdquo;</strong> del men&uacute; principal de Mantenimiento. En esta  opci&oacute;n es donde se administran los usuarios que tienen acceso al SAPE, su nivel  de acceso y respectivo privilegio para configuraci&oacute;n y manejo del sistema.  Tambi&eacute;n es posible el ingreso de nuevos usuarios, modificaci&oacute;n y/o eliminaci&oacute;n  de ellos. </p>
+<p class="style1 style12">Para visualizar  a los usuarios del sistema en la parte derecha de la pantalla aparece un campo  &ldquo;Exportar&rdquo; seleccione con el mouse el formato con el que se abrir&aacute; el archivo y  haga Click en el <strong>&ldquo;Aceptar&rdquo;</strong>.</p>
+<p class="style1 style12">&nbsp;</p>
+<p class="style1 style12"><strong>AGREGAR  NUEVO USUARIO</strong></p>
+<p class="style1 style12">&nbsp;</p>
+<ul class="style1 style12">
+  <li>Haga Click en <strong>&ldquo;Agregar Nuevo Usuario&rdquo;</strong><em>.</em></li>
+  <li>Complete  los datos requeridos para el ingreso del nuevo usuario.</li>
+  <li>Haga  Click en <strong>&ldquo;Alta Usuario&rdquo;</strong>.</li>
+  <li>Luego  aparece una ventana con los datos ingresados del nuevo usuario, si estos est&aacute;n  correctos, haga Click en <strong>&ldquo;OK&rdquo;</strong>.</li>
+</ul>
+<p class="style1 style12">Los campos requeridos para el ingreso de un  nuevo usuario son:</p>
+<ul class="style1 style12">
+  <li><strong>Nombre  de usuario:</strong>Nombre  de acceso al sistema del usuario (m&aacute;ximo 10 caracteres).</li>
+  <li><strong>Password:</strong> Clave o contrase&ntilde;a secreta para acceder  al sistema (m&aacute;ximo 8 caracteres)</li>
+  <li><strong>Confirme  su Password:</strong> Confirmaci&oacute;n  de la clave o contrase&ntilde;a escrita.</li>
+  <li><strong>Nivel:</strong> Indica los privilegios que tendr&aacute; el  usuario en el sistema. </li>
+  <li><strong>Nombre  del usuario:</strong> Nombre  completo del usuario (m&aacute;ximo 30 caracteres).</li>
+  <li><strong>Lenguaje:</strong>Idioma con el cual funcionar&aacute; el sistema.</li>
+  <li><strong>Contacto:</strong> N&uacute;mero telef&oacute;nico del usuario.</li>
+</ul>
+<p class="style1 style12">&nbsp;</p>
+<p class="style1 style12"><strong>&nbsp;&nbsp;&nbsp;&nbsp; <span class="style10">NIVELES DE USUARIO</span></strong></p>
+<p class="style9"><strong>ADMINISTRADOR</strong>: Tiene todos los privilegios sobre el    sistema. Realizar todo tipo de movimientos y configuraciones en el sistema.</p>
+<p class="style9"><strong>SUPERVISOR</strong>: Al igual que el &ldquo;Administrador&rdquo; puede    acceder a todas las opciones del sistema excepto a realizar alg&uacute;n tipo de    cambio en la informaci&oacute;n del men&uacute; &ldquo;Mantenimiento&rdquo;.</p>
+<p class="style9"><strong>OPERADOR</strong>: Puede ejecutar pruebas el&eacute;ctricas y acceder    a reportes del sistema.</p>
+<p class="style1 style12">&nbsp;</p>
+<p class="style11">&nbsp;</p>
+<p class="style1 style12"><strong>MODIFICACION USUARIO</strong></p>
+<ul class="style1 style12">
+  <li>Sobre  el usuario que se desea modificar en el lado derecho de la pantalla esta la  opci&oacute;n de modificar.</li>
+  <li>Haga  Click en <strong>&ldquo;Modificar&rdquo;.</strong></li>
+  <li>Aparecer&aacute; la  pantalla con los datos actuales del usuario.</li>
+  <li>Realice  los cambios solo en los recuadros que aparecen en blanco.</li>
+  <li>Haga  Click en <strong>&ldquo;Modificar Usuario&rdquo;</strong>, se  abrir&aacute; una ventana donde se muestran los nuevos datos del usuario. Haga Click  en <strong>&ldquo;OK&rdquo;.</strong></li>
+</ul>
+<p class="style1 style12">&nbsp;</p>
+<p class="style1 style12"><strong>ELIMINAR UN USUARIO</strong></p>
+<ul class="style1 style12"><li>  <span class="style1 style12">Al  lado derecho de la pantalla sobre los datos de cada unos de los usuarios  existentes en el sistema aparece la opci&oacute;n <strong>&ldquo;Eliminar&rdquo;</strong>,  haga Click. </span>
+</li>
+  <li>El  sistema le pedir&aacute; confirmar si realmente quiere eliminar al usuario, si esta  correcto, haga Click en <strong>&ldquo;OK&rdquo;</strong>.</li>
+  <li>El  usuario se eliminar del sistema y los cambios se notar&aacute;n cuando ingrese  nuevamente a su sesi&oacute;n.</li>
+</ul>
+<p class="style1 style12">&nbsp;</p>
+<p class="style1"><span class="style12"><a href="Indice.html" class="style6">Indice</a></span></p>
+</body>
+</html>

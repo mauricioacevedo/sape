@@ -1,0 +1,876 @@
+package com.osp.sape.servlets;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.hibernate.ObjectNotFoundException;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.output.XMLOutputter;
+
+import com.gc.acceso.GestorServlet;
+import com.osp.sape.SapeConfiguration;
+import com.osp.sape.Exceptions.SapeDataException;
+import com.osp.sape.data.CategoriasDAO;
+import com.osp.sape.data.CodigosVerDAO;
+import com.osp.sape.data.DAOFactory;
+import com.osp.sape.data.DAOFactoryImpl;
+import com.osp.sape.data.EventoSapeDAO;
+import com.osp.sape.data.PruebaBasicaDAO;
+import com.osp.sape.data.SerieDAO;
+import com.osp.sape.data.TipoNodoDAO;
+import com.osp.sape.data.UsuarioDAO;
+import com.osp.sape.maestros.Categorias;
+import com.osp.sape.maestros.CodigoVer;
+import com.osp.sape.maestros.EventoSape;
+import com.osp.sape.maestros.PruebaAtu;
+import com.osp.sape.maestros.PruebaBasica;
+import com.osp.sape.maestros.PruebaSiplexPRO;
+import com.osp.sape.maestros.Serie;
+import com.osp.sape.maestros.TipoNodo;
+import com.osp.sape.maestros.UserSipe;
+
+
+public class PruebaTelefonoServlet extends GestorServlet {
+
+	private org.apache.log4j.Logger logs;
+	private SerieDAO serieDAO;
+	private TipoNodoDAO tipoNodoDAO;
+	private UsuarioDAO usuarioDAO;
+	private EventoSapeDAO eventoSapeDAO;
+	private PruebaBasicaDAO pruebaBasicaDAO;
+	private CodigosVerDAO codigosVerDAO;
+	private CategoriasDAO categoriasDAO;
+	
+ 
+	
+    public void init() throws ServletException {
+    	super.init();
+    	logs = org.apache.log4j.LogManager.getLogger(getClass());
+    	DAOFactory factory = DAOFactoryImpl.getInstance();
+    	
+    	serieDAO = factory.getSerieDAO();
+    	tipoNodoDAO = factory.getTipoNodoDAO();
+    	usuarioDAO = factory.getUsuarioDAO();
+    	eventoSapeDAO = factory.getEventoSapeDAO();
+    	pruebaBasicaDAO = factory.getPruebaBasicaDAO();
+    	codigosVerDAO = factory.getCodigosVerDAO();
+    	categoriasDAO = factory.getCategoriasDAO();
+    }
+    
+
+    public void doGet(HttpServletRequest request, HttpServletResponse  response) throws IOException, ServletException {
+        
+    	String operacion = request.getParameter("operacion");
+        if(logs.isDebugEnabled())logs.debug("doGet: operacion=["+operacion+"]");
+
+        if(operacion == null || operacion.equals("inicio")){
+            redireccionarConPlantilla("PruebaTelefono",request,response);
+            return;
+        }
+        
+	     if(operacion.equals("buscarCentral")){
+	        buscarCentral(request, response); 
+	        return;
+	     }
+	     
+	     if(operacion.equals("probarTelefono")) {
+	    	 probarTelefono(request, response);
+	    	 return;
+	     }
+	     
+	     if (operacion.equals("historicoTelefonos")) {
+	    	 historicoTelefonos(request, response);
+	    	 return;
+	     }
+	     
+	     if (operacion.equals("mostrarResultados")) {
+	    	 mostrarResultados(request, response);
+	    	 return;
+	     }
+	     if (operacion.equals("categorias")) {
+	    	 operacionCategorias(request,response);
+	    	 return;
+	     }
+	     if(operacion.equals("telnetInteractiva")){
+	    	 operacionTelnetInteractiva(request,response);
+	    	 return;
+	     }
+	     	//He decidido volver el sistema a estado de mantenimiento
+	     if (operacion.equals("estadoMantenimiento")) {
+	    	 	//si ya existe la variable la elimino
+	    	 if (getServletContext().getAttribute("mantenimientoSistema") != null) 
+	    		 getServletContext().removeAttribute("mantenimientoSistema"); 
+	    	 else
+	    		 getServletContext().setAttribute("mantenimientoSistema", "MANTENIMIENTO");
+	    	 
+	    	 return;
+	     }
+	     
+	     if(operacion.equals("pruebasClip")) {
+	    	 
+	    	 operacionInicioPruebasClip(request,response);
+	    	 return;
+	     }
+	     
+	     if(operacion.equals("buscarSite")) {
+	    	 
+	    	 operacionBuscarSite(request,response);
+	    	 return;
+	     }
+    }
+    
+    private void operacionBuscarSite(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    	
+    	String central = request.getParameter("central");
+    	List l = null;
+    	try {
+			l=tipoNodoDAO.getTipoNodosCentral(central);
+		} catch (SapeDataException e) {
+			error(e,request,response);
+			return;
+		}
+		
+		response.setContentType("text/xml");
+		response.setHeader("Cache-Control", "no-cache");
+		
+    	Document documento = new Document();
+    	Element root = new Element("cabezas");
+    	documento.setRootElement(root);
+    	
+//    	System.out.println("cabezas para central: "+central+" size:"+l.size());
+    	for(int i=0;i<l.size();i++){
+    		Element element = new Element("site");
+        	TipoNodo tmp = (TipoNodo)l.get(i);
+    		String valor = tmp.getId()+","+tmp.getSite();
+    		
+    		element.setText(valor);
+        	
+        	root.addContent(element);	
+    	}
+    	
+    	
+    	/*
+    	element = new Element("tipoCentral");
+    	element.setText(tipoCentral);
+    	root.addContent(element);
+    	element = new Element("cabezaId");
+    	element.setText(String.valueOf(cabezaId));
+    	root.addContent(element);
+   
+    	String pruebas[] = null;
+        if(tipoCentral.equalsIgnoreCase("SIPLEXPRO")){
+            pruebas = getPruebasSiplexPRO();
+        }else if (tipoCentral.equals("AXE") || tipoCentral.equals("NEC")){
+            pruebas = new String [] {"basica", "categorias"};
+        } else {
+        	pruebas = new String [] {"basica"};
+        }
+      
+   */ 
+    
+    	PrintWriter out = response.getWriter();
+		XMLOutputter serializer = new XMLOutputter();
+		serializer.output(documento, out);
+		out.flush();	
+		out.close();
+		
+    }
+    
+    private void operacionInicioPruebasClip(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    	
+   	 	List l = null;
+   	 	try {
+   	 		l = serieDAO.getCentralesPorTecnologia("SIPLEXPRO");
+   	 	} catch (SapeDataException e) {
+   	 		error(e,request,response);
+   	 		return;
+   	 	}
+		request.setAttribute("listaCentrales",l);
+		l = null;
+		l = new ArrayList();
+		String pruebas[]= getPruebasSiplexPRO();
+		
+		for (int i = 0; i< pruebas.length;i++){
+			l.add(i,pruebas[i]);
+		}
+		
+		request.setAttribute("pruebas",l);
+	 	redireccionarConPlantilla("pruebasClip",request,response);
+	 	return;
+    }
+    
+    private void operacionTelnetInteractiva(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    	
+    	String telOperador=(String)request.getSession().getAttribute("telOperador");
+    	
+    	if(telOperador == null || telOperador.equals("")){
+    		telOperador = request.getParameter("telOperador");
+    		
+    		if(telOperador != null && !telOperador.equals(""))
+    			request.getSession().setAttribute("telOperador",telOperador);
+    	}
+    	
+    	String telCliente =  request.getParameter("telCliente");
+    	
+    	
+    	
+    	/*
+    	if(telOperador == null || telOperador.equals("")){
+    		//telOperador = telOperador;
+    		response.setContentType("text/html");
+    		PrintWriter out = response.getWriter();
+    		out.println("<script  language=\"JavaScript\">"+
+    				"var telOper = prompt('Ingrese el telefono del Operador');"+
+    				"location.href = \"/sape/actionSape?accion=pruebaTelefono&operacion=telnetInteractiva&telCliente="+telCliente+"&telOperador=\"+telOper"+
+    				"</script>"
+    		);
+    		return;
+    	}*/
+    	
+    	//TODO cargar esta informacion desde un xml de configuracion.
+    	String ip = "10.7.5.87";
+    	String port="2020";
+
+    	Serie serie = null;
+    	try {
+			serie = serieDAO.buscarSerie(telCliente);
+		} catch (SapeDataException e) {
+			error(e,request,response);
+			return;
+		}
+
+		if(serie == null){
+			request.setAttribute("tipo","cerrar");
+			error("No se encontro ninguna serie para el telefono: '"+telCliente+"'.",request,response);
+			return;
+		}
+		
+		/*if(serie.getTipocentral().equals("FTX") ){
+			
+			request.setAttribute("tipo","cerrar");
+			error("Monitoreo para tecnologia '"+serie.getTipocentral()+"' aun no esta en servicio.",request,response);
+			return;
+		}*/
+				
+		request.setAttribute("tecnologia",serie.getTipocentral());
+		request.setAttribute("telCliente",telCliente);
+		request.setAttribute("telOperador",telOperador);
+		request.setAttribute("ip",ip);
+		request.setAttribute("port",port);
+		
+
+		redireccionarConPlantilla("telnetInteractivas",request,response);
+    }
+    
+    private void buscarCentral (HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	if (logs.isDebugEnabled()) logs.debug("buscarCentral");
+        
+		response.setContentType("text/xml");
+		response.setHeader("Cache-Control", "no-cache");
+    	
+        String telefono = request.getParameter("telefono");
+        if (logs.isDebugEnabled()) logs.debug("Buscar Central. telefono= "+telefono);
+//        List l=null;
+        Serie serie = null;
+        
+        //TODO : planear bien como controlar esta exception!!!
+        
+        String mantenimiento = null;
+        if(telefono == null || telefono.equals("")){
+        	mantenimiento = "";
+        	// esto es para ke no entre al if siguiente!!!!
+        	// ojo, cuidado, no borrar!!!!
+        }
+        
+        
+        
+        String central = "NOT FOUND";
+        String tipoCentral = "NOT FOUND";
+        int cabezaId = 0;
+        	///XXX Sistema en mantenimiento.
+        	//Verifico si el sistema esta en estado de mantenimiento para no buscar la serie.
+        	//cuando el sistema pasa a mantenimiento ningun usuario via WEB podra hacer pruebas.
+        mantenimiento = (String)getServletContext().getAttribute("mantenimientoSistema");
+        if (mantenimiento == null) {        
+	        try{
+	            serie=serieDAO.buscarSerie(telefono);
+	        }catch(SapeDataException e){
+	        	central = e.toString();
+	        	tipoCentral = central;
+	        }
+	        if(serie != null) {
+	        	central = serie.getCentral();
+	        	tipoCentral = serie.getTipocentral();
+	        	cabezaId = serie.getCabezaId().intValue();
+	        }
+        } else {
+        	central = mantenimiento;
+        	tipoCentral = mantenimiento;
+        }
+    	Document documento = new Document();
+    	Element root = new Element("serie");
+    	documento.setRootElement(root);
+    	Element element = new Element("central");
+    	element.setText(central);
+    	root.addContent(element);
+    	element = new Element("tipoCentral");
+    	element.setText(tipoCentral);
+    	root.addContent(element);
+    	element = new Element("cabezaId");
+    	element.setText(String.valueOf(cabezaId));
+    	root.addContent(element);
+   
+    	String pruebas[] = null;
+        if(tipoCentral.equalsIgnoreCase("SIPLEXPRO") || tipoCentral.equalsIgnoreCase("SIPLEXPRO-MAT")){
+            pruebas = getPruebasSiplexPRO();
+        }else if (tipoCentral.equals("AXE") || tipoCentral.equals("NEC")){
+            pruebas = new String [] {"basica", "categorias"};
+        } else{
+        	// Se supone ke si llego hasta aca es una FTX!!!
+        	pruebas = new String [] {"basica","basica_force"};
+        }
+        
+    	Element ePruebas = new Element("pruebas");
+    	for (int i = 0; i < pruebas.length; i++) {
+			element = new Element("option");
+			element.setText(pruebas[i]);
+			ePruebas.addContent(element);
+		}
+    	root.addContent(ePruebas);
+        
+    	PrintWriter out = response.getWriter();
+		XMLOutputter serializer = new XMLOutputter();
+		serializer.output(documento, out);
+		out.flush();	
+		out.close();
+    	
+        if (logs.isInfoEnabled()) logs.info("buscarCentral: termino el script");
+    } //fin de buscarCentral
+    
+    
+    
+    private void probarTelefono(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        if (logs.isDebugEnabled()) logs.debug("probarTelefono");
+        
+        		//XXX Hago la prueba de los telefonos.
+        String telefono = request.getParameter("tel1");
+        String tipoPrueba = request.getParameter("tipoPrueba1");
+        if (logs.isDebugEnabled()) logs.debug("Tipo de prueba: ["+tipoPrueba+"]");
+        			//en que posicion de la pantalla se hace la prueba.
+        String numeroPrueba = request.getParameter("numeroPrueba");
+        String usuario = ((UserSipe)request.getSession().getAttribute("usuario")).getNick();
+        SapeConfiguration config = SapeConfiguration.getInstance();
+        String servicio = null;
+        if(tipoPrueba.equals("categorias")) {
+        	servicio = config.getServicio("categorias");
+        } else if (tipoPrueba.equals("atuc") || tipoPrueba.equals("atur")){
+        	servicio = config.getServicio("atu");
+        } else {
+        	servicio = config.getServicio("prueba");
+        }
+        
+        
+        
+        String ipGude = null;
+    	int puertoGude = -1;
+    	
+    	if(telefono.indexOf("clip") != -1){// es una prueba clip!!!!!
+    		
+    		ipGude = config.getIpGUDE();
+    		puertoGude = config.getPuertoGUDE();
+    		servicio = config.getServicio("clip");
+    		//Para hacer pruebas clip por medio de los cabezales SIPLEXPRO. los parametros son: cliente, tipoClip (clip, clip1, clip2), tipoPrueba, nodo y central.
+    		
+    		String cabeza =	request.getParameter("cabeza");
+    		String central = request.getParameter("central");
+    		
+    		tipoPrueba += " "+cabeza+" "+central;  
+    		 
+    	} else {
+    		TipoNodo tipoNodo = null;
+	        try {
+	        	Serie serie = serieDAO.buscarSerie(telefono);
+	        	tipoNodo = tipoNodoDAO.getTipoNodo(serie.getCabezaId().intValue());
+	        } catch (SapeDataException e) {
+	        	error(e, request, response);
+	        	return;
+	        }
+	        ipGude = tipoNodo.getIpServidor();
+	    	puertoGude = Integer.parseInt(tipoNodo.getPuertoServidor());	        
+    	}
+
+    	if (logs.isDebugEnabled()) logs.debug("El servidor es: " + ipGude + ":" + puertoGude);
+
+    	response.setBufferSize(256);
+    	response.resetBuffer();
+    	response.setContentType("text/html");
+    	PrintWriter out = response.getWriter();
+    	
+    	out.println("<html><body bgcolor=\"black\" text=\"white\" link=\"WHITE\"><pre>\n");
+    	
+    	Socket socketGude = null;
+    	try {
+			socketGude = new Socket(ipGude, puertoGude);
+		} catch (UnknownHostException e) {
+			out.println("<h1><center>UnknownHostException: " + e + "</center></h1>");
+		} catch (IOException e) {
+			out.println("<h1><center>No hay conexion con el servidor!!!!!</center></h1>");
+			out.println("</body></html>");
+			return;
+		}
+		
+        out.println("Conectado al ServicioGude via " + ipGude + ":" + puertoGude);
+		if (logs.isInfoEnabled()) logs.info("Conectado al ServicioGude via " + ipGude + ":" + puertoGude);
+        BufferedReader bf = new BufferedReader(new InputStreamReader(socketGude.getInputStream()));
+        DataOutputStream outSocket = new DataOutputStream(socketGude.getOutputStream());
+        		//Habilito el socket para que me muestre todo.
+        
+        String flujoInicial=bf.readLine();
+        if(flujoInicial != null){
+        	if(flujoInicial.startsWith("Este IP")){
+    			out.println("<h1><center>"+flujoInicial+"</center></h1>");
+    			out.println("</body></html>");
+    			out.close();
+    			bf.close();
+    			socketGude.close();
+    			return;
+        	}
+        }
+//        outSocket.writeBytes("set log=on\r");
+        outSocket.writeBytes("G " + servicio + " "+ usuario+" " + telefono + " " + tipoPrueba + "\r");
+        String rta="";
+        String lineaAnterior = "";
+        if (logs.isInfoEnabled()) logs.info("COMIENZA LA PRUEBA: " + telefono);
+
+        String ticketPrueba=null;
+        String evento = null;
+//        int cantFIN = 0;  //como activo los log, me llegan dos %FIN, me interesa el segundo.
+//        System.out.println("antes del ciclo");
+        while((rta=bf.readLine())!= null){
+            if(rta.equals("")){
+            	//System.out.println("llego por aca!!!! y es vacio!!!");
+                continue;
+            }
+            int o = -1; ///TODO eliminar esta variable.
+            if ((o = rta.indexOf("NumeroEvento-")) != -1) {
+                evento = rta.substring(o+13,rta.length());
+                if (logs.isInfoEnabled()) logs.info("Ticket en Gude: " + evento);
+                continue;
+            }
+            if(rta.indexOf("ENVIAR_COMANDO")!=-1){
+                out.println("<font color=\"blue\">"+rta+"</font>");
+            } else if(rta.indexOf("TicketPrueba=[")!=-1){
+                ticketPrueba=rta.substring(14,rta.length()-1);
+                out.println("<font color=\"red\"><b>"+rta+"</b></font>");
+                if (logs.isInfoEnabled()) logs.info("Ticket de Prueba: " + ticketPrueba);
+            } else {
+                out.println(rta);
+            }
+            response.flushBuffer();
+            if(rta.indexOf("%FIN") != -1){
+                	break;
+            }
+            lineaAnterior = rta;	//para ir conservando la linea Anterior
+        } //fin del ciclo.
+
+        if(!rta.equals("%FIN")){
+           logs.warn("La prueba no termino bien: " + rta);
+        }
+        out.println("</pre>");
+        
+        if (logs.isInfoEnabled()) logs.info("La respuesta de la prueba es: " + lineaAnterior);
+        
+//        outSocket.writeBytes("set log=off\r");
+//        bf.readLine(); //leo el % luego de mandar el log=off
+        outSocket.writeBytes("~\r"); //Con este se cierra la comunicacion.
+        outSocket.flush();
+        socketGude.close();
+        /* TODO :
+        14 de abril de 2005:
+        * se implementa la clase PruebaBasica con interfaz y clase DAO.
+        * la idea es que se capture un # de evento, que es el id de
+        * la tabla prueba_basica y atraves de este id obtengo la demas
+        * informacion que tambien esta en esa tabla y asi mostrar
+        * la informacion completa en DetallePruebaBasica.jsp.
+        * Aun no se esta enviado el # de evento para obtener la info.
+        
+        en eventossape esta la informacion del cliente al ke se le hizo
+        la prueba. prueba_basica y eventossape se relacionan con
+        el campo idprueba_basica e ideventossape.
+        
+        tenemos:
+        event : evento del proceso en gude.
+        event2 : el id para obtener la info desde al tabla
+        prueba_basica.
+        */
+      
+        out.println("</body></html>");
+        CodigoVer cv = null;
+        
+        String codiv="";
+        try {
+			PruebaBasica pv = pruebaBasicaDAO.getPruebaBasica(Long.parseLong(ticketPrueba));
+			codiv = pv.getCodigoVer();
+			cv = codigosVerDAO.getCodigoVer(codiv);
+        } catch (SapeDataException e) {
+        	cv = new CodigoVer();
+        	cv.setCodigoVer(codiv);
+    		if (e.getCause() instanceof net.sf.hibernate.ObjectNotFoundException) {
+            	logs.error(e.toString());
+            	cv.setClasificacion("El codigo "+codiv+" no esta registrado en codigosVer.");
+//    			return;
+    		} else {
+    			cv.setClasificacion("[ERROR]: Error no capturado. Por favor informar a Mantenimiento (" + e.toString() + ").");
+    		}
+		}
+       
+        out.println("<script>window.parent.pruebaTerminada(" + numeroPrueba + ", " + ticketPrueba + ",'"+cv.getCodigoVer()+"','"+cv.getClasificacion()+"');</script>");
+        if (logs.isDebugEnabled()) logs.debug("Termino la prueba.");
+        out.flush();
+        out.close();
+    } //Fin de probarTelefonos
+
+    
+    /**
+     * Busca todos los telefonos que ha probado el usuario el dia de hoy.
+     * @param request
+     * @param response
+     * @throws IOException
+     * @throws ServletException
+     */
+    private void historicoTelefonos(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    	if (logs.isDebugEnabled()) logs.debug("historicoTelefonos");	
+    	
+    	UserSipe usuario = null;
+    	
+    	String idUsuario = request.getParameter("idUsuario");
+    	
+    	System.out.println("EL USUARIO ES: "+idUsuario);
+    	
+    	try {
+			usuario = usuarioDAO.getUsuario(Integer.parseInt(idUsuario));
+			
+        	Calendar cal = Calendar.getInstance();
+        	DecimalFormat df2 = new DecimalFormat("00");
+        	
+        	String ano = df2.format(cal.get(Calendar.YEAR));
+            String mes = df2.format(cal.get(Calendar.MONTH)+1);
+            String day = df2.format(cal.get(Calendar.DAY_OF_MONTH));
+            
+            String fIni =""+ano+"-"+mes+"-"+day;
+        	String fFin =""+ano+"-"+mes+"-"+day;
+			
+			
+			List listaTelefonos = eventoSapeDAO.getEventosUsuario(usuario, fIni, fFin);
+//			System.out.println("lista telefonos es: " + listaTelefonos.size());
+			
+	    	Document documento = new Document();
+	    	Element root = new Element("telefonos");
+	    	documento.setRootElement(root);
+	    	
+	    	for (Iterator iter = listaTelefonos.iterator(); iter.hasNext();) {
+				EventoSape evento = (EventoSape) iter.next();
+				Element element = new Element("telefono");
+		    	element.setAttribute("idPrueba", String.valueOf(evento.getId()));
+				element.setText(evento.getTelefono());
+				root.addContent(element);
+			}
+	    	
+			response.setContentType("text/xml");
+			response.setHeader("Cache-Control", "no-cache");
+
+	    	PrintWriter out = response.getWriter();
+			XMLOutputter serializer = new XMLOutputter();
+			serializer.output(documento, out);
+			out.flush();
+			out.close();
+			
+		} catch (NumberFormatException e) {
+			error(e, request, response);
+			return;
+		} catch (SapeDataException e) {
+			error(e, request, response);
+			return;
+		}
+    	
+    }
+    
+    private void mostrarPruebaAtu (EventoSape evento, HttpServletRequest request, HttpServletResponse response) throws ServletException {
+    	if (logs.isDebugEnabled()) logs.debug("mostrarPruebaAtu: " + evento);
+    	try {
+			PruebaAtu prueba = pruebaBasicaDAO.getPruebaAtu((int)evento.getId());
+			request.setAttribute("evento",evento);
+			request.setAttribute("pruebaAtu", prueba);
+			redireccionarConPlantilla("pruebaAtu", request, response);
+		} catch (SapeDataException e) {
+			error(e, request, response);
+			return;
+		}
+    	
+    }
+    
+    
+    private void mostrarResultados(HttpServletRequest request, HttpServletResponse response) 
+    														throws IOException, ServletException {
+		/*
+		* para esta obtengo el codigo del evento, para buscarlo en la
+		* base de datos y obtener el objeto PruebaBasica, este a su vez
+		* se envia por el request al jsp DetallePruebaBasica para
+		* que lo despliegue.
+		*/
+
+//  	esto es para ke si saca algun error coloque un boton de cerrar a la ventana
+    	request.setAttribute("tipo","cerrar");  
+    	
+    	
+    	String tmp =(String)request.getParameter("ticket");
+    	
+    	if (logs.isDebugEnabled()) logs.debug("mostrarResultados: el ticket es ="+tmp);
+    	
+    	PruebaBasica pb = null;
+
+    	EventoSape es=null;
+    	long ticket = 0;
+    	try{
+    		ticket=Long.parseLong(tmp);
+    		
+    		es=eventoSapeDAO.getEventoSape(ticket);
+    		
+    		if(es.getTipoPrueba().equals("bas2") || es.getTipoPrueba().equals("bas2-clip") ||  es.getTipoPrueba().equals("bas2_force") ) {
+    			// es una siplex!!!!
+    			pb = (PruebaBasica) DAOFactoryImpl.getInstance().getPruebaSiplexPRODAO().getPruebaBasica(ticket);
+    			
+    		}else if (es.getTipoPrueba().equals("categorias")){
+    			operacionCategorias (request, response);
+    			return;
+    		} else if (es.getTipoPrueba().equals("atuc") || es.getTipoPrueba().equals("atur")) {
+    			mostrarPruebaAtu(es, request, response);
+    			return;
+    		} else {
+    			pb=pruebaBasicaDAO.getPruebaBasica(ticket);
+    		}
+    		
+    	}catch(NumberFormatException e){
+    		error(e,request,response);
+    		return;
+    	}catch(SapeDataException e){
+    		if(e.getCause() instanceof ObjectNotFoundException){
+    			error("El ticket: '"+ticket+"' no se encuentra en nuestros archivos.",request,response);
+    			return;
+    		}
+    		return;
+    	}
+//  	Verifico si tiene grafica.
+    	String haveGraph=null;
+    	try {
+    		haveGraph = pruebaBasicaDAO.getGrafica(ticket);//VERIFICAMOS SI TIENE O NO GRAFICA1!!!
+    	} catch (SapeDataException e) {
+    		
+    		if(e.getCause() instanceof ObjectNotFoundException){
+    			error("El ticket: '"+ticket+"' no se encuentra en nuestros archivos.",request,response);
+    			return;
+    		}else{
+    			error(e, request, response);
+    			return;
+    		}
+    	} 	
+    	
+    	if (haveGraph == null) haveGraph = "noTieneGrafica";
+    	
+    	if(es.getTipoPrueba().equals("bas2") || es.getTipoPrueba().equals("bas2_force"))
+    		request.setAttribute("pruebaSiplex",(PruebaSiplexPRO)pb);
+    	
+   		request.setAttribute("prueba",pb);
+    	
+    	request.setAttribute("haveGraph",haveGraph);
+    	
+    	if(logs.isDebugEnabled()) logs.debug("tiene grafica: "+haveGraph);
+    	
+    	String cv=pb.getCodigoVer();
+    	CodigoVer cv2=null;
+//  	System.out.println("EL CODIGO KE SE OBTUVO ES:"+cv);
+    	String descCodigoVer=null;
+    	
+    	try {
+    		cv2=codigosVerDAO.getCodigoVer(cv);
+//    		System.out.println("antes de obtener la clasificacion: cv="+cv);
+    		descCodigoVer = cv2.getClasificacion();
+    	} catch (Exception e2) {
+    		
+    		descCodigoVer = "El codigo: \""+cv+"\" no esta registrado en codigosVer.";
+//  		Si el error es diferente a que no encuentra e codigover, lo muestro.
+    		if (!(e2.getCause() instanceof net.sf.hibernate.ObjectNotFoundException)) {
+    			logs.error(e2);
+    			error(e2, request, response);
+    			return;
+    		}
+    	}
+    	request.setAttribute("descCodigoVer",descCodigoVer);
+    	request.setAttribute("evento",es);
+    	Serie serie = null;
+    	String tipocentral=null;
+    	try {
+//  		TODO yo creo que esto se puede sacar de otro lado.
+    		serie=serieDAO.buscarSerie(String.valueOf(pb.getTelefono()));
+//  		s=(Serie) l.get(0);
+    		if(serie == null)
+    			tipocentral = "ND";
+    		else
+    			tipocentral=serie.getTipocentral();
+    	} catch (SapeDataException e1) {
+    		tipocentral="-";
+    	}
+    	request.setAttribute("tipocentral",tipocentral);
+    	
+    	/*
+    	 * Se realizara la comparacion de las capacitancias para obtener la menor de todas
+    	 */
+    	if(tipocentral.equals("SIPLEXPRO")){
+    		String res1=pb.getRes_tiptoground();
+    		String res2=pb.getRes_ringtoground();
+    		String res3=pb.getRes_tiptoring();
+    		
+    		StringTokenizer ress1 = new StringTokenizer(res1," ");
+    		StringTokenizer ress2 = new StringTokenizer(res2," ");
+    		StringTokenizer ress3 = new StringTokenizer(res3," ");
+    		
+//    		System.out.println("res1=["+res1+"],res2=["+res2+"],res3=["+res3+"]");
+    		
+    		//para verificar si la informacion esta completa!!!
+    		if(ress1.countTokens() != 2 || ress2.countTokens() != 2 || ress3.countTokens() != 2){
+    			System.out.println("Uno de los tokens esta imcompleto");
+    			redireccionarConPlantilla("DetallePruebaBasica", request, response);
+    			return;
+    		}
+   		
+    		
+    		
+    		try{
+	    		double re1 = Double.parseDouble(ress1.nextToken());
+	    		String tipo1 = ress1.nextToken();
+	    		
+	    		double re2 = Double.parseDouble(ress2.nextToken());
+	    		String tipo2 = ress2.nextToken();
+	    		
+	    		double re3 = Double.parseDouble(ress3.nextToken());
+	    		String tipo3 = ress3.nextToken();
+	    		
+	    		//para que todos los datos keden en KOhms
+	    		
+	    		System.out.println("tipo1: "+tipo1+" tipo2: "+tipo2+" tipo3: "+tipo3);
+	    		
+	    		if (tipo1.indexOf("MOhm") != -1)
+	    			re1 = re1*1000;
+	    		else if (tipo1.indexOf("KOhm") == -1)// esto pasa el valor de la resistencia
+	    			re1 = re1/1000;					/// de Ohm a KOhm
+	    		
+	    		if(tipo2.indexOf("MOhm") != -1)
+	    			re2 = re2*1000;
+	    		else if (tipo2.indexOf("KOhm") == -1)// esto pasa el valor de la resistencia
+	    			re2 = re2/1000;					/// de Ohm a KOhm
+	    		
+	    		if(tipo3.indexOf("MOhm") != -1)
+	    			re3 = re3*1000;
+	    		else if (tipo3.indexOf("KOhm") == -1)// esto pasa el valor de la resistencia
+	    			re3 = re3/1000;					/// de Ohm a KOhm
+	    		
+	    		//TODO testear como esta comprobando las resistencias!!!!
+	    		System.out.println("numeros: res1="+re1+" res2="+re2+" res3="+re3);
+	    		
+	    		if((re1 == 30000 && re2 == 30000) || (re1 == 300000 && re3 == 30000) || (re2 == 300000 && re3 == 30000))
+	    			System.out.println("par bueno!");
+	    		else{
+	    		
+		    		String menor = null;
+		    		//en r1 voi a guardar el dato del mayor
+	    		
+		    		if(re1 < re2){
+		    			menor = "1";
+		    		} else {
+		    			menor = "2";
+		    			re1 = re2;
+		    		}
+	    		
+	    			if(re3 < re1)
+	    				menor = "3";
+	    		
+	    			
+	    			if(re1 == re2 && re2== re3)
+	    				menor = "todos";
+	    		
+	    			System.out.println("la menor es la : "+menor);
+	    		
+	    			request.setAttribute("resistenciaMenorSIPLEXPRO",menor);
+	    		}
+    		}catch(NumberFormatException e){
+    			if(logs.isDebugEnabled())logs.debug("Uno de los parametros no era numerico.");
+    		}
+    		
+    	}
+
+    	redireccionarConPlantilla("DetallePruebaBasica", request, response);
+//    	request.getRequestDispatcher(acciones.getTemplate("DetallePruebaBasica")).forward(request,response);        
+    } //fin de mostrarResultados
+
+    
+    private void operacionCategorias(HttpServletRequest request, HttpServletResponse response) 
+																throws IOException, ServletException {
+
+    	String ticket= request.getParameter("ticket");
+    	
+    	Categorias c = null;
+    	try {
+    		c=categoriasDAO.getCategorias(ticket);
+    	} catch (SapeDataException e) {
+    		error(e,request,response);
+    		return;
+    	}
+    	
+    	if (c == null) {
+    		error("Ocurrio un error al consultar Categoria con id "+ticket+" \nValor : null",request,response);
+    		return;
+    	}
+    	
+    	String cats = c.getCategorias();
+    	StringTokenizer st = new StringTokenizer(cats,"**");
+    	
+    	List l = new ArrayList();
+    	
+    	int i= 0;
+    	while (st.hasMoreTokens()) {
+    		l.add(i,st.nextToken());
+    		i++;
+    	}
+    	c.setCategoriasList(l);
+    	
+    	request.setAttribute("categoria",c);
+    	request.getRequestDispatcher(acciones.getTemplate("categorias")).forward(request,response);
+    }
+
+    
+    private String[] getPruebasSiplexPRO() {
+    	String pruebas[] = new String [] {"bas2","bas2_force","basica", "completa", "xdsl", "ecometro", "psd", "shdsl",
+				"frec", "balance", "bobina","circuit","basica_force", "aislamiento", "aislamientoAB", "aislamientoAT", 
+				"aislamientoBT", "atuc", "atur"};
+    	
+    	return pruebas;
+    }
+    
+}

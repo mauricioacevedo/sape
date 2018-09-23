@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.TipoNodo"
+        table="tiponodo"
+    >
+
+        <id
+            name="id"
+            column="idtiponodo"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="sequence">
+                <param name="sequence">idtiponodo</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-TipoNodo.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="site"
+            type="string"
+            update="true"
+            insert="true"
+            column="site"
+        />
+
+        <many-to-one
+            name="tipoCabeza"
+            class="com.osp.sape.maestros.CabezaPrueba"
+            cascade="none"
+            outer-join="auto"
+            update="false"
+            insert="false"
+            column="tipocabeza"
+        />
+
+        <property
+            name="ipServidor"
+            type="string"
+            update="true"
+            insert="true"
+            column="ipservidor"
+        />
+
+        <property
+            name="ipCabeza"
+            type="string"
+            update="true"
+            insert="true"
+            column="ipcabeza"
+        />
+
+        <property
+            name="puertoServidor"
+            type="string"
+            update="true"
+            insert="true"
+            column="puertoservidor"
+        />
+
+        <property
+            name="puertoCabeza"
+            type="string"
+            update="true"
+            insert="true"
+            column="puertocabeza"
+        />
+
+        <property
+            name="estado"
+            type="string"
+            update="true"
+            insert="true"
+            column="estado"
+        />
+
+        <property
+            name="ipEsclavo"
+            type="string"
+            update="true"
+            insert="true"
+            column="ipesclavo"
+        />
+
+        <property
+            name="puertoEsclavo"
+            type="string"
+            update="true"
+            insert="true"
+            column="puertoesclavo"
+        />
+
+        <property
+            name="usuarioUltimoCambio"
+            type="string"
+            update="true"
+            insert="true"
+            column="usuarioultimocambio"
+        />
+
+        <property
+            name="tipoCentral"
+            type="string"
+            update="true"
+            insert="true"
+            column="tipocentral"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-TipoNodo.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

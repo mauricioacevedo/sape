@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.osp.sape.maestros.rutinas.RutinaCliente"
+        table="rutina_cliente"
+    >
+
+        <id
+            name="oid"
+            column="oid"
+            type="long"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-RutinaCliente.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="telefono"
+            type="long"
+            update="true"
+            insert="true"
+            column="telefono"
+        />
+
+        <property
+            name="nombre"
+            type="string"
+            update="true"
+            insert="true"
+            column="nombre"
+        />
+
+        <property
+            name="estatus"
+            type="string"
+            update="true"
+            insert="true"
+            column="estatus"
+        />
+
+        <property
+            name="usuario"
+            type="string"
+            update="true"
+            insert="true"
+            column="usuario"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-RutinaCliente.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>
